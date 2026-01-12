@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiMail, FiMapPin, FiGithub, FiLinkedin, FiInstagram, FiSend, FiPhone, FiMessageCircle } from 'react-icons/fi';
+import { FiMail, FiMapPin, FiGithub, FiLinkedin, FiInstagram, FiPhone, FiMessageCircle } from 'react-icons/fi';
 import { useState } from 'react';
 
 const contactInfo = [
