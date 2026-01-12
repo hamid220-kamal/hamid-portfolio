@@ -13,7 +13,7 @@ const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/hamid220-kamal', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://linkedin.com/in/hamid-kamal-hyderabad', label: 'LinkedIn' },
     { icon: FiInstagram, href: 'https://instagram.com/hamid220_kamal', label: 'Instagram' },
-    { icon: FiMail, href: 'mailto:hamidkamal220@gmail.com', label: 'Email' },
+    { icon: FiMail, href: 'mailto:buildwithhamid@gmail.com', label: 'Email' },
 ];
 
 export default function Footer() {
@@ -145,10 +145,10 @@ export default function Footer() {
                         </h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                             <a
-                                href="mailto:hamidkamal220@gmail.com"
+                                href="mailto:buildwithhamid@gmail.com"
                                 style={{ color: '#e4e4e7', textDecoration: 'none', fontSize: '0.95rem' }}
                             >
-                                hamidkamal220@gmail.com
+                                buildwithhamid@gmail.com
                             </a>
                             <span style={{ color: '#e4e4e7', fontSize: '0.95rem' }}>
                                 Hyderabad, India

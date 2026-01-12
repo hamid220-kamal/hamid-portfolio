@@ -135,7 +135,7 @@ hamid-portfolio/
 
 <div align="center">
 
-[![Email](https://img.shields.io/badge/Email-hamidkamal220%40gmail.com-EA4335?style=for-the-badge&logo=gmail)](mailto:hamidkamal220@gmail.com)
+[![Email](https://img.shields.io/badge/Email-buildwithhamid%40gmail.com-EA4335?style=for-the-badge&logo=gmail)](mailto:buildwithhamid@gmail.com)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Message-25D366?style=for-the-badge&logo=whatsapp)](https://wa.me/918332059777)
 [![Instagram](https://img.shields.io/badge/Instagram-@hamid220__kamal-E4405F?style=for-the-badge&logo=instagram)](https://instagram.com/hamid220_kamal)
 

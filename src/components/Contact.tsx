@@ -7,8 +7,8 @@ const contactInfo = [
     {
         icon: FiMail,
         label: 'Email',
-        value: 'hamidkamal220@gmail.com',
-        href: 'mailto:hamidkamal220@gmail.com',
+        value: 'buildwithhamid@gmail.com',
+        href: 'mailto:buildwithhamid@gmail.com',
     },
     {
         icon: FiMapPin,
