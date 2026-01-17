@@ -228,7 +228,7 @@ export default function Hero() {
                         }}
                     />
                     <img
-                        src="/images/hamid.png"
+                        src="/images/Hamid.jpeg"
                         alt="Hamid Kamal"
                         style={{
                             position: 'relative',
