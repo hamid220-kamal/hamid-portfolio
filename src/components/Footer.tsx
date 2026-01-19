@@ -92,8 +92,8 @@ export default function Footer() {
                             </span>
                         </div>
                         <p style={{ color: '#d4d4d8', lineHeight: 1.8, fontSize: '0.95rem' }}>
-                            Aspiring AI Engineer and Full-Stack Developer passionate about building innovative
-                            technology solutions that make a meaningful impact.
+                            I'm a student developer who's obsessed with building cool things with AI.
+                            Always learning, always building!
                         </p>
                     </div>
 

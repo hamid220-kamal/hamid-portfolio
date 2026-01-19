@@ -118,5 +118,19 @@ export const certificates: Certificate[] = [
         provider: "Electronic Arts",
         image: "/certificates/electronics arts.jpg",
         category: "development"
+    },
+    {
+        id: 17,
+        title: "Generative AI Masterclass",
+        provider: "LetsUpgrade & ITM Skills University",
+        image: "/certificates/generative_ai_masterclass.png",
+        category: "ai"
+    },
+    {
+        id: 18,
+        title: "Intro to Data Science",
+        provider: "Analytics Vidhya",
+        image: "/certificates/ANALYTICS VIDHYA.png",
+        category: "analytics"
     }
 ];

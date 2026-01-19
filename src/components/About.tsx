@@ -12,18 +12,18 @@ const stats = [
 const journeyItems = [
     {
         year: '2023',
-        title: 'Embarked on Development Journey',
-        description: 'Began exploring web development fundamentals and discovered a passion for building digital solutions.',
+        title: 'Where It All Started',
+        description: 'I started out with the basics—HTML, CSS, and some simple JS. I quickly realized that building digital solutions was exactly what I wanted to do.',
     },
     {
         year: '2024',
-        title: 'Mastered Full-Stack Development',
-        description: 'Developed expertise in React, Next.js, and backend technologies while completing enterprise-level projects.',
+        title: 'Diving into Full-Stack',
+        description: 'I spent the year learning React and Next.js. I worked on some pretty huge projects (like my 80k line Islamic Learning Platform) and learned how to build apps from start to finish.',
     },
     {
         year: '2025',
-        title: 'Pioneered AI Integration',
-        description: 'Specialized in artificial intelligence, building multi-agent systems and voice-enabled applications with cutting-edge AI.',
+        title: 'Exploring the World of AI',
+        description: "Lately, I've been obsessed with AI. I've been building voice assistants and multi-agent systems that can actually think and talk. It's safe to say I've found my focus!",
     },
 ];
 
@@ -50,7 +50,6 @@ export default function About() {
                     </p>
                 </motion.div>
 
-                {/* Bio Section */}
                 <div
                     style={{
                         display: 'grid',
@@ -112,10 +111,9 @@ export default function About() {
                                 fontSize: '1rem',
                             }}
                         >
-                            As a <strong style={{ color: '#8b5cf6' }}>Class 11 student</strong> with an exceptional
-                            aptitude for technology, I specialize in developing AI-integrated applications and
-                            enterprise-scale web platforms. My journey represents a unique blend of academic
-                            excellence and practical software engineering expertise.
+                            I'm currently a <strong style={{ color: '#8b5cf6' }}>Class 11 student</strong> who spends most of my free time
+                            glued to my keyboard. I love building AI-integrated apps and web platforms that people actually enjoy using.
+                            My journey is all about learning as much as I can and building things that matter.
                         </p>
                         <p
                             style={{
@@ -125,14 +123,12 @@ export default function About() {
                                 marginTop: '16px',
                             }}
                         >
-                            I am driven by a passion for <strong style={{ color: '#06b6d4' }}>artificial intelligence</strong> and
-                            its transformative potential. From architecting multi-agent voice assistants to building
-                            comprehensive learning platforms, I consistently deliver solutions that push the boundaries
-                            of what's possible in modern software development.
+                            AI is what really gets me excited. Whether it's making a voice assistant that feels like a friend or
+                            architecting a complex learning tool, I'm always looking for ways to push the boundaries and see
+                            what's possible. I'm just getting started!
                         </p>
                     </motion.div>
 
-                    {/* Stats Grid */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -166,7 +162,6 @@ export default function About() {
                     </motion.div>
                 </div>
 
-                {/* Journey Timeline */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}

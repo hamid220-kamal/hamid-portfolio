@@ -62,10 +62,10 @@ export default function Contact() {
                 >
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '8px' }}>
                         <FiMessageCircle size={28} color="#8b5cf6" />
-                        <h2 className="section-title" style={{ marginBottom: 0 }}>Let's Connect</h2>
+                        <h2 className="section-title" style={{ marginBottom: 0 }}>Get In Touch</h2>
                     </div>
                     <p className="section-subtitle">
-                        Interested in collaboration or have a project in mind? I'd love to hear from you.
+                        Have a question or just want to chat? Drop me a message and I'll get back to you!
                     </p>
                 </motion.div>
 
@@ -219,7 +219,7 @@ export default function Contact() {
                                 marginBottom: '28px',
                             }}
                         >
-                            Send a Message
+                            Drop me a line
                         </h3>
 
                         <form onSubmit={handleSubmit}>

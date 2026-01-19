@@ -28,7 +28,7 @@ export default function Projects() {
                         <h2 className="section-title" style={{ marginBottom: 0 }}>Featured Projects</h2>
                     </div>
                     <p className="section-subtitle">
-                        A selection of my recent work showcasing AI, full-stack development, and modern web technologies
+                        A collection of things I've built lately—from AI experiments to full-scale web apps
                     </p>
                 </motion.div>
 

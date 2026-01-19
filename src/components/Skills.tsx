@@ -35,10 +35,10 @@ export default function Skills() {
                 >
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '8px' }}>
                         <FiZap size={28} color="#8b5cf6" />
-                        <h2 className="section-title" style={{ marginBottom: 0 }}>Technical Expertise</h2>
+                        <h2 className="section-title" style={{ marginBottom: 0 }}>My Tech Stack</h2>
                     </div>
                     <p className="section-subtitle">
-                        A comprehensive toolkit for building modern, scalable applications
+                        The tools and languages I use to build my projects
                     </p>
                 </motion.div>
 
@@ -139,7 +139,7 @@ export default function Skills() {
                             marginBottom: '24px',
                         }}
                     >
-                        Professional Competencies
+                        Beyond the Code
                     </h3>
                     <div
                         style={{

@@ -40,10 +40,10 @@ export default function Certificates() {
                 >
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '8px' }}>
                         <FiAward size={28} color="#8b5cf6" />
-                        <h2 className="section-title" style={{ marginBottom: 0 }}>Professional Certifications</h2>
+                        <h2 className="section-title" style={{ marginBottom: 0 }}>My Certifications</h2>
                     </div>
                     <p className="section-subtitle">
-                        Industry-recognized credentials from leading technology organizations
+                        I'm always learning and picking up new skills. here are some of the certs I've picked up from Google, Microsoft, and more.
                     </p>
                 </motion.div>
 

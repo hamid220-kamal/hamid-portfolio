@@ -3,11 +3,10 @@ import { useEffect, useState, useRef } from 'react';
 import { FiArrowDown, FiGithub, FiMail, FiStar, FiZap, FiCode } from 'react-icons/fi';
 
 const roles = [
-    "AI Engineer",
-    "Full-Stack Developer",
-    "Tech Innovator",
-    "Prompt Engineering Specialist",
-    "Software Architect"
+    "AI Explorer",
+    "Self-Taught Developer",
+    "Creative Coder",
+    "AI Agent Architect"
 ];
 
 const floatingIcons = [
@@ -103,7 +102,7 @@ export default function Hero() {
                 ))}
             </div>
 
-            {/* Floating Icons */}
+            {/* UI Accents */}
             {floatingIcons.map(({ Icon, delay, x, y }, index) => (
                 <motion.div
                     key={index}
@@ -132,7 +131,7 @@ export default function Hero() {
                 </motion.div>
             ))}
 
-            {/* Glowing Orbs */}
+            {/* Ambient Lighting */}
             <motion.div
                 animate={{
                     y: [-30, 30, -30],
@@ -205,7 +204,6 @@ export default function Hero() {
                         height: '200px',
                     }}
                 >
-                    {/* Animated Ring */}
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -236,11 +234,11 @@ export default function Hero() {
                             height: '100%',
                             borderRadius: '50%',
                             objectFit: 'cover',
+                            objectPosition: 'center 10%', // Adjusting to show more of the top (hair)
                             border: '6px solid #0a0a0f',
                         }}
                     />
 
-                    {/* Status Badge */}
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
@@ -263,7 +261,6 @@ export default function Hero() {
                     </motion.div>
                 </motion.div>
 
-                {/* Welcome Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: 20, scale: 0.8 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -289,7 +286,6 @@ export default function Hero() {
                     </span>
                 </motion.div>
 
-                {/* Name with Gradient Animation */}
                 <motion.h1
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -308,7 +304,6 @@ export default function Hero() {
                     </span>
                 </motion.h1>
 
-                {/* Typing Effect with Cursor */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -355,13 +350,11 @@ export default function Hero() {
                         lineHeight: 1.9,
                     }}
                 >
-                    <span style={{ color: '#8b5cf6', fontWeight: 600 }}>16-year-old technologist</span> specializing in
-                    AI-powered solutions and enterprise-grade web applications. Passionate about architecting
-                    innovative digital experiences and transforming complex ideas into{' '}
-                    <span style={{ color: '#06b6d4', fontWeight: 600 }}>production-ready solutions</span>.
+                    I'm a <span style={{ color: '#8b5cf6', fontWeight: 600 }}>16-year-old developer</span> who's obsessed with AI and building cool things.
+                    From massive learning platforms to smart voice assistants, I love taking tricky ideas and turning them into
+                    <span style={{ color: '#06b6d4', fontWeight: 600 }}> real, working apps</span>.
                 </motion.p>
 
-                {/* Stats Row */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -403,7 +396,6 @@ export default function Hero() {
                     ))}
                 </motion.div>
 
-                {/* CTA Buttons */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
