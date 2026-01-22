@@ -123,14 +123,14 @@ export const certificates: Certificate[] = [
         id: 17,
         title: "Generative AI Masterclass",
         provider: "LetsUpgrade & ITM Skills University",
-        image: "/certificates/generative_ai_masterclass.png",
+        image: "/certificates/hamid-kamal-generative-ai-masterclass.png",
         category: "ai"
     },
     {
         id: 18,
         title: "Intro to Data Science",
         provider: "Analytics Vidhya",
-        image: "/certificates/ANALYTICS VIDHYA.png",
+        image: "/certificates/hamid-kamal-analytics-vidhya-data-science.png",
         category: "analytics"
     }
 ];
