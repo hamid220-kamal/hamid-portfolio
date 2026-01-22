@@ -128,7 +128,7 @@ export const certificates: Certificate[] = [
     },
     {
         id: 18,
-        title: "Intro to Data Science",
+        title: "Deep Dive into QWQ-32B",
         provider: "Analytics Vidhya",
         image: "/certificates/hamid-kamal-analytics-vidhya-data-science.png",
         category: "analytics"
