@@ -226,8 +226,9 @@ export default function Hero() {
                         }}
                     />
                     <img
-                        src="/images/Hamid.jpeg"
-                        alt="Hamid Kamal"
+                        src="/images/hamid-ai-developer-portfolio.jpg"
+                        alt="Hamid, AI Developer and Software Engineer Portfolio"
+                        title="Hamid - AI Developer & Software Engineer"
                         style={{
                             position: 'relative',
                             width: '100%',
