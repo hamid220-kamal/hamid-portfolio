@@ -67,7 +67,8 @@ export default function Projects() {
                             >
                                 <motion.img
                                     src={project.image}
-                                    alt={project.title}
+                                    alt={`${project.title} - Hamid Kamal Project`}
+                                    loading="lazy"
                                     animate={{
                                         scale: hoveredProject === project.id ? 1.15 : 1,
                                         rotate: hoveredProject === project.id ? 2 : 0,
@@ -336,7 +337,7 @@ export default function Projects() {
                                 {/* Project Image */}
                                 <img
                                     src={selectedProjectData.image}
-                                    alt={selectedProjectData.title}
+                                    alt={`${selectedProjectData.title} - Hamid Kamal Project`}
                                     style={{
                                         width: '100%',
                                         height: '300px',

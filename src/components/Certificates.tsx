@@ -147,7 +147,8 @@ export default function Certificates() {
                                 >
                                     <motion.img
                                         src={cert.image}
-                                        alt={cert.title}
+                                        alt={`${cert.title} - Hamid Kamal Portfolio`}
+                                        loading="lazy"
                                         animate={{
                                             scale: hoveredCard === cert.id ? 1.1 : 1,
                                         }}
@@ -354,7 +355,7 @@ export default function Certificates() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2 }}
                                     src={selectedCertData.image}
-                                    alt={selectedCertData.title}
+                                    alt={`${selectedCertData.title} - Hamid Kamal Certificate`}
                                     style={{
                                         width: '100%',
                                         borderRadius: '16px',
