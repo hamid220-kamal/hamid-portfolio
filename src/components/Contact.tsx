@@ -26,8 +26,8 @@ const contactInfo = [
 
 const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/hamid220-kamal', label: 'GitHub', color: '#8b5cf6' },
-    { icon: FiLinkedin, href: 'https://linkedin.com/in/hamid-kamal-hyderabad', label: 'LinkedIn', color: '#0077b5' },
-    { icon: FiInstagram, href: 'https://instagram.com/hamid220_kamal', label: 'Instagram', color: '#e4405f' },
+    { icon: FiLinkedin, href: 'https://www.linkedin.com/in/hamid-kamal-/', label: 'LinkedIn', color: '#0077b5' },
+    { icon: FiInstagram, href: 'https://www.instagram.com/buildwith_hamid/', label: 'Instagram', color: '#e4405f' },
 ];
 
 export default function Contact() {
