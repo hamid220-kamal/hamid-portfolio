@@ -24,8 +24,8 @@ export default function LoadingScreen() {
                     position: 'absolute',
                     inset: 0,
                     background: `
-            radial-gradient(ellipse at center, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-            radial-gradient(ellipse at bottom right, rgba(6, 182, 212, 0.1) 0%, transparent 50%)
+            radial-gradient(ellipse at center, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom right, rgba(96, 165, 250, 0.1) 0%, transparent 50%)
           `,
                 }}
             />
@@ -49,8 +49,8 @@ export default function LoadingScreen() {
                         height: '120px',
                         borderRadius: '50%',
                         border: '3px solid transparent',
-                        borderTopColor: '#8b5cf6',
-                        borderRightColor: '#06b6d4',
+                        borderTopColor: '#3b82f6',
+                        borderRightColor: '#60a5fa',
                         position: 'absolute',
                         inset: '-10px',
                     }}
@@ -66,7 +66,7 @@ export default function LoadingScreen() {
                         borderRadius: '50%',
                         border: '2px solid transparent',
                         borderBottomColor: '#f59e0b',
-                        borderLeftColor: '#8b5cf6',
+                        borderLeftColor: '#3b82f6',
                         position: 'absolute',
                         inset: 0,
                     }}
@@ -79,14 +79,14 @@ export default function LoadingScreen() {
                     style={{
                         width: '100px',
                         height: '100px',
-                        background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2))',
+                        background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.2))',
                         borderRadius: '50%',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                     }}
                 >
-                    <FiCode size={40} color="#8b5cf6" />
+                    <FiCode size={40} color="#3b82f6" />
                 </motion.div>
             </motion.div>
 
@@ -96,10 +96,10 @@ export default function LoadingScreen() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
                 style={{
-                    fontFamily: "'Outfit', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
                     fontWeight: 800,
-                    background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)',
+                    background: 'linear-gradient(135deg, #3b82f6, #60a5fa)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     marginBottom: '16px',
@@ -143,7 +143,7 @@ export default function LoadingScreen() {
                     transition={{ duration: 3.5, ease: "easeInOut" }}
                     style={{
                         height: '100%',
-                        background: 'linear-gradient(90deg, #8b5cf6, #06b6d4)',
+                        background: 'linear-gradient(90deg, #3b82f6, #60a5fa)',
                         borderRadius: '2px',
                     }}
                 />

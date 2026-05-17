@@ -1,61 +1,57 @@
 export interface Skill {
-    name: string;
-    icon?: string;
+  name: string;
+  level: number;
 }
 
 export interface SkillCategory {
-    title: string;
-    icon: string;
-    skills: Skill[];
+  title: string;
+  description: string;
+  skills: Skill[];
 }
 
 export const skillCategories: SkillCategory[] = [
-    {
-        title: "Programming Languages",
-        icon: "code",
-        skills: [
-            { name: "Python" },
-            { name: "JavaScript (ES6+)" },
-            { name: "TypeScript" },
-            { name: "Java" },
-            { name: "HTML5" },
-            { name: "CSS3 / SCSS" }
-        ]
-    },
-    {
-        title: "Frameworks & Libraries",
-        icon: "layers",
-        skills: [
-            { name: "React.js" },
-            { name: "Next.js 15" },
-            { name: "Tailwind CSS" },
-            { name: "Framer Motion" },
-            { name: "Flask" },
-            { name: "Node.js" }
-        ]
-    },
-    {
-        title: "Artificial Intelligence",
-        icon: "brain",
-        skills: [
-            { name: "Prompt Engineering" },
-            { name: "LLM Integration" },
-            { name: "Multi-Agent Systems" },
-            { name: "Natural Language Processing" },
-            { name: "Voice AI" },
-            { name: "Generative AI" }
-        ]
-    },
-    {
-        title: "Tools & Platforms",
-        icon: "tools",
-        skills: [
-            { name: "Git & GitHub" },
-            { name: "VS Code" },
-            { name: "MongoDB" },
-            { name: "RESTful APIs" },
-            { name: "Vite" },
-            { name: "Vercel" }
-        ]
-    }
+  {
+    title: "Strategic Orchestration",
+    description: "Aligning complex technical architectures with long-term venture objectives and global product strategy.",
+    skills: [
+      { name: "Product Engineering Strategy", level: 95 },
+      { name: "Executive Technical Leadership", level: 90 },
+      { name: "Cross-Border Venture Building", level: 85 },
+      { name: "Global EdTech Infrastructure", level: 90 },
+      { name: "Stakeholder Technical Alignment", level: 85 }
+    ]
+  },
+  {
+    title: "Defensive & Offensive Cyber-Security",
+    description: "Specialized in identifying architectural vulnerabilities and implementing robust, multi-layer security protocols.",
+    skills: [
+      { name: "Elite Ethical Hacking", level: 95 },
+      { name: "Vulnerability Landscape Analysis", level: 90 },
+      { name: "Penetration Testing (OSCP Standard)", level: 85 },
+      { name: "Secure Systems Architecture", level: 85 },
+      { name: "Advanced Threat Simulation", level: 80 }
+    ]
+  },
+  {
+    title: "Full-Stack Software Architecture",
+    description: "Building high-performance, resilient digital ecosystems using modern, production-grade technology stacks.",
+    skills: [
+      { name: "React 19 / Next.js 15 Ecosystems", level: 95 },
+      { name: "TypeScript Production Patterns", level: 90 },
+      { name: "High-Availability Node.js", level: 85 },
+      { name: "Database Schema Optimization", level: 85 },
+      { name: "Enterprise Tailwind CSS Architecture", level: 95 }
+    ]
+  },
+  {
+    title: "Industrial Intelligence & Agentic AI",
+    description: "Pioneering the intersection of industrial hardware control and generative cognitive intelligence.",
+    skills: [
+      { name: "Agentic AI Orchestration", level: 95 },
+      { name: "Gemini 2.0 / LLM RAG Pipelines", level: 90 },
+      { name: "CAD/CAM Engine Development", level: 85 },
+      { name: "Web Serial & Hardware Integration", level: 95 },
+      { name: "G-Code Logic & Machine Control", level: 85 }
+    ]
+  }
 ];

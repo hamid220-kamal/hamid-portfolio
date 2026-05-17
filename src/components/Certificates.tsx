@@ -1,373 +1,321 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiX, FiAward, FiZoomIn } from 'react-icons/fi';
-import { certificates } from '../data/certificates';
+import { FiAward, FiShield, FiCpu, FiCloud, FiCheckCircle, FiExternalLink } from 'react-icons/fi';
+import { certificates, type Certificate } from '../data/certificates';
 
-const categories = [
-    { id: 'all', name: 'All Certifications', count: certificates.length },
-    { id: 'ai', name: 'AI & Machine Learning', count: certificates.filter(c => c.category === 'ai').length },
-    { id: 'cloud', name: 'Cloud Computing', count: certificates.filter(c => c.category === 'cloud').length },
-    { id: 'development', name: 'Development', count: certificates.filter(c => c.category === 'development').length },
-    { id: 'analytics', name: 'Data Analytics', count: certificates.filter(c => c.category === 'analytics').length },
-    { id: 'other', name: 'Other', count: certificates.filter(c => c.category === 'other').length },
-];
+const categories = ['All', 'AI', 'Cybersecurity', 'Cloud', 'Other'];
+
+const getCategoryIcon = (category: string) => {
+  switch (category) {
+    case 'Cybersecurity': return <FiShield size={20} />;
+    case 'AI': return <FiCpu size={20} />;
+    case 'Cloud': return <FiCloud size={20} />;
+    default: return <FiAward size={20} />;
+  }
+};
+
+const getCategoryColor = (category: string) => {
+  switch (category) {
+    case 'Cybersecurity': return '#34d399'; // Emerald
+    case 'AI': return '#818cf8'; // Indigo
+    case 'Cloud': return '#38bdf8'; // Sky
+    default: return '#ffffff'; // Slate
+  }
+};
+
+function CredentialCard({ cert, index }: { cert: Certificate, index: number }) {
+  const color = getCategoryColor(cert.category);
+
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      className="credential-card"
+    >
+      <div className="cred-glow-bg" style={{ background: `radial-gradient(circle at top right, ${color}15, transparent 70%)` }} />
+      
+      <div className="cred-inner">
+        <div className="cred-header">
+          <div className="cred-icon-box" style={{ color: color, background: `${color}10`, borderColor: `${color}20` }}>
+            {getCategoryIcon(cert.category)}
+          </div>
+          <div className="cred-category" style={{ color: color, background: `${color}10`, borderColor: `${color}20` }}>
+            {cert.category}
+          </div>
+        </div>
+
+        <div className="cred-body">
+          <h3 className="cred-title">{cert.title}</h3>
+          <div className="cred-issuer">
+            <FiCheckCircle size={14} className="verified-icon" />
+            Issued by <span className="issuer-name">{cert.issuer}</span>
+          </div>
+        </div>
+
+        <div className="cred-footer">
+          <a href={`/Certificates/${cert.file}`} target="_blank" rel="noopener noreferrer" className="verify-btn">
+            Verify Credential <FiExternalLink />
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Certificates() {
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.05,
+  });
 
-    const [activeCategory, setActiveCategory] = useState('all');
-    const [selectedCert, setSelectedCert] = useState<number | null>(null);
-    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState('All');
 
-    const filteredCerts =
-        activeCategory === 'all'
-            ? certificates
-            : certificates.filter((c) => c.category === activeCategory);
+  const filteredCerts = certificates.filter(
+    cert => activeCategory === 'All' || cert.category === activeCategory
+  );
 
-    const selectedCertData = certificates.find((c) => c.id === selectedCert);
+  return (
+    <section id="certificates" className="section credentials-section" ref={ref}>
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="credentials-header"
+        >
+          <div className="section-label">Verified Expertise</div>
+          <h2 className="section-title">Professional Credentials</h2>
+          <p className="section-subtitle">
+            A curated index of rigorous technical certifications validating deep architectural expertise in AI, Cloud Infrastructure, and Offensive Cybersecurity.
+          </p>
+        </motion.div>
 
-    return (
-        <section id="certificates" className="section" ref={ref}>
-            <div className="container">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                >
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '8px' }}>
-                        <FiAward size={28} color="#8b5cf6" />
-                        <h2 className="section-title" style={{ marginBottom: 0 }}>My Certifications</h2>
-                    </div>
-                    <p className="section-subtitle">
-                        I'm always learning and picking up new skills. here are some of the certs I've picked up from Google, Microsoft, and more.
-                    </p>
-                </motion.div>
+        {/* Filter Bar */}
+        <motion.div 
+          className="filter-bar"
+          initial={{ opacity: 0, y: 10 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {activeCategory === cat && (
+                <motion.div layoutId="activeFilter" className="filter-active-bg" />
+              )}
+              <span className="filter-text">{cat}</span>
+            </button>
+          ))}
+        </motion.div>
 
-                {/* Category Filter */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        justifyContent: 'center',
-                        gap: '12px',
-                        marginBottom: '50px',
-                    }}
-                >
-                    {categories.map((category) => (
-                        <motion.button
-                            key={category.id}
-                            whileHover={{ scale: 1.08, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => setActiveCategory(category.id)}
-                            style={{
-                                padding: '12px 28px',
-                                background:
-                                    activeCategory === category.id
-                                        ? 'linear-gradient(135deg, #8b5cf6, #06b6d4)'
-                                        : 'rgba(255, 255, 255, 0.05)',
-                                border:
-                                    activeCategory === category.id
-                                        ? 'none'
-                                        : '1px solid rgba(255, 255, 255, 0.1)',
-                                borderRadius: '50px',
-                                color: '#fff',
-                                fontWeight: 600,
-                                fontSize: '0.9rem',
-                                cursor: 'pointer',
-                                transition: 'all 0.3s ease',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '8px',
-                            }}
-                        >
-                            {category.name}
-                            <span
-                                style={{
-                                    background: activeCategory === category.id
-                                        ? 'rgba(255, 255, 255, 0.2)'
-                                        : 'rgba(139, 92, 246, 0.3)',
-                                    padding: '2px 8px',
-                                    borderRadius: '50px',
-                                    fontSize: '0.75rem',
-                                }}
-                            >
-                                {category.count}
-                            </span>
-                        </motion.button>
-                    ))}
-                </motion.div>
+        {/* Credentials Grid */}
+        <motion.div layout className="credentials-grid">
+          <AnimatePresence mode="popLayout">
+            {filteredCerts.map((cert, idx) => (
+              <CredentialCard key={cert.id} cert={cert} index={idx} />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
 
-                {/* Certificates Grid */}
-                <motion.div
-                    layout
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                        gap: '28px',
-                    }}
-                >
-                    <AnimatePresence mode="popLayout">
-                        {filteredCerts.map((cert, index) => (
-                            <motion.div
-                                key={cert.id}
-                                layout
-                                initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                                animate={{ opacity: 1, scale: 1, y: 0 }}
-                                exit={{ opacity: 0, scale: 0.8, y: -30 }}
-                                transition={{
-                                    duration: 0.4,
-                                    delay: index * 0.08,
-                                    type: "spring",
-                                    stiffness: 200
-                                }}
-                                className="glass-card cert-card"
-                                style={{
-                                    padding: 0,
-                                    cursor: 'pointer',
-                                    overflow: 'hidden',
-                                }}
-                                onClick={() => setSelectedCert(cert.id)}
-                                onMouseEnter={() => setHoveredCard(cert.id)}
-                                onMouseLeave={() => setHoveredCard(null)}
-                            >
-                                {/* Certificate Image */}
-                                <div
-                                    style={{
-                                        position: 'relative',
-                                        overflow: 'hidden',
-                                        height: '200px',
-                                    }}
-                                >
-                                    <motion.img
-                                        src={cert.image}
-                                        alt={`${cert.title} - Hamid Kamal Portfolio`}
-                                        loading="lazy"
-                                        animate={{
-                                            scale: hoveredCard === cert.id ? 1.1 : 1,
-                                        }}
-                                        transition={{ duration: 0.4 }}
-                                        style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'cover',
-                                        }}
-                                    />
+      <style>{`
+        .credentials-section {
+          position: relative;
+          background: transparent;
+        }
 
-                                    {/* Overlay on hover */}
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: hoveredCard === cert.id ? 1 : 0 }}
-                                        style={{
-                                            position: 'absolute',
-                                            inset: 0,
-                                            background: 'linear-gradient(to top, rgba(139, 92, 246, 0.9), rgba(6, 182, 212, 0.6))',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                        }}
-                                    >
-                                        <motion.div
-                                            initial={{ scale: 0 }}
-                                            animate={{ scale: hoveredCard === cert.id ? 1 : 0 }}
-                                            transition={{ delay: 0.1 }}
-                                            style={{
-                                                width: '60px',
-                                                height: '60px',
-                                                borderRadius: '50%',
-                                                background: 'rgba(255, 255, 255, 0.2)',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                backdropFilter: 'blur(10px)',
-                                            }}
-                                        >
-                                            <FiZoomIn size={28} color="#fff" />
-                                        </motion.div>
-                                    </motion.div>
+        .credentials-header {
+          text-align: center;
+          margin-bottom: 40px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
-                                    {/* Provider Badge */}
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            top: '12px',
-                                            right: '12px',
-                                            padding: '6px 14px',
-                                            background: 'rgba(0, 0, 0, 0.7)',
-                                            backdropFilter: 'blur(10px)',
-                                            borderRadius: '50px',
-                                            fontSize: '0.75rem',
-                                            fontWeight: 600,
-                                            color: '#06b6d4',
-                                        }}
-                                    >
-                                        {cert.provider}
-                                    </div>
-                                </div>
+        .filter-bar {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 12px;
+          margin-bottom: 48px;
+        }
 
-                                {/* Certificate Info */}
-                                <div style={{ padding: '20px' }}>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '12px',
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                width: '44px',
-                                                height: '44px',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2))',
-                                                borderRadius: '12px',
-                                                flexShrink: 0,
-                                            }}
-                                        >
-                                            <FiAward size={22} color="#8b5cf6" />
-                                        </div>
-                                        <h3
-                                            style={{
-                                                fontFamily: "'Outfit', sans-serif",
-                                                fontSize: '1rem',
-                                                fontWeight: 600,
-                                                color: '#fff',
-                                                lineHeight: 1.3,
-                                            }}
-                                        >
-                                            {cert.title}
-                                        </h3>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
+        .filter-btn {
+          position: relative;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 8px 20px;
+          border-radius: 99px;
+          cursor: pointer;
+          font-family: 'Inter', sans-serif;
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #ffffff;
+          transition: color 0.3s;
+          outline: none;
+        }
 
-                {/* Certificate Modal */}
-                <AnimatePresence>
-                    {selectedCertData && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setSelectedCert(null)}
-                            style={{
-                                position: 'fixed',
-                                inset: 0,
-                                background: 'rgba(0, 0, 0, 0.95)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                zIndex: 2000,
-                                padding: '24px',
-                                backdropFilter: 'blur(10px)',
-                            }}
-                        >
-                            <motion.div
-                                initial={{ scale: 0.8, opacity: 0, y: 50 }}
-                                animate={{ scale: 1, opacity: 1, y: 0 }}
-                                exit={{ scale: 0.8, opacity: 0, y: 50 }}
-                                transition={{ type: "spring", damping: 25 }}
-                                onClick={(e) => e.stopPropagation()}
-                                style={{
-                                    background: 'linear-gradient(135deg, #1a1a2e, #12121a)',
-                                    borderRadius: '24px',
-                                    padding: '32px',
-                                    maxWidth: '700px',
-                                    width: '100%',
-                                    maxHeight: '90vh',
-                                    overflow: 'auto',
-                                    position: 'relative',
-                                    border: '1px solid rgba(139, 92, 246, 0.3)',
-                                    boxShadow: '0 0 60px rgba(139, 92, 246, 0.3)',
-                                }}
-                            >
-                                {/* Close Button */}
-                                <motion.button
-                                    whileHover={{ scale: 1.1, rotate: 90 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    onClick={() => setSelectedCert(null)}
-                                    style={{
-                                        position: 'absolute',
-                                        top: '16px',
-                                        right: '16px',
-                                        background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)',
-                                        border: 'none',
-                                        borderRadius: '50%',
-                                        width: '44px',
-                                        height: '44px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        cursor: 'pointer',
-                                        color: '#fff',
-                                        zIndex: 10,
-                                    }}
-                                >
-                                    <FiX size={22} />
-                                </motion.button>
+        .filter-btn:hover {
+          color: #f8fafc;
+        }
 
-                                {/* Header */}
-                                <div style={{ marginBottom: '24px', paddingRight: '50px' }}>
-                                    <div
-                                        style={{
-                                            display: 'inline-flex',
-                                            alignItems: 'center',
-                                            gap: '8px',
-                                            padding: '8px 16px',
-                                            background: 'rgba(6, 182, 212, 0.1)',
-                                            border: '1px solid rgba(6, 182, 212, 0.3)',
-                                            borderRadius: '50px',
-                                            marginBottom: '16px',
-                                        }}
-                                    >
-                                        <FiAward size={16} color="#06b6d4" />
-                                        <span style={{ color: '#06b6d4', fontSize: '0.9rem', fontWeight: 600 }}>
-                                            {selectedCertData.provider}
-                                        </span>
-                                    </div>
+        .filter-btn.active {
+          color: #fff;
+          border-color: transparent;
+        }
 
-                                    <h3
-                                        style={{
-                                            fontFamily: "'Outfit', sans-serif",
-                                            fontSize: '1.8rem',
-                                            fontWeight: 700,
-                                            color: '#fff',
-                                            lineHeight: 1.2,
-                                        }}
-                                    >
-                                        {selectedCertData.title}
-                                    </h3>
-                                </div>
+        .filter-active-bg {
+          position: absolute;
+          inset: 0;
+          background: rgba(99, 102, 241, 0.2);
+          border: 1px solid rgba(99, 102, 241, 0.4);
+          border-radius: 99px;
+          z-index: 0;
+        }
 
-                                {/* Certificate Image */}
-                                <motion.img
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 }}
-                                    src={selectedCertData.image}
-                                    alt={`${selectedCertData.title} - Hamid Kamal Certificate`}
-                                    style={{
-                                        width: '100%',
-                                        borderRadius: '16px',
-                                        border: '2px solid rgba(139, 92, 246, 0.3)',
-                                        boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)',
-                                    }}
-                                />
-                            </motion.div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </div>
-        </section>
-    );
+        .filter-text {
+          position: relative;
+          z-index: 1;
+        }
+
+        .credentials-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 24px;
+        }
+
+        .credential-card {
+          position: relative;
+          background: rgba(15, 23, 42, 0.4);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 20px;
+          overflow: hidden;
+          transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .credential-card:hover {
+          transform: translateY(-5px);
+          border-color: rgba(99, 102, 241, 0.3);
+          box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .cred-glow-bg {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          z-index: 0;
+          opacity: 0.5;
+          transition: opacity 0.3s;
+        }
+
+        .credential-card:hover .cred-glow-bg {
+          opacity: 1;
+        }
+
+        .cred-inner {
+          position: relative;
+          z-index: 1;
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+
+        .cred-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 20px;
+        }
+
+        .cred-icon-box {
+          width: 44px;
+          height: 44px;
+          border-radius: 12px;
+          border: 1px solid transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .cred-category {
+          font-size: 0.65rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          padding: 4px 10px;
+          border-radius: 6px;
+          border: 1px solid transparent;
+        }
+
+        .cred-body {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-bottom: 24px;
+        }
+
+        .cred-title {
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: #f8fafc;
+          line-height: 1.4;
+          letter-spacing: -0.01em;
+        }
+
+        .cred-issuer {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 0.85rem;
+          color: #ffffff;
+        }
+
+        .verified-icon {
+          color: #34d399;
+        }
+
+        .issuer-name {
+          color: #ffffff;
+          font-weight: 600;
+        }
+
+        .cred-footer {
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          padding-top: 16px;
+        }
+
+        .verify-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #818cf8;
+          text-decoration: none;
+          transition: color 0.3s, gap 0.3s;
+        }
+
+        .verify-btn:hover {
+          color: #c084fc;
+          gap: 10px;
+        }
+
+        @media (max-width: 640px) {
+          .credentials-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
+    </section>
+  );
 }

@@ -3,13 +3,13 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://hamid-ai-dev.vercel.app/</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://hamid-ai-dev.vercel.app/images/hamid-ai-developer-portfolio.jpg</image:loc>
-      <image:title>Hamid Kamal | AI Developer &amp; Software Engineer Portfolio</image:title>
-      <image:caption>Hamid Kamal, AI Developer and Software Engineer Portfolio</image:caption>
+      <image:title>17yo AI Developer &amp; Founder | Hamid Kamal</image:title>
+      <image:caption>Hamid Kamal, 17yo AI Developer and Founder Portfolio</image:caption>
     </image:image>
   </url>
 </urlset>

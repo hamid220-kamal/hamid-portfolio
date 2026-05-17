@@ -1,229 +1,159 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
-
-const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Certificates', href: '#certificates' },
-    { name: 'Contact', href: '#contact' },
-];
-
-const socialLinks = [
-    { icon: FiGithub, href: 'https://github.com/hamid220-kamal', label: 'GitHub' },
-    { icon: FiLinkedin, href: 'https://www.linkedin.com/in/hamidkamal/', label: 'LinkedIn' },
-    { icon: FiInstagram, href: 'https://www.instagram.com/buildwith_hamid/', label: 'Instagram' },
-];
+import { FiMenu, FiX } from 'react-icons/fi';
 
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    const handleNavClick = (href: string) => {
-        setIsMobileMenuOpen(false);
-        const element = document.querySelector(href);
-        element?.scrollIntoView({ behavior: 'smooth' });
-    };
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Capabilities', href: '#skills' },
+    { name: 'Ventures', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Contact', href: '#contact' },
+  ];
 
-    return (
-        <>
-            <motion.nav
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5 }}
-                style={{
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    zIndex: 1000,
-                    padding: '16px 24px',
-                    background: isScrolled ? 'rgba(10, 10, 15, 0.9)' : 'transparent',
-                    backdropFilter: isScrolled ? 'blur(20px)' : 'none',
-                    borderBottom: isScrolled ? '1px solid rgba(139, 92, 246, 0.1)' : 'none',
-                    transition: 'all 0.3s ease',
-                }}
+  return (
+    <nav 
+      style={{
+        position: 'fixed',
+        top: '24px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 1000,
+        width: 'calc(100% - 48px)',
+        maxWidth: '800px',
+        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+      }}
+    >
+      <div 
+        style={{
+          background: scrolled ? 'rgba(15, 23, 42, 0.7)' : 'rgba(15, 23, 42, 0.4)',
+          backdropFilter: 'blur(16px)',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          borderRadius: '24px',
+          padding: '12px 24px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          boxShadow: scrolled ? '0 20px 40px rgba(0,0,0,0.3)' : 'none'
+        }}
+      >
+        <a href="#home" style={{ fontSize: '1.25rem', fontWeight: 800, color: '#f8fafc', textDecoration: 'none', letterSpacing: '-0.02em' }}>
+          HK<span style={{ color: '#6366f1' }}>.</span>
+        </a>
+
+        {/* Desktop Links */}
+        <div style={{ display: 'none', gap: '32px' }} className="desktop-nav">
+          {navLinks.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href}
+              style={{
+                color: '#ffffff',
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                transition: 'color 0.3s'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#f8fafc'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#ffffff'}
             >
-                <div style={{
-                    maxWidth: '1200px',
-                    margin: '0 auto',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                }}>
-                    {/* Logo */}
-                    <motion.a
-                        href="#home"
-                        onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}
-                        whileHover={{ scale: 1.05 }}
-                        style={{
-                            fontSize: '1.5rem',
-                            fontWeight: 800,
-                            background: 'linear-gradient(135deg, #8b5cf6, #06b6d4)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            textDecoration: 'none',
-                            fontFamily: "'Outfit', sans-serif",
-                        }}
-                    >
-                        HK
-                    </motion.a>
+              {link.name}
+            </a>
+          ))}
+        </div>
 
-                    {/* Desktop Navigation */}
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '32px',
-                    }}
-                        className="desktop-nav"
-                    >
-                        {navLinks.map((link) => (
-                            <motion.a
-                                key={link.name}
-                                href={link.href}
-                                onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                                whileHover={{ color: '#8b5cf6' }}
-                                style={{
-                                    color: '#e4e4e7',
-                                    textDecoration: 'none',
-                                    fontSize: '0.9rem',
-                                    fontWeight: 500,
-                                    transition: 'color 0.3s ease',
-                                }}
-                            >
-                                {link.name}
-                            </motion.a>
-                        ))}
-                    </div>
+        <a href="#contact" className="btn-nav" style={{ display: 'none' }}>
+          Get in Touch
+        </a>
 
-                    {/* Social Icons */}
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '16px',
-                    }}
-                        className="desktop-nav"
-                    >
-                        {socialLinks.map((social) => (
-                            <motion.a
-                                key={social.label}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.1, color: '#8b5cf6' }}
-                                style={{
-                                    color: '#e4e4e7',
-                                    transition: 'color 0.3s ease',
-                                }}
-                            >
-                                <social.icon size={20} />
-                            </motion.a>
-                        ))}
-                    </div>
+        {/* Mobile Menu Toggle */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          style={{ 
+            background: 'none', 
+            border: 'none', 
+            color: '#f8fafc', 
+            cursor: 'pointer',
+            padding: '8px',
+            display: 'block'
+          }}
+          className="mobile-toggle"
+        >
+          {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        </button>
+      </div>
 
-                    {/* Mobile Menu Button */}
-                    <motion.button
-                        whileTap={{ scale: 0.9 }}
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="mobile-menu-btn"
-                        style={{
-                            display: 'none',
-                            background: 'transparent',
-                            border: 'none',
-                            color: '#fff',
-                            cursor: 'pointer',
-                            padding: '8px',
-                        }}
-                    >
-                        {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-                    </motion.button>
-                </div>
-            </motion.nav>
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            style={{
+              position: 'absolute',
+              top: '80px',
+              left: 0,
+              right: 0,
+              background: 'rgba(15, 23, 42, 0.95)',
+              backdropFilter: 'blur(20px)',
+              borderRadius: '24px',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              padding: '24px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px',
+              zIndex: 999
+            }}
+          >
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                style={{
+                  color: '#f8fafc',
+                  textDecoration: 'none',
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  padding: '12px 0',
+                  borderBottom: '1px solid rgba(255,255,255,0.05)'
+                }}
+              >
+                {link.name}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: '100%' }}
-                        transition={{ duration: 0.3 }}
-                        style={{
-                            position: 'fixed',
-                            top: 0,
-                            right: 0,
-                            bottom: 0,
-                            width: '70%',
-                            maxWidth: '300px',
-                            background: 'rgba(10, 10, 15, 0.98)',
-                            backdropFilter: 'blur(20px)',
-                            zIndex: 999,
-                            padding: '100px 32px 32px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '24px',
-                        }}
-                    >
-                        {navLinks.map((link, index) => (
-                            <motion.a
-                                key={link.name}
-                                href={link.href}
-                                onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                style={{
-                                    color: '#fff',
-                                    textDecoration: 'none',
-                                    fontSize: '1.2rem',
-                                    fontWeight: 500,
-                                }}
-                            >
-                                {link.name}
-                            </motion.a>
-                        ))}
-
-                        <div style={{
-                            display: 'flex',
-                            gap: '20px',
-                            marginTop: '32px',
-                        }}>
-                            {socialLinks.map((social) => (
-                                <a
-                                    key={social.label}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ color: '#e4e4e7' }}
-                                >
-                                    <social.icon size={24} />
-                                </a>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            <style>{`
-        @media (max-width: 768px) {
-          .desktop-nav {
-            display: none !important;
+      <style>{`
+        @media (min-width: 769px) {
+          .desktop-nav { display: flex !important; }
+          .btn-nav { 
+            display: block !important; 
+            background: #f8fafc; 
+            color: #020617; 
+            padding: 10px 20px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+            font-weight: 700;
+            transition: all 0.3s;
           }
-          .mobile-menu-btn {
-            display: block !important;
-          }
+          .btn-nav:hover { background: #6366f1; color: #fff; }
+          .mobile-toggle { display: none !important; }
         }
       `}</style>
-        </>
-    );
+    </nav>
+  );
 }
