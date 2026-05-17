@@ -2,16 +2,29 @@ import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiGithub, FiExternalLink, FiArrowRight } from 'react-icons/fi';
 import { projects } from '../data/projects';
+import { useRef } from 'react';
 import type { MouseEvent } from 'react';
 
 function SpotlightProjectCard({ project, index, inView }: { project: any, index: number, inView: boolean }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const rectRef = useRef<DOMRect | null>(null);
 
-  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
+  function handleMouseEnter(e: MouseEvent<HTMLDivElement>) {
+    rectRef.current = e.currentTarget.getBoundingClientRect();
+  }
+
+  function handleMouseMove(e: MouseEvent<HTMLDivElement>) {
+    if (!rectRef.current) {
+      rectRef.current = e.currentTarget.getBoundingClientRect();
+    }
+    const rect = rectRef.current;
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  }
+
+  function handleMouseLeave() {
+    rectRef.current = null;
   }
 
   return (
@@ -20,7 +33,9 @@ function SpotlightProjectCard({ project, index, inView }: { project: any, index:
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
       className={`spotlight-card-wrapper ${project.featured ? 'featured-project' : ''}`}
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       {/* Animated Border Glow following mouse */}
       <motion.div
@@ -53,10 +68,22 @@ function SpotlightProjectCard({ project, index, inView }: { project: any, index:
         
         <div className="project-visual">
           {project.image ? (
-            <img src={project.image} alt={`${project.title} - AI Software Architecture by Hamid Kamal`} className="project-image" />
+            <img 
+              src={project.image} 
+              alt={`${project.title} - AI Software Architecture by Hamid Kamal`} 
+              className="project-image" 
+              loading="lazy"
+              decoding="async"
+            />
           ) : project.logo ? (
             <div className="project-logo-container">
-              <img src={project.logo} alt={`${project.title} logo - Engineered by Hamid Kamal`} className="project-logo" />
+              <img 
+                src={project.logo} 
+                alt={`${project.title} logo - Engineered by Hamid Kamal`} 
+                className="project-logo" 
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           ) : (
             <div className="project-fallback">{project.title.substring(0, 2)}</div>

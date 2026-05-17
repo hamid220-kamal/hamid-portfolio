@@ -151,6 +151,8 @@ export default function ExecutiveHero() {
                 src="/images/hamid-ai-developer-portfolio.webp" 
                 alt="Hamid Kamal - 17-year-old AI Developer and Founder profile picture" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                fetchPriority="high"
+                decoding="async"
               />
             </motion.div>
 

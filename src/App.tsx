@@ -1,13 +1,16 @@
+import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import ExecutiveHero from './components/ExecutiveHero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Certificates from './components/Certificates';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
 import Effects from './components/Effects';
+
+// Lazy load below-the-fold components for optimized bundle splitting & FCP
+const About = lazy(() => import('./components/About'));
+const Skills = lazy(() => import('./components/Skills'));
+const Projects = lazy(() => import('./components/Projects'));
+const Experience = lazy(() => import('./components/Experience'));
+const Certificates = lazy(() => import('./components/Certificates'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   return (
@@ -16,14 +19,18 @@ function App() {
       <Navbar />
       <main>
         <ExecutiveHero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Certificates />
-        <Contact />
+        <Suspense fallback={null}>
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Certificates />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </>
   );
 }

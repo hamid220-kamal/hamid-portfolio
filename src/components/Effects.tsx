@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { useEffect } from 'react';
+import { motion, useScroll, useSpring, useMotionValue } from 'framer-motion';
 
 export default function Effects() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -10,9 +9,19 @@ export default function Effects() {
     restDelta: 0.001
   });
 
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
+
+  const cursorX = useSpring(mouseX, { stiffness: 500, damping: 28, mass: 0.5 });
+  const cursorY = useSpring(mouseY, { stiffness: 500, damping: 28, mass: 0.5 });
+
+  const followerX = useSpring(mouseX, { stiffness: 250, damping: 20, mass: 0.8 });
+  const followerY = useSpring(mouseY, { stiffness: 250, damping: 20, mass: 0.8 });
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
       
       // Update CSS variables for card hover glow
       document.documentElement.style.setProperty('--mouse-x', `${(e.clientX / window.innerWidth) * 100}%`);
@@ -21,7 +30,7 @@ export default function Effects() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
     <>
@@ -31,13 +40,11 @@ export default function Effects() {
       {/* Custom Cursor */}
       <motion.div 
         className="custom-cursor"
-        animate={{ x: mousePos.x - 10, y: mousePos.y - 10 }}
-        transition={{ type: 'spring', stiffness: 500, damping: 28, mass: 0.5 }}
+        style={{ x: cursorX, y: cursorY, left: -4, top: -4 }}
       />
       <motion.div 
         className="custom-cursor-follower"
-        animate={{ x: mousePos.x - 20, y: mousePos.y - 20 }}
-        transition={{ type: 'spring', stiffness: 250, damping: 20, mass: 0.8 }}
+        style={{ x: followerX, y: followerY, left: -16, top: -16 }}
       />
 
       {/* Animated Mesh Background */}
