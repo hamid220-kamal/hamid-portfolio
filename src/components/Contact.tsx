@@ -77,6 +77,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="social-btn"
                     title={social.label}
+                    aria-label={`Visit Hamid Kamal's ${social.label}`}
                   >
                     <social.icon size={20} />
                   </a>
@@ -104,8 +105,9 @@ export default function Contact() {
               </div>
 
               <div className={`input-group ${focusedField === 'name' ? 'focused' : ''} ${formData.name ? 'has-value' : ''}`}>
-                <label>Full Name</label>
+                <label htmlFor="contact-name">Full Name</label>
                 <input 
+                  id="contact-name"
                   type="text" 
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -117,8 +119,9 @@ export default function Contact() {
               </div>
 
               <div className={`input-group ${focusedField === 'email' ? 'focused' : ''} ${formData.email ? 'has-value' : ''}`}>
-                <label>Corporate Email</label>
+                <label htmlFor="contact-email">Corporate Email</label>
                 <input 
+                  id="contact-email"
                   type="email" 
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -130,8 +133,9 @@ export default function Contact() {
               </div>
 
               <div className={`input-group textarea-group ${focusedField === 'message' ? 'focused' : ''} ${formData.message ? 'has-value' : ''}`}>
-                <label>Project Details / Inquiry</label>
+                <label htmlFor="contact-message">Project Details / Inquiry</label>
                 <textarea 
+                  id="contact-message"
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}

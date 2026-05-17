@@ -125,8 +125,8 @@ export default function ExecutiveHero() {
               </a>
 
               <div style={{ display: 'flex', gap: '24px', marginLeft: '12px' }}>
-                <a href="https://github.com/hamid220-kamal" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', transition: 'color 0.3s' }} onMouseEnter={e => e.currentTarget.style.color = '#fff'} onMouseLeave={e => e.currentTarget.style.color = '#ffffff'}><FiGithub size={24} /></a>
-                <a href="https://linkedin.com/in/hamid-kamal" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', transition: 'color 0.3s' }} onMouseEnter={e => e.currentTarget.style.color = '#fff'} onMouseLeave={e => e.currentTarget.style.color = '#ffffff'}><FiLinkedin size={24} /></a>
+                <a href="https://github.com/hamid220-kamal" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', transition: 'color 0.3s' }} onMouseEnter={e => e.currentTarget.style.color = '#fff'} onMouseLeave={e => e.currentTarget.style.color = '#ffffff'} aria-label="Hamid Kamal's GitHub Profile"><FiGithub size={24} /></a>
+                <a href="https://linkedin.com/in/hamid-kamal" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', transition: 'color 0.3s' }} onMouseEnter={e => e.currentTarget.style.color = '#fff'} onMouseLeave={e => e.currentTarget.style.color = '#ffffff'} aria-label="Hamid Kamal's LinkedIn Profile"><FiLinkedin size={24} /></a>
               </div>
             </motion.div>
           </motion.div>
@@ -148,7 +148,7 @@ export default function ExecutiveHero() {
               }}
             >
               <img 
-                src="/images/hamid-ai-developer-portfolio.jpg" 
+                src="/images/hamid-ai-developer-portfolio.webp" 
                 alt="Hamid Kamal - 17-year-old AI Developer and Founder profile picture" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />

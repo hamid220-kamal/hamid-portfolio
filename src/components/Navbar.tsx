@@ -87,6 +87,7 @@ export default function Navbar() {
             display: 'block'
           }}
           className="mobile-toggle"
+          aria-label="Toggle Navigation Menu"
         >
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>

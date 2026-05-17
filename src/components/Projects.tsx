@@ -76,12 +76,12 @@ function SpotlightProjectCard({ project, index, inView }: { project: any, index:
             <h3 className="project-title">{project.title}</h3>
             <div className="project-links">
               {project.github && (
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="action-icon">
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="action-icon" aria-label={`View ${project.title} source code on GitHub`}>
                   <FiGithub size={20} />
                 </a>
               )}
               {project.demo && (
-                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="action-icon primary">
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="action-icon primary" aria-label={`Visit ${project.title} live platform`}>
                   <FiExternalLink size={20} />
                 </a>
               )}

@@ -151,7 +151,7 @@ export default function Hero() {
                     }}
                 >
                     <img
-                        src="/images/hamid-ai-developer-portfolio.jpg"
+                        src="/images/hamid-ai-developer-portfolio.webp"
                         alt="Hamid Kamal"
                         style={{
                             width: '100%',
