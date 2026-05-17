@@ -22,10 +22,6 @@ export default function Effects() {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
-      
-      // Update CSS variables for card hover glow
-      document.documentElement.style.setProperty('--mouse-x', `${(e.clientX / window.innerWidth) * 100}%`);
-      document.documentElement.style.setProperty('--mouse-y', `${(e.clientY / window.innerHeight) * 100}%`);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
