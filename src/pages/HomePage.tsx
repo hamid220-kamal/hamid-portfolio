@@ -4,7 +4,7 @@ import DomainArchitectureStage from '../components/DomainArchitectureStage';
 import { projects } from '../data/projects';
 import type { Project } from '../data/projects';
 import { useRouter } from '../context/RouterContext';
-import { FiArrowRight, FiExternalLink, FiGithub, FiCpu, FiShield, FiZap, FiCheckCircle, FiLayers, FiMaximize2 } from 'react-icons/fi';
+import { FiArrowRight, FiExternalLink, FiGithub, FiCpu, FiCheckCircle, FiMaximize2 } from 'react-icons/fi';
 
 interface HomePageProps {
   onSelectProject: (project: Project) => void;
