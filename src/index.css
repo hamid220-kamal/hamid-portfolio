@@ -48,10 +48,11 @@
   border-width: 0;
 }
 
-/* Master Global Background Theme across ALL Pages (100% Exact Match to Target Image 2) */
+/* Master Global Background Theme across ALL Pages with 100dvh Layout Stability */
 html {
   scroll-behavior: smooth;
   min-height: 100vh;
+  min-height: 100dvh;
   background: radial-gradient(circle at 88% 12%, #4a84c4 0%, #689cd2 22%, #9cc4ee 45%, #dce9f8 70%, #fdf4db 100%) fixed;
   background-attachment: fixed;
   color: var(--text-body);
@@ -61,6 +62,7 @@ html {
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   background: radial-gradient(circle at 88% 12%, #4a84c4 0%, #689cd2 22%, #9cc4ee 45%, #dce9f8 70%, #fdf4db 100%) fixed;
   background-attachment: fixed;
   color: var(--text-body);
