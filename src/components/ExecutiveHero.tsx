@@ -1,242 +1,522 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
-import { FiArrowRight, FiDownload, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { FiArrowRight, FiDownload, FiGithub, FiLinkedin, FiTerminal, FiCode } from 'react-icons/fi';
+import Hero3DCanvas from './canvas/Hero3DCanvas';
+import { useRouter } from '../context/RouterContext';
 
 export default function ExecutiveHero() {
-  const containerRef = useRef(null);
+  const { navigate } = useRouter();
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
+  // Telemetry Cycling Text
+  const [logIndex, setLogIndex] = useState(0);
+  const telemetryLogs = [
+    "> YOLOv8 Stream Inference: 99.4% Density Accuracy",
+    "> WebSerial.connect('COM4', 115200) → READY",
+    "> LearnQuran Protocol: Audio Sync OK (12ms)",
+    "> WASM G-Code Generator: 494 Files Verified"
+  ];
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.8 } 
-    },
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLogIndex((prev) => (prev + 1) % telemetryLogs.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [telemetryLogs.length]);
 
   return (
-    <section 
-      id="home" 
-      ref={containerRef}
-      style={{ 
-        minHeight: '85vh', 
-        display: 'flex', 
-        alignItems: 'center', 
-        paddingTop: '140px',
-        paddingBottom: '40px',
+    <section
+      id="home"
+      style={{
+        minHeight: '94vh',
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: '100px',
+        paddingBottom: '50px',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        background: 'transparent'
       }}
     >
-      <div className="container">
-        <motion.div 
-          className="hero-grid"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <h1 className="sr-only">Hamid Kamal - 17-Year-Old AI Developer & Founder</h1>
+      {/* 3D Constellation Particle Canvas Background */}
+      <Hero3DCanvas />
 
+      {/* Embedded 3D Technical Engine & G-Code Laser Wireframe Illustration */}
+      <div 
+        style={{
+          position: 'absolute',
+          top: '48%',
+          left: '52%',
+          transform: 'translate(-50%, -50%)',
+          width: '540px',
+          height: '440px',
+          opacity: 0.28,
+          pointerEvents: 'none',
+          zIndex: 1
+        }}
+      >
+        <svg viewBox="0 0 400 300" fill="none" stroke="#2563eb" strokeWidth="1.2">
+          {/* Cylinder Block Engine Lines */}
+          <rect x="60" y="80" width="280" height="150" rx="16" strokeDasharray="4 4" />
           
-          {/* Text Content */}
-          <motion.div className="hero-content">
-            {/* Label */}
-            <motion.div
-              variants={itemVariants}
+          {/* Oscillating Piston Cylinder Assemblies */}
+          <motion.circle 
+            cx="120" cy="155" r="40" 
+            animate={{ r: [38, 42, 38], strokeWidth: [1.2, 1.8, 1.2] }}
+            transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+          />
+          <motion.circle 
+            cx="200" cy="155" r="40" 
+            animate={{ r: [42, 38, 42], strokeWidth: [1.8, 1.2, 1.8] }}
+            transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
+          />
+          <motion.circle 
+            cx="280" cy="155" r="40" 
+            animate={{ r: [38, 42, 38], strokeWidth: [1.2, 1.8, 1.2] }}
+            transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 1 }}
+          />
+
+          <path d="M120 115 L120 195 M200 115 L200 195 M280 115 L280 195" strokeDasharray="2 2" />
+          <path d="M40 80 L360 80 M40 230 L360 230" strokeWidth="2" />
+          <path d="M100 40 L300 40 L280 80 L120 80 Z" />
+
+          {/* Continuous Rotating Gear Assembly */}
+          <motion.g
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
+            style={{ transformOrigin: '60px 80px' }}
+          >
+            <circle cx="60" cy="80" r="24" strokeWidth="2" />
+            <path d="M60 50 L60 110 M30 80 L90 80 M39 59 L81 101 M39 101 L81 59" strokeWidth="1.5" />
+          </motion.g>
+
+          {/* Animated Laser G-Code Toolpath Sweep Line */}
+          <motion.line
+            x1="40" y1="155" x2="360" y2="155"
+            stroke="#0284c7"
+            strokeWidth="2"
+            strokeDasharray="10 10"
+            animate={{ strokeDashoffset: [0, -100] }}
+            transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
+          />
+        </svg>
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="hero-reference-grid">
+          
+          {/* Left Hero Narrative Column */}
+          <div className="hero-left-content">
+            
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '10px',
-                padding: '10px 20px',
-                background: 'rgba(99, 102, 241, 0.08)',
-                border: '1px solid rgba(99, 102, 241, 0.15)',
-                borderRadius: '99px',
-                color: '#818cf8',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                marginBottom: '32px',
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase'
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: 'clamp(1.9rem, 6.5vw, 4.8rem)',
+                fontWeight: 700,
+                lineHeight: 1.1,
+                marginBottom: '20px',
+                letterSpacing: '-0.03em',
+                color: '#0f172a',
+                maxWidth: '640px',
+                wordBreak: 'break-word',
               }}
             >
-              <motion.span 
-                animate={{ scale: [1, 1.4, 1], opacity: [0.5, 1, 0.5] }}
-                transition={{ repeat: Infinity, duration: 2.5 }}
-                style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#6366f1' }}
-              />
-              Pioneering Agentic AI Architecture
-            </motion.div>
+              Engineering <span style={{
+                background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>high-stakes web systems,</span> CAD engines &amp; AI.
+            </motion.h1>
 
-            {/* Headline */}
-            <motion.h2
-              variants={itemVariants}
-              style={{
-                fontSize: 'clamp(3.5rem, 8vw, 6.5rem)',
-                fontWeight: 800,
-                lineHeight: 0.9,
-                marginBottom: '28px',
-                letterSpacing: '-0.06em',
-                color: '#f8fafc'
-              }}
-            >
-              Building the <br />
-              <span style={{ color: '#6366f1' }}>Intelligence</span> <br />
-              of Tomorrow.
-            </motion.h2>
-
-            {/* Subheader */}
+            {/* Paragraph Bio */}
             <motion.p
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               style={{
-                fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)',
-                color: '#ffffff',
-                marginBottom: '56px',
-                maxWidth: '600px',
-                lineHeight: 1.6,
+                fontSize: 'clamp(0.95rem, 1.6vw, 1.22rem)',
+                color: '#334155',
+                marginBottom: '28px',
+                maxWidth: '620px',
+                lineHeight: 1.65,
                 fontWeight: 400
               }}
             >
-              I am <span style={{ color: '#fff', fontWeight: 600 }}>Hamid Kamal</span>. A 17-year-old high school student (Class 12) and self-taught AI Developer architecting industrial-grade ecosystems and secure decentralized platforms.
+              I'm <strong style={{ color: '#0f172a', fontWeight: 700 }}>Hamid Kamal</strong>. Chief Technology Officer (CTO) at <strong style={{ color: '#2563eb', fontWeight: 700 }}>Learn Quran</strong> (real-time EdTech platform) and former Co-Founder &amp; Lead Systems Engineer at <strong style={{ color: '#2563eb', fontWeight: 700 }}>CNC Jugaaadi</strong> (browser CAD/CAM via Web Serial API). I build robust web apps, hardware serial control logic, and computer vision pipelines.
             </motion.p>
 
-            {/* Actions */}
+            {/* Live Telemetry Dark Teal Capsule Widget */}
             <motion.div
-              variants={itemVariants}
-              className="hero-actions"
-            >
-              <a href="#projects" className="btn-primary">
-                View My Ventures
-                <FiArrowRight size={20} />
-              </a>
-              <a href="/Hamid Kamal - Resume.pdf" className="btn-secondary" download>
-                Executive CV
-                <FiDownload size={18} />
-              </a>
-
-              <div style={{ display: 'flex', gap: '24px', marginLeft: '12px' }}>
-                <a href="https://github.com/hamid220-kamal" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', transition: 'color 0.3s' }} onMouseEnter={e => e.currentTarget.style.color = '#fff'} onMouseLeave={e => e.currentTarget.style.color = '#ffffff'} aria-label="Hamid Kamal's GitHub Profile"><FiGithub size={24} /></a>
-                <a href="https://linkedin.com/in/hamid-kamal" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', transition: 'color 0.3s' }} onMouseEnter={e => e.currentTarget.style.color = '#fff'} onMouseLeave={e => e.currentTarget.style.color = '#ffffff'} aria-label="Hamid Kamal's LinkedIn Profile"><FiLinkedin size={24} /></a>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Photo Section */}
-          <motion.div
-            variants={itemVariants}
-            style={{ position: 'relative', width: '100%', maxWidth: '420px', margin: '0 auto' }}
-          >
-            <motion.div 
-              style={{ 
-                aspectRatio: '4/5', 
-                width: '100%', 
-                background: '#0f172a', 
-                borderRadius: '40px',
-                overflow: 'hidden',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
-                boxShadow: '0 50px 100px -20px rgba(0, 0, 0, 0.6)'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="telemetry-capsule"
+              style={{
+                background: 'linear-gradient(135deg, #0d2830 0%, #0b1f26 100%)',
+                border: '1px solid #154c58',
+                borderRadius: '20px',
+                padding: '14px 18px',
+                marginBottom: '32px',
+                maxWidth: '560px',
+                boxShadow: '0 12px 30px -5px rgba(13, 40, 48, 0.4)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '12px',
+                width: '100%',
+                overflow: 'hidden'
               }}
             >
-              <img 
-                src="/images/hamid-ai-developer-portfolio.webp" 
-                alt="Hamid Kamal - 17-year-old AI Developer and Founder profile picture" 
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                fetchPriority="high"
-                decoding="async"
-              />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexGrow: 1, minWidth: 0 }}>
+                {/* Terminal Icon Box */}
+                <div style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '10px',
+                  background: 'rgba(20, 184, 166, 0.15)',
+                  border: '1px solid rgba(20, 184, 166, 0.35)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#2dd4bf',
+                  flexShrink: 0
+                }}>
+                  <FiTerminal size={16} />
+                </div>
+
+                <div style={{ minWidth: 0, flexGrow: 1, overflow: 'hidden' }}>
+                  <div style={{
+                    fontSize: '0.65rem',
+                    fontFamily: 'Space Mono, monospace',
+                    color: '#6ee7b7',
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    marginBottom: '2px'
+                  }}>
+                    LIVE SYSTEM TELEMETRY
+                  </div>
+
+                  <motion.div
+                    key={logIndex}
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      fontFamily: 'Space Mono, monospace',
+                      fontSize: '0.8rem',
+                      fontWeight: 700,
+                      color: '#38bdf8',
+                      whiteSpace: 'nowrap',
+                      textOverflow: 'ellipsis',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    {telemetryLogs[logIndex]}
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Animated ECG Pulse Wave SVG */}
+              <div className="telemetry-ecg-wave" style={{ width: '60px', height: '22px', flexShrink: 0, opacity: 0.9 }}>
+                <svg viewBox="0 0 100 30" fill="none" stroke="#2dd4bf" strokeWidth="2.5" strokeLinecap="round">
+                  <path d="M0 15 L25 15 L35 5 L45 25 L55 10 L65 20 L75 15 L100 15" />
+                </svg>
+              </div>
             </motion.div>
 
-            {/* Founder Card - Enhanced */}
+            {/* Action Buttons */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="founder-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="hero-action-btns"
+              style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}
             >
-              <div style={{ fontSize: '0.7rem', color: '#818cf8', fontWeight: 800, textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.1em' }}>17-Year-Old Prodigy</div>
-              <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#fff', marginBottom: '2px' }}>Hamid Kamal</div>
-              <div style={{ fontSize: '0.9rem', color: '#ffffff', fontWeight: 500 }}>AI Developer & Founder</div>
+              <button 
+                onClick={() => navigate('/projects')} 
+                className="btn-primary hero-btn"
+                style={{
+                  background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                  borderColor: '#2563eb',
+                  borderRadius: '999px',
+                  padding: '14px 28px',
+                  fontSize: '0.92rem',
+                  fontWeight: 700,
+                  boxShadow: '0 8px 24px -4px rgba(37, 99, 235, 0.4)'
+                }}
+              >
+                Explore Selected Ventures
+                <FiArrowRight size={16} />
+              </button>
+
+              <a 
+                href="/Hamid Kamal - Resume.pdf" 
+                className="btn-secondary hero-btn" 
+                download
+                style={{
+                  background: '#ffffff',
+                  borderColor: '#cbd5e1',
+                  borderRadius: '999px',
+                  padding: '14px 26px',
+                  color: '#0f172a',
+                  fontWeight: 700,
+                  fontSize: '0.92rem'
+                }}
+              >
+                <FiDownload size={16} />
+                Executive CV
+              </a>
             </motion.div>
+
+          </div>
+
+          {/* Right Column Stage — Rotated 3D Hologram Frame */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="hero-right-stage"
+          >
+            <div className="hologram-rotated-container">
+              
+              {/* Slate-Cyan Dark Rotated Polygon Backdrop Frame */}
+              <div className="dark-rotated-backdrop" />
+
+              {/* Rotated 3D Glass Photo Card */}
+              <div className="rotated-photo-card">
+                <img 
+                  src="/images/hamid-ai-developer-portfolio.webp" 
+                  alt="Hamid Kamal Profile" 
+                  className="photo-img"
+                  fetchPriority="high"
+                />
+
+                {/* Bottom Overlay Profile Card */}
+                <div className="bottom-profile-card">
+                  <div style={{
+                    width: '30px',
+                    height: '30px',
+                    borderRadius: '8px',
+                    background: 'rgba(37, 99, 235, 0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#2563eb',
+                    flexShrink: 0
+                  }}>
+                    <FiCode size={15} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#0f172a' }}>Hamid Kamal</div>
+                    <div style={{ fontSize: '0.68rem', color: '#64748b', fontFamily: 'Space Mono, monospace' }}>Systems &amp; Web Architect</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Translucent Glass Circle HK Badge on Top-Right */}
+              <div className="floating-hk-badge">
+                <span>HK</span>
+                <span className="live-dot" />
+              </div>
+
+              {/* Bottom Right Floating Social Pills */}
+              <div className="floating-social-pills">
+                <a 
+                  href="https://github.com/hamid220-kamal" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="social-pill-btn"
+                  aria-label="Hamid Kamal GitHub"
+                >
+                  <FiGithub size={16} />
+                </a>
+                <a 
+                  href="https://linkedin.com/in/hamid-kamal" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="social-pill-btn"
+                  aria-label="Hamid Kamal LinkedIn"
+                >
+                  <FiLinkedin size={16} />
+                </a>
+              </div>
+
+            </div>
           </motion.div>
 
-        </motion.div>
+        </div>
       </div>
 
       <style>{`
-        .hero-grid {
+        .hero-reference-grid {
           display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 80px;
+          grid-template-columns: 1.15fr 0.85fr;
+          gap: 50px;
           align-items: center;
+          padding-left: 45px;
         }
 
-        .founder-card {
+        .hero-right-stage {
+          position: relative;
+          width: 100%;
+          max-width: 440px;
+          margin: 0 auto;
+        }
+
+        .hologram-rotated-container {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4/5;
+        }
+
+        .dark-rotated-backdrop {
           position: absolute;
-          bottom: 40px;
-          left: -40px;
-          padding: 28px 32px;
-          background: rgba(15, 23, 42, 0.8);
-          backdrop-filter: blur(32px);
-          border-radius: 24px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+          inset: 0;
+          background: linear-gradient(135deg, #0d1e2b 0%, #162f42 100%);
+          border-radius: 44px;
+          transform: rotate(14deg);
+          box-shadow: 0 25px 60px -15px rgba(13, 30, 43, 0.45);
+          z-index: 1;
+        }
+
+        .rotated-photo-card {
+          position: absolute;
+          inset: 0;
+          background: #ffffff;
+          border: 1px solid rgba(255, 255, 255, 0.8);
+          border-radius: 36px;
+          overflow: hidden;
+          transform: rotate(-10deg);
+          box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.18), 0 0 30px rgba(186, 230, 253, 0.4);
+          z-index: 2;
+          transition: transform 0.4s ease;
+        }
+
+        .hologram-rotated-container:hover .rotated-photo-card {
+          transform: rotate(-5deg) scale(1.02);
+        }
+
+        .photo-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .bottom-profile-card {
+          position: absolute;
+          bottom: 16px;
+          left: 16px;
+          right: 16px;
+          padding: 12px 16px;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(12px);
+          border-radius: 16px;
+          border: 1px solid #e2e8f0;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
+        }
+
+        .floating-hk-badge {
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          background: rgba(15, 23, 42, 0.88);
+          backdrop-filter: blur(16px);
+          border: 2px solid rgba(186, 230, 253, 0.6);
+          color: #ffffff;
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 800;
+          font-size: 1.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
           z-index: 10;
         }
 
-        .hero-actions {
+        .floating-hk-badge .live-dot {
+          position: absolute;
+          bottom: 4px;
+          right: 4px;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #10b981;
+          border: 2px solid #0f172a;
+          box-shadow: 0 0 8px #10b981;
+        }
+
+        .floating-social-pills {
+          position: absolute;
+          bottom: -12px;
+          right: -6px;
           display: flex;
-          gap: 24px;
-          flex-wrap: wrap;
+          gap: 10px;
+          z-index: 10;
+        }
+
+        .social-pill-btn {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: #ffffff;
+          border: 1px solid #cbd5e1;
+          color: #334155;
+          display: flex;
           align-items: center;
+          justify-content: center;
+          box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+          transition: all 0.2s ease;
+        }
+
+        .social-pill-btn:hover {
+          border-color: #2563eb;
+          color: #2563eb;
+          transform: translateY(-2px);
         }
 
         @media (max-width: 1024px) {
-          .hero-grid {
+          .hero-reference-grid {
             grid-template-columns: 1fr;
-            text-align: center;
-            gap: 60px;
+            padding-left: 0;
+            gap: 40px;
           }
-          .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-          .hero-actions {
-            justify-content: center;
-          }
-          .hero-actions > div {
-            margin-left: 0 !important;
-            justify-content: center;
-            width: 100%;
-          }
-          .founder-card {
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -30px;
-            width: max-content;
+          .hero-right-stage {
+            max-width: 340px;
+            margin: 20px auto 0;
           }
         }
 
-        @media (max-width: 480px) {
-          section#home {
-            padding-top: 100px !important;
+        @media (max-width: 640px) {
+          .telemetry-ecg-wave {
+            display: none !important;
           }
-          .hero-grid {
-            gap: 60px;
+          .hero-action-btns {
+            flex-direction: column !important;
+            width: 100% !important;
           }
-          .founder-card {
-            padding: 20px 24px;
-            bottom: -20px;
+          .hero-btn {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+          .floating-hk-badge {
+            width: 56px !important;
+            height: 56px !important;
+            font-size: 1rem !important;
+            top: -12px !important;
+            right: -10px !important;
+          }
+          .social-pill-btn {
+            width: 38px !important;
+            height: 38px !important;
           }
         }
       `}</style>

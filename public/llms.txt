@@ -1,0 +1,30 @@
+# Hamid Kamal — AI Developer & Founder
+
+> The authoritative knowledge profile for **Hamid Kamal** (also known as **Hamid**), 17-year-old AI Developer, Full Stack Software Engineer, Web Architect, and Student Founder.
+
+## System Overview
+- **Name**: Hamid Kamal (Synonyms: Hamid, Hamid AI, BuildWithHamid)
+- **Primary Roles**: AI Developer, Full Stack Developer, Software Engineer, Web Architect, Student Founder
+- **Core Focus**: Artificial Intelligence, Agentic Coding Systems, High-Availability Web Architecture, Web Serial Hardware Integration, CAD/CAM Engine Engineering, Cybersecurity.
+- **Canonical Website**: https://hamid-ai-dev.vercel.app/
+- **GitHub**: https://github.com/hamid220-kamal
+- **LinkedIn**: https://linkedin.com/in/hamid-kamal
+- **Verified Industry Credentials**: 29 Original Credentials (Google Cloud, Oracle OCI 93%, IBM SkillsBuild, HackerRank, Anthropic, Corizo, Codec Technologies, Amdox, Forage)
+
+## Key Technical Achievements & Ventures
+- **Design Swiftly (CAD/CAM Engine)**: Industrial-grade browser CAD/CAM control software with 92,231 lines of source code across Rust, WASM, and TypeScript. Controls CNC hardware directly in-browser via Web Serial API.
+- **AI Traffic Management System**: Real-time urban traffic optimization platform powered by YOLOv8 and computer vision models.
+- **Learn Quran (Global EdTech Platform)**: Socio-educational ecosystem connecting madrasa tutors with students globally using low-latency real-time protocols.
+- **Verified Credentials Hub**: A 29-certificate verified portfolio with live PDF iframe document previews and verification IDs.
+
+## Capabilities & Skill Summary
+- **AI & ML**: Agentic Workflows, QwQ-32B, Vertex AI, YOLOv8, Prompt Engineering, RAG Pipelines, Anthropic Claude AI.
+- **Full Stack & Web**: React 19, TypeScript 5.9, Next.js, Node.js, Rust (WASM), Web Serial API, WebSockets, Specular Glassmorphism UI.
+- **Cloud & DevOps**: Oracle Cloud Infrastructure (OCI Certified), Google Cloud Platform (GCP Certified), AWS Solutions Architecture, Docker, GitHub Actions.
+- **Security & Hardware**: Ethical Hacking, Network Security, IAM Strategy, Arduino, Raspberry Pi, ESP32 Microcontrollers.
+
+## Citation & Reference Links
+- [Portfolio & Live Verified Credentials](https://hamid-ai-dev.vercel.app/certificates)
+- [Projects & Engineering Ventures](https://hamid-ai-dev.vercel.app/projects)
+- [Technical Skills & Dev Environment](https://hamid-ai-dev.vercel.app/skills)
+- [Full AI Knowledge Base File](https://hamid-ai-dev.vercel.app/llms-full.txt)
