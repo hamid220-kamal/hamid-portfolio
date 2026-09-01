@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMail, FiSend, FiCopy, FiCheck, FiGithub, FiLinkedin, FiHelpCircle, FiChevronDown } from 'react-icons/fi';
+import { FiMail, FiSend, FiCopy, FiCheck, FiGithub, FiLinkedin, FiHelpCircle, FiChevronDown, FiAlertCircle, FiLoader } from 'react-icons/fi';
 
 export default function ContactPage() {
   const [copied, setCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [openFaq, setOpenFaq] = useState<string>('who-is');
 
@@ -14,10 +16,63 @@ export default function ContactPage() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject ? `[Portfolio Inquiry] ${formData.subject}` : `[Portfolio Inquiry] From ${formData.name}`,
+      message: formData.message,
+    };
+
+    try {
+      // 1. Primary: Secure Vercel Serverless Function (/api/contact) where Access Key is completely hidden
+      let response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      // 2. Fallback for local Vite dev if Vercel serverless /api is not running locally:
+      if (!response.ok && response.status === 404) {
+        const localKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+        if (localKey) {
+          response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            },
+            body: JSON.stringify({
+              access_key: localKey,
+              ...payload,
+              from_name: `${formData.name} via Hamid Portfolio`,
+              replyto: formData.email,
+              botcheck: '',
+            }),
+          });
+        }
+      }
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setErrorMessage(result.message || 'Submission failed. You can email directly to buildwithhamid@gmail.com');
+      }
+    } catch {
+      setErrorMessage('Network transmission failed. Click below to launch your email client directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -255,21 +310,74 @@ export default function ContactPage() {
         >
           {submitted ? (
             <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-              <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(5, 150, 105, 0.1)', border: '1px solid rgba(5, 150, 105, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#059669', margin: '0 auto 16px' }}>
-                <FiCheck size={24} />
+              <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(5, 150, 105, 0.12)', border: '1.5px solid rgba(5, 150, 105, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#059669', margin: '0 auto 16px' }}>
+                <FiCheck size={28} />
               </div>
-              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '6px' }}>
-                Message Sent Successfully!
+              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.6rem', fontWeight: 800, color: '#0f172a', marginBottom: '8px' }}>
+                Message Transmitted Successfully!
               </h3>
-              <p style={{ color: '#475569', fontSize: '0.96rem', margin: 0 }}>
-                Thank you for reaching out. I will get back to you within 12-24 hours.
+              <p style={{ color: '#475569', fontSize: '0.98rem', maxWidth: '520px', margin: '0 auto 24px', lineHeight: 1.6 }}>
+                Your message has been delivered directly to Hamid Kamal&apos;s verified inbox (<strong>buildwithhamid@gmail.com</strong>). I will review and respond within 12–24 hours.
               </p>
+              <button
+                type="button"
+                onClick={() => setSubmitted(false)}
+                style={{
+                  background: 'rgba(37, 99, 235, 0.1)',
+                  border: '1px solid rgba(37, 99, 235, 0.3)',
+                  color: '#2563eb',
+                  padding: '10px 24px',
+                  borderRadius: '999px',
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer',
+                }}
+              >
+                Send Another Inquiry
+              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               
+              {errorMessage && (
+                <div style={{
+                  background: 'rgba(239, 68, 68, 0.08)',
+                  border: '1px solid rgba(239, 68, 68, 0.3)',
+                  borderRadius: '12px',
+                  padding: '14px 18px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '12px',
+                  color: '#b91c1c',
+                  fontSize: '0.9rem',
+                  fontFamily: "'Space Grotesk', sans-serif",
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <FiAlertCircle size={18} />
+                    <span>{errorMessage}</span>
+                  </div>
+                  <a
+                    href={`mailto:buildwithhamid@gmail.com?subject=${encodeURIComponent(formData.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(formData.message + '\n\nFrom: ' + formData.name + ' (' + formData.email + ')')}`}
+                    style={{
+                      background: '#b91c1c',
+                      color: '#ffffff',
+                      padding: '6px 14px',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      fontWeight: 700,
+                      fontSize: '0.8rem',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    Open Mail Client
+                  </a>
+                </div>
+              )}
+
               {/* Row 1: Side-by-Side 2-Column Inputs for Name & Email */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }} className="contact-form-grid">
                 <div>
                   <label style={{ display: 'block', fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', fontWeight: 800, color: '#475569', marginBottom: '8px' }}>
                     YOUR FULL NAME
@@ -376,12 +484,15 @@ export default function ContactPage() {
 
               {/* Submit Button across full width */}
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                disabled={isSubmitting}
                 type="submit"
                 style={{
                   width: '100%',
-                  background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                  background: isSubmitting
+                    ? 'linear-gradient(135deg, #64748b 0%, #475569 100%)'
+                    : 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
                   border: 'none',
                   borderRadius: '14px',
                   padding: '16px',
@@ -393,12 +504,23 @@ export default function ContactPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '10px',
-                  cursor: 'pointer',
+                  cursor: isSubmitting ? 'not-allowed' : 'pointer',
                   boxShadow: '0 12px 30px rgba(37, 99, 235, 0.4)',
+                  opacity: isSubmitting ? 0.8 : 1,
+                  transition: 'all 0.2s ease',
                 }}
               >
-                <span>Send Message</span>
-                <FiSend size={16} />
+                {isSubmitting ? (
+                  <>
+                    <FiLoader className="animate-spin" size={18} />
+                    <span>Transmitting to Inbox...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Send Message</span>
+                    <FiSend size={16} />
+                  </>
+                )}
               </motion.button>
 
             </form>
