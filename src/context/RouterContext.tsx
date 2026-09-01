@@ -62,6 +62,15 @@ const routeSeoMap: Record<string, RouteSEO> = {
   },
 };
 
+// Interaction to Next Paint (INP) Non-Blocking Scheduler
+const scheduleIdleWork = (callback: () => void) => {
+  if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+    (window as Window & { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(callback);
+  } else {
+    setTimeout(callback, 1);
+  }
+};
+
 export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentPath, setCurrentPath] = useState<string>(() => {
     return window.location.pathname || '/';
@@ -71,12 +80,12 @@ export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const handlePopState = () => {
       const path = window.location.pathname || '/';
       setCurrentPath(path);
-      updateSeo(path);
+      scheduleIdleWork(() => updateSeo(path));
       window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
     };
 
     window.addEventListener('popstate', handlePopState);
-    updateSeo(currentPath);
+    scheduleIdleWork(() => updateSeo(currentPath));
 
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
@@ -142,7 +151,9 @@ export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
     window.history.pushState({}, '', targetPath);
     setCurrentPath(targetPath);
-    updateSeo(targetPath);
+    
+    // Non-blocking INP execution: Update SEO on idle thread so UI is instantly responsive
+    scheduleIdleWork(() => updateSeo(targetPath));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

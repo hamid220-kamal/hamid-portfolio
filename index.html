@@ -5,10 +5,12 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/images/hamid-ai-developer-portfolio.jpg" />
+  <link rel="manifest" href="/manifest.json" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <link rel="canonical" href="https://hamid-ai-dev.vercel.app/" />
   
-  <!-- DNS Prefetch & Preconnect for Ultra-Fast TTFB -->
+  <!-- DNS Prefetch & Preconnect for Sub-Second TTFB -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -78,7 +80,7 @@
   <link rel="author" href="https://hamid-ai-dev.vercel.app/llms.txt" />
   <link rel="help" href="https://hamid-ai-dev.vercel.app/llms-full.txt" />
 
-  <!-- Structured Data: Google Sitelinks, Knowledge Graph, Credentials & Multi-Route Entities -->
+  <!-- Structured Data: Google Sitelinks, Voice Search Speakable, Local SEO Geo, Knowledge Graph, ImageObject & Citations -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -100,13 +102,25 @@
           "description": "The official multi-page developer portfolio and verified credentials platform of Hamid Kamal.",
           "inLanguage": "en-US",
           "publisher": {"@id": "https://hamid-ai-dev.vercel.app/#person"},
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://hamid-ai-dev.vercel.app/projects?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          },
           "hasPart": [
             {
               "@type": "WebPage",
               "@id": "https://hamid-ai-dev.vercel.app/about#webpage",
               "url": "https://hamid-ai-dev.vercel.app/about",
               "name": "About Hamid Kamal — 17yo AI Developer & Systems Architect",
-              "description": "Background, engineering philosophy, and architectural vision of Hamid Kamal."
+              "description": "Background, engineering philosophy, and architectural vision of Hamid Kamal.",
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [".section-title", ".section-subtitle", "p"]
+              }
             },
             {
               "@type": "WebPage",
@@ -252,7 +266,11 @@
             "17yo AI Developer Hamid"
           ],
           "url": "https://hamid-ai-dev.vercel.app/",
-          "image": "https://hamid-ai-dev.vercel.app/images/hamid-ai-developer-portfolio.jpg",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://hamid-ai-dev.vercel.app/images/hamid-ai-developer-portfolio.jpg",
+            "caption": "Hamid Kamal — 17yo AI Developer and Founder"
+          },
           "email": "mailto:buildwithhamid@gmail.com",
           "nationality": "Indian",
           "address": {
@@ -260,6 +278,11 @@
             "addressLocality": "Hyderabad",
             "addressRegion": "Telangana",
             "addressCountry": "India"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "17.3850",
+            "longitude": "78.4867"
           },
           "sameAs": [
             "https://github.com/hamid220-kamal",
@@ -323,6 +346,25 @@
           "image": "https://hamid-ai-dev.vercel.app/images/hamid-ai-developer-portfolio.jpg",
           "description": "Elite AI systems engineering, agentic architecture, full-stack software development, and WebAssembly engine design.",
           "founder": {"@id": "https://hamid-ai-dev.vercel.app/#person"},
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "addressCountry": "India"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "17.3850",
+            "longitude": "78.4867"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "21:00"
+            }
+          ],
           "knowsAbout": [
             "Artificial Intelligence",
             "Agentic AI & Multi-Agent Systems",
@@ -333,6 +375,13 @@
             "Rust & WebAssembly (WASM)",
             "Computer Vision & YOLOv8",
             "Retrieval Augmented Generation (RAG)"
+          ],
+          "citation": [
+            "https://wicg.github.io/serial/",
+            "https://webassembly.org/",
+            "https://pytorch.org/",
+            "https://docs.ultralytics.com/",
+            "https://fastapi.tiangolo.com/"
           ],
           "areaServed": "Worldwide"
         },
@@ -371,22 +420,40 @@
 </head>
 
 <body>
-  <!-- Fallback Semantic HTML for Non-JS Headless Crawlers -->
+  <!-- Semantic RAG-Friendly Crawl Tree for LLMs and Headless Scrapers -->
   <noscript>
-    <header>
-      <h1>Hamid Kamal | 17yo AI Developer & Founder</h1>
-      <p>Official portfolio of Hamid Kamal (Hamid) — 17yo AI Developer, Full Stack Software Engineer, Web Architect, and Student Founder.</p>
-      <nav>
+    <article>
+      <header>
+        <h1>Hamid Kamal | 17yo AI Developer, Full Stack Engineer & Founder</h1>
+        <p><strong>Bio:</strong> Hamid Kamal (Hamid) is a 17-year-old AI Developer and Founder based in Hyderabad, India, building agentic AI, WebAssembly CAD/CAM engines, and verified credentials.</p>
+        <p><strong>Contact:</strong> <a href="mailto:buildwithhamid@gmail.com">buildwithhamid@gmail.com</a> | <a href="https://github.com/hamid220-kamal">GitHub Profile</a> | <a href="https://linkedin.com/in/hamid-kamal">LinkedIn</a></p>
+      </header>
+
+      <section>
+        <h2>Site Navigation &amp; Sitelinks</h2>
+        <nav>
+          <ul>
+            <li><a href="/about">About Hamid Kamal</a> — Systems architect biography and engineering principles.</li>
+            <li><a href="/projects">AI &amp; Web Engineering Projects</a> — 20 production systems across AI, Ventures, and Clients.</li>
+            <li><a href="/skills">Technical Skills &amp; Stack</a> — React 19, TypeScript, Rust WASM, Python, Web Serial API.</li>
+            <li><a href="/certificates">29 Verified Certificates</a> — Official credentials from Oracle Cloud, Google Cloud, IBM, and AWS.</li>
+            <li><a href="/experience">Career &amp; Leadership Timeline</a> — Founder of Design Swiftly, CTO of LearnQuran.app.</li>
+            <li><a href="/contact">Contact &amp; Advisory</a> — Direct engineering inquiries.</li>
+          </ul>
+        </nav>
+      </section>
+
+      <section>
+        <h2>Core AI &amp; Founder Projects</h2>
         <ul>
-          <li><a href="/about">About Hamid Kamal</a></li>
-          <li><a href="/projects">AI & Web Engineering Projects (20 Systems)</a></li>
-          <li><a href="/skills">Technical Skills & Architecture Toolchain</a></li>
-          <li><a href="/certificates">29 Verified AI & Cloud Credentials</a></li>
-          <li><a href="/experience">Career & Leadership Timeline</a></li>
-          <li><a href="/contact">Contact & Engineering Advisory</a></li>
+          <li><strong>Design Swiftly (CNC CAD/CAM Engine):</strong> Browser-native manufacturing engine with 92,231 lines of code in Rust, WASM, and TypeScript. Controls CNC hardware directly via Web Serial API. <a href="https://cnc.jugaaadi.com/">Live Platform</a></li>
+          <li><strong>Learn Quran:</strong> Global EdTech ecosystem with low-latency WebSocket audio for madrasa students. <a href="https://learnquran.app/">Live Platform</a></li>
+          <li><strong>Multi-Agent AI System:</strong> Custom Python asyncio state-machine orchestration with Pydantic v2 and ChromaDB. <a href="https://github.com/hamid220-kamal/Multi-Agent-AI-System">GitHub</a></li>
+          <li><strong>End-to-End MLOps Pipeline:</strong> OpenTelemetry &amp; Arize Phoenix observability with Docker CI/CD. <a href="https://github.com/hamid220-kamal/End-to-End-MLOps---LLMOps-Pipeline">GitHub</a></li>
+          <li><strong>Advanced Production RAG:</strong> Hybrid dense + BM25 vector search with cross-encoder reranking. <a href="https://github.com/hamid220-kamal/Advanced-production-RAG">GitHub</a></li>
         </ul>
-      </nav>
-    </header>
+      </section>
+    </article>
   </noscript>
 
   <div id="root"></div>

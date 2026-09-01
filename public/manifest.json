@@ -1,0 +1,25 @@
+{
+  "name": "Hamid Kamal — 17yo AI Developer & Founder",
+  "short_name": "Hamid AI",
+  "description": "Official portfolio of Hamid Kamal — 17yo AI Developer, Full Stack Software Engineer, Web Architect, and Student Founder.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/hamid-ai-developer-portfolio.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "technology", "productivity", "developer"]
+}
