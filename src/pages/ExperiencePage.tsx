@@ -29,10 +29,10 @@ export default function ExperiencePage() {
             color: '#1e3a5f',
             marginBottom: '16px',
           }}>
-            04 / CAREER TRAJECTORY &amp; ROLES
+            04 / WORK EXPERIENCE &amp; LEADERSHIP
           </div>
 
-          {/* 3D Floating Metallic Chrome Title */}
+          {/* Title */}
           <h1 className="section-title" style={{
             fontSize: 'clamp(2.4rem, 5.2vw, 4.4rem)',
             fontWeight: 800,
@@ -46,7 +46,7 @@ export default function ExperiencePage() {
             maxWidth: '920px',
             margin: '0 auto 20px',
           }}>
-            Professional Experience &amp; Technical Leadership
+            Work Experience &amp; Roles
           </h1>
 
           {/* Translucent Glass Subtitle Capsule */}
@@ -62,7 +62,7 @@ export default function ExperiencePage() {
             boxShadow: '0 8px 24px -4px rgba(15, 23, 42, 0.06)',
           }}>
             <p style={{ fontSize: '0.96rem', color: '#334155', lineHeight: 1.6, margin: 0, fontWeight: 450 }}>
-              A chronological timeline detailing engineering outcomes across founder initiatives, high-availability web platforms, and AI research internships.
+              My professional journey across founder ventures, CTO leadership at Learn Quran, and engineering internships.
             </p>
           </div>
         </motion.div>
@@ -212,7 +212,7 @@ export default function ExperiencePage() {
                 borderRadius: '999px',
                 padding: '4px 12px',
               }}>
-                QUANTUM CORE RADAR
+                CORE DOMAINS
               </div>
 
               {/* Animated 3D Orbit Sculpture Stage */}
@@ -662,7 +662,7 @@ export default function ExperiencePage() {
             </h3>
 
             <p style={{ color: '#94a3b8', fontSize: '0.98rem', margin: '0 0 24px 0', lineHeight: 1.55, fontWeight: 500 }}>
-              I'm open for technical consulting, AI development contracts, and engineering leadership opportunities.
+              I'm open for software consulting, web development projects, and engineering roles.
             </p>
 
             <motion.button
@@ -685,7 +685,7 @@ export default function ExperiencePage() {
                 boxShadow: '0 14px 40px -4px rgba(37, 99, 235, 0.85), inset 0 2px 3px rgba(255, 255, 255, 0.8), inset 0 -3px 6px rgba(0, 0, 0, 0.5)',
               }}
             >
-              <span>Initiate Contact</span>
+              <span>Get in Touch</span>
               <FiArrowRight size={18} />
             </motion.button>
           </div>

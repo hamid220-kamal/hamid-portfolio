@@ -594,9 +594,9 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
             SECTION 1 — AI & Machine Learning
            ══════════════════════════════════════════════════ */}
         {renderSectionHeader(
-          '01 / AI SYSTEMS',
-          'Machine Learning & AI Engineering',
-          'Production-grade AI pipelines, multi-agent frameworks, computer vision systems, and NLP engines — all built from scratch.',
+          '01 / AI & MACHINE LEARNING',
+          'Applied Machine Learning & AI',
+          'Computer vision pipelines, autonomous multi-agent systems, and NLP tools built with Python, PyTorch, and modern LLM APIs.',
           '#2563eb',
         )}
 
@@ -611,7 +611,7 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
           {renderSectionHeader(
             '02 / FOUNDER VENTURES',
             'Products I\'ve Built & Shipped',
-            'Full-scale platforms conceived, architected, and shipped as a founder — from industrial CAD/CAM engines to global EdTech ecosystems.',
+            'Independent products I conceived and shipped as a founder — including browser-based CAD/CAM tools and EdTech platforms.',
             '#7c3aed',
           )}
 
@@ -625,9 +625,9 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
            ══════════════════════════════════════════════════ */}
         <div style={{ marginTop: '80px' }}>
           {renderSectionHeader(
-            '03 / CLIENT WORK',
+            '03 / CLIENT PROJECTS',
             'Delivered for Real Businesses',
-            'End-to-end platforms built and deployed for paying clients across logistics, tourism, and engineering sectors.',
+            'Web platforms and business websites built and deployed for clients across engineering, logistics, and hospitality.',
             '#059669',
           )}
 
@@ -706,7 +706,7 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
                     margin: 0,
                   }}
                 >
-                  Need a custom AI system or web architecture?
+                  Need a custom web app or machine learning tool?
                 </h3>
               </div>
 
@@ -727,8 +727,7 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
                     margin: 0,
                   }}
                 >
-                  Let's discuss how we can engineer a performant, custom AI
-                  pipeline or web platform for your team.
+                  Let's discuss how we can build a fast, reliable web application or AI feature for your team.
                 </p>
               </div>
             </div>

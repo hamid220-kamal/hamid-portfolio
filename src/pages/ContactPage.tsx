@@ -112,7 +112,7 @@ export default function ContactPage() {
             letterSpacing: '-0.03em',
             marginBottom: '16px',
           }}>
-            Initiate Technical Collaboration<br />&amp; Contracting
+            Let's Connect &amp;<br />Work Together
           </h1>
 
           <p style={{
@@ -123,7 +123,7 @@ export default function ContactPage() {
             fontWeight: 450,
             margin: 0,
           }}>
-            Whether you need software architecture consulting, hardware serial <strong>execution</strong>, or an <strong>AI-driven web platform</strong>—my inbox is open.
+            Whether you have a web development project, need a custom application, or want to discuss an engineering role — feel free to drop me a message.
           </p>
         </motion.div>
 
@@ -640,10 +640,10 @@ export default function ContactPage() {
               </motion.div>
 
               <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.3rem', fontWeight: 800, color: '#0f172a', marginBottom: '10px' }}>
-                Got Technical Questions?
+                Got Questions?
               </h3>
               <p style={{ color: '#475569', fontSize: '0.88rem', lineHeight: 1.6, margin: 0, maxWidth: '280px' }}>
-                Click any topic on the right to expand technical specifications, engineering protocols, and contracting FAQs.
+                Here are quick answers regarding my background, technical focus, availability, and certifications.
               </p>
             </div>
 
@@ -652,39 +652,39 @@ export default function ContactPage() {
               {[
                 {
                   id: 'who-is',
-                  q: "Who is Hamid Kamal and what is his engineering background?",
-                  a: "Hamid Kamal is a Full-Stack Engineer, Chief Technology Officer (CTO) at Learn Quran, and AI Systems Developer specializing in React, TypeScript, and industrial web architectures. He engineers resilient systems that bridge cognitive Artificial Intelligence with physical hardware execution.",
+                  q: "Who is Hamid Kamal and what is your engineering background?",
+                  a: "I'm a 17-year-old developer and founder from Hyderabad. Currently CTO at Learn Quran and previously co-founded CNC Jugaaadi. I specialize in full-stack web applications with React and TypeScript, browser hardware integrations via Web Serial API, and practical computer vision models.",
                   cat: "BACKGROUND"
                 },
                 {
                   id: 'projects',
                   q: "What types of engineering projects do you accept?",
-                  a: "I specialize in web architecture (React 19, Next.js 15), browser hardware control (Web Serial API, WASM engines), computer vision pipelines (YOLOv8, OpenCV), and AI model integration.",
+                  a: "I build responsive web applications (React 19, Next.js, TypeScript), browser hardware control tools (Web Serial API, WebAssembly), computer vision systems (YOLOv8, OpenCV), and applied AI features.",
                   cat: "CAPABILITIES"
                 },
                 {
                   id: 'response',
-                  q: "What is your typical response time for technical inquiries?",
-                  a: "I review technical inquiries daily. You can expect a direct response to emails and contract inquiries within 12 to 24 hours.",
-                  cat: "SLA / TIMELINE"
+                  q: "What is your typical response time?",
+                  a: "I check my email daily. You can usually expect a reply within 12 to 24 hours.",
+                  cat: "TIMELINE"
                 },
                 {
                   id: 'remote',
-                  q: "Are you available for remote contracts & technical leadership?",
-                  a: "Yes, I actively consult for select technical contracts, product engineering advisory, CTO advisory roles, and founder partnerships worldwide.",
-                  cat: "CONTRACTS"
+                  q: "Are you available for remote contracts & roles?",
+                  a: "Yes. I'm open for remote contract work, web development projects, and startup engineering roles worldwide.",
+                  cat: "AVAILABILITY"
                 },
                 {
                   id: 'hardware',
-                  q: "How do you handle browser-hardware & serial execution?",
-                  a: "I engineer native Web Serial API drivers, WebAssembly binary engines, and low-latency WebSocket bridges for direct micro-controller, CNC hardware, and sensor array control inside the browser.",
-                  cat: "HARDWARE / WASM"
+                  q: "How do you connect browser web apps to physical hardware?",
+                  a: "I use the native Web Serial API to communicate directly with microcontrollers (Arduino, ESP32) and CNC machines from the browser, using WebAssembly for fast toolpath computation.",
+                  cat: "HARDWARE & WASM"
                 },
                 {
                   id: 'credentials',
-                  q: "Can I request official transcripts and verified credentials?",
-                  a: "Yes, all 17 formal industry certifications (IBM, HackerOne, Anthropic, AWS, Oracle), PDF transcripts, and degree documentation are cryptographically verified and ready for compliance.",
-                  cat: "COMPLIANCE"
+                  q: "Can I verify your certificates and background?",
+                  a: "Yes. All 29 industry certificates (from Oracle Cloud, Google Cloud, IBM, HackerRank, etc.) have public verification links and embedded PDF views available on the Certificates page.",
+                  cat: "VERIFICATION"
                 }
               ].map((faq) => {
                 const isOpen = openFaq === faq.id;

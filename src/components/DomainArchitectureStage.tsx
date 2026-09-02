@@ -96,14 +96,14 @@ export default function DomainArchitectureStage() {
           }}>
             <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#3b82f6', boxShadow: '0 0 8px #3b82f6', display: 'inline-block' }} />
             <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '0.7rem', fontWeight: 700, color: '#1e3a5f', letterSpacing: '0.08em' }}>
-              01 / CORE ENGINEERING FOCUS
+              01 / CORE FOCUS AREAS
             </span>
           </div>
           <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 'clamp(1.8rem,5vw,3.4rem)', fontWeight: 800, color: '#0f1e38', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: 14 }}>
-            Specialized Domain Architecture
+            What I Specialize In
           </h2>
           <p style={{ fontSize: isMobile ? '0.9rem' : '1rem', color: '#475569', lineHeight: 1.65, maxWidth: 520 }}>
-            Combining browser software execution with industrial physical machinery, cognitive AI models, and offensive cyber research.
+            Connecting web browsers to physical machines, training computer vision models, and building reliable full-stack applications.
           </p>
         </motion.div>
 
@@ -223,7 +223,7 @@ export default function DomainArchitectureStage() {
                   background: 'rgba(20,16,60,0.88)', backdropFilter: 'blur(8px)',
                   border: '1px solid rgba(165,180,252,0.45)', borderRadius: 999, padding: '3px 9px',
                   fontFamily: "'Space Mono',monospace", fontSize: '0.56rem', fontWeight: 700, color: '#a5b4fc',
-                }}>Web Serial API &amp; Rust WASM Toolpaths</div>
+                }}>Web Serial API &amp; Machine Control</div>
                 <img src="/images/3d/cnc_blueprint.jpg" alt="CNC Blueprint" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.88 }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 36, background: 'linear-gradient(transparent, rgba(10,12,40,0.65))' }} />
               </div>
@@ -236,13 +236,13 @@ export default function DomainArchitectureStage() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                   <div style={{ width: 27, height: 27, borderRadius: 8, background: 'rgba(255,255,255,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4f46e5', flexShrink: 0 }}><FiCpu size={13} /></div>
-                  <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#1e1b4b', lineHeight: 1.25, margin: 0 }}>Industrial CAD/CAM &amp; Serial Hardware</h3>
+                  <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#1e1b4b', lineHeight: 1.25, margin: 0 }}>CAD/CAM &amp; Machine Control</h3>
                 </div>
                 <p style={{ fontSize: '0.76rem', color: '#374151', lineHeight: 1.5, marginBottom: 9 }}>
-                  Engineered CNC Jugaaadi—a browser platform communication with CNC hardware and 3D simulation.
+                  Built browser software that generates G-Code toolpaths and streams commands directly to CNC hardware via the Web Serial API.
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#4f46e5', fontFamily: "'Space Mono',monospace", fontSize: '0.66rem', fontWeight: 700 }}>
-                  <span>Explore Architecture</span><FiArrowRight size={11} />
+                  <span>View Project</span><FiArrowRight size={11} />
                 </div>
               </div>
             </motion.div>
@@ -281,19 +281,19 @@ export default function DomainArchitectureStage() {
               }}
             >
               <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.85)', border: '1px solid rgba(110,231,183,0.62)', borderRadius: 999, padding: '3px 9px', marginBottom: 9, fontFamily: "'Space Mono',monospace", fontSize: '0.56rem', fontWeight: 700, color: '#065f46' }}>
-                YOLOv8, OpenCV &amp; Gemini Agentic AI
+                YOLOv8, OpenCV &amp; Machine Learning
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 112px', gap: 10 }}>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                     <div style={{ width: 27, height: 27, borderRadius: 8, background: 'rgba(255,255,255,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#059669', flexShrink: 0 }}><FiZap size={13} /></div>
-                    <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#064e3b', lineHeight: 1.25, margin: 0 }}>Computer Vision &amp; AI Pipelines</h3>
+                    <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#064e3b', lineHeight: 1.25, margin: 0 }}>Computer Vision &amp; Applied AI</h3>
                   </div>
                   <p style={{ fontSize: '0.74rem', color: '#1f4a3a', lineHeight: 1.5, marginBottom: 9 }}>
-                    Building real-time urban traffic models and natural language toolpath by cutting-edge LLMs.
+                    Trained computer vision models for vehicle detection and built automated AI pipelines using modern models.
                   </p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#059669', fontFamily: "'Space Mono',monospace", fontSize: '0.65rem', fontWeight: 700 }}>
-                    <span>Explore Architecture</span><FiArrowRight size={11} />
+                    <span>View Project</span><FiArrowRight size={11} />
                   </div>
                 </div>
                 {!isMobile && (
@@ -344,17 +344,17 @@ export default function DomainArchitectureStage() {
                 </div>
               )}
               <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.9)', border: '1px solid rgba(203,213,225,0.7)', borderRadius: 999, padding: '3px 9px', marginBottom: 9, fontFamily: "'Space Mono',monospace", fontSize: '0.56rem', fontWeight: 700, color: '#0c4a6e' }}>
-                OverRide Toolkit &amp; OSCP Guidelines
+                Security &amp; Vulnerability Research
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                 <div style={{ width: 27, height: 27, borderRadius: 8, background: 'rgba(255,255,255,0.88)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0284c7', flexShrink: 0 }}><FiShield size={13} /></div>
-                <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#0f172a', lineHeight: 1.25, margin: 0 }}>Defensive Architecture &amp; Cyber Labs</h3>
+                <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#0f172a', lineHeight: 1.25, margin: 0 }}>Security &amp; System Hardening</h3>
               </div>
               <p style={{ fontSize: '0.74rem', color: '#334155', lineHeight: 1.5, marginBottom: 9 }}>
-                Developing automated exploit simulation decentralized platforms on Security-by-Design principles.
+                Practicing ethical security audits, network analysis, and building applications with strong input validation and security best practices.
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#0284c7', fontFamily: "'Space Mono',monospace", fontSize: '0.65rem', fontWeight: 700 }}>
-                <span>Explore Architecture</span><FiArrowRight size={11} />
+                <span>View Details</span><FiArrowRight size={11} />
               </div>
             </motion.div>
 
@@ -401,17 +401,17 @@ export default function DomainArchitectureStage() {
                 </svg>
               </div>
               <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.88)', border: '1px solid rgba(253,230,138,0.78)', borderRadius: 999, padding: '3px 9px', marginBottom: 9, fontFamily: "'Space Mono',monospace", fontSize: '0.56rem', fontWeight: 700, color: '#78350f' }}>
-                React 18, Next.js 15 &amp; Low-Latency Audio
+                React 19, Next.js &amp; WebSockets
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                 <div style={{ width: 27, height: 27, borderRadius: 8, background: 'rgba(255,255,255,0.88)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#d97706', flexShrink: 0 }}><FiLayers size={13} /></div>
-                <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.96rem', fontWeight: 700, color: '#451a03', lineHeight: 1.25, margin: 0 }}>High-Availability Web Systems</h3>
+                <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.96rem', fontWeight: 700, color: '#451a03', lineHeight: 1.25, margin: 0 }}>Full-Stack Web Development</h3>
               </div>
               <p style={{ fontSize: '0.74rem', color: '#57360a', lineHeight: 1.5, marginBottom: 9 }}>
-                Architected Learn Quran's global EdTech infrastructure serving teachers and students across continents with low-latency audio.
+                Architecting responsive web apps and low-latency audio communication connecting students and tutors globally at Learn Quran.
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#d97706', fontFamily: "'Space Mono',monospace", fontSize: '0.65rem', fontWeight: 700 }}>
-                <span>Explore Architecture</span><FiArrowRight size={11} />
+                <span>View Details</span><FiArrowRight size={11} />
               </div>
             </motion.div>
 

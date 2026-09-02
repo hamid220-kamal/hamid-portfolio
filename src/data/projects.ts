@@ -25,7 +25,7 @@ export const projects: Project[] = [
     title: "Multi-Agent AI System",
     role: "AI Systems Architect",
     description:
-      "Production-grade multi-agent orchestration framework built with native Python asyncio. Features autonomous task delegation, inter-agent state graphs, and deterministic recovery mechanisms without third-party wrapper overhead.",
+      "A multi-agent framework built with Python's native asyncio. Enables autonomous agents to coordinate tasks, maintain shared state graphs, and handle errors reliably without heavy external libraries.",
     image: "/images/projects/multi_agent_ai.jpg",
     tags: ["Python", "LangChain", "Multi-Agent", "asyncio", "Pydantic v2", "ChromaDB"],
     github: "https://github.com/hamid220-kamal/Multi-Agent-AI-System",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     title: "End-to-End MLOps & LLMOps Pipeline",
     role: "MLOps & Platform Engineer",
     description:
-      "Complete production MLOps and LLMOps lifecycle pipeline implementing CI/CD automation, distributed telemetry, automated evaluation gates, and containerized deployment monitoring.",
+      "An end-to-end MLOps pipeline featuring automated model evaluation, OpenTelemetry tracing with Arize Phoenix, and Docker containerized deployment.",
     image: "/images/projects/mlops_pipeline.jpg",
     tags: ["Python", "MLflow", "Docker", "OpenTelemetry", "FastAPI", "Arize Phoenix"],
     github: "https://github.com/hamid220-kamal/End-to-End-MLOps---LLMOps-Pipeline",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     title: "Advanced Production RAG",
     role: "AI Search Engineer",
     description:
-      "Enterprise-grade Retrieval-Augmented Generation system with contextual query decomposition, hybrid dense-sparse vector search, cross-encoder reranking, and citation verification.",
+      "A practical Retrieval-Augmented Generation (RAG) system using hybrid vector search (BM25 + dense embeddings), cross-encoder reranking, and citation grounding.",
     image: "/images/projects/rag_system.jpg",
     tags: ["Python", "LangChain", "Vector DB", "Hybrid Search", "Cross-Encoder", "RAG"],
     github: "https://github.com/hamid220-kamal/Advanced-production-RAG",
@@ -312,7 +312,7 @@ export const projects: Project[] = [
     title: "Design Swiftly (CNC)",
     role: "Founder & Lead Architect",
     description:
-      "An elite industrial-grade CAD/CAM control engine for the modern web. Enables direct hardware execution via Web Serial API with high-fidelity 3D simulation and Gemini-integrated design intelligence.",
+      "A browser-based CAD/CAM tool that controls CNC hardware directly through the Web Serial API. Features real-time G-Code toolpath generation, 3D Canvas simulation, and automated design assistance.",
     image: "/images/projects/cnc_robot.jpg",
     tags: ["Web Serial API", "Rust WASM", "Canvas 60fps", "CAD/CAM", "Microcontroller Comm"],
     demo: "https://cnc.jugaaadi.com/",
@@ -335,7 +335,7 @@ export const projects: Project[] = [
     title: "Learn Quran",
     role: "CTO & Founding Architect",
     description:
-      "A global socio-educational ecosystem facilitating accessible spiritual learning. Built on a low-latency communication protocol to connect madrasa teachers with worldwide students across continents.",
+      "An online EdTech platform connecting students with certified tutors globally. Features low-latency audio streaming, lesson scheduling, and interactive progress tracking.",
     image: "/images/projects/learn_quran_net.jpg",
     tags: ["Next.js 15", "Node.js", "WebSockets", "Low-Latency Audio", "RBAC Auth", "EdTech"],
     demo: "https://learnquran.app/",
@@ -362,7 +362,7 @@ export const projects: Project[] = [
     title: "Ali Logistics",
     role: "Lead Full-Stack Developer",
     description:
-      "Full-stack logistics platform for Sydney's premier refrigerated transport & cold chain delivery company. Temperature-controlled courier management across Metropolitan Sydney & NSW.",
+      "Corporate web application built for a Sydney refrigerated transport company, featuring service catalogs, instant quote inquiries, and local SEO optimization.",
     image: "/images/projects/ali_logistics.jpg",
     tags: ["React", "Vite", "Local SEO", "Cold Chain Logistics", "Mobile Responsive"],
     demo: "https://ali-logistics.vercel.app/",
@@ -404,7 +404,7 @@ export const projects: Project[] = [
     title: "PrimeEdge Engicon Pvt. Ltd.",
     role: "Web Architect & Consultant",
     description:
-      "Corporate web architecture for Bihar's leading engineering & construction company. Specializing in infrastructure, DGPS/Total Station surveys, and turnkey industrial construction.",
+      "Corporate website built for an engineering and construction company in Bihar, featuring service catalogs, project showcases, and client inquiry forms.",
     image: "/images/projects/prime_edge.jpg",
     tags: ["HTML", "Tailwind CSS", "Enterprise SEO", "Civil Engineering"],
     demo: "https://prime-edge-engicon-pvt-lt.vercel.app/",

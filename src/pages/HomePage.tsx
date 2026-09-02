@@ -34,11 +34,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
             style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '36px' }}
           >
             <div>
-              <div className="section-tag">02 / FEATURED VENTURES</div>
-              <h2 className="section-title">Selected Systems &amp; Products</h2>
+              <div className="section-tag">02 / FEATURED PROJECTS</div>
+              <h2 className="section-title">Selected Projects &amp; Ventures</h2>
               <p className="section-subtitle">
-                High-stakes software built for industrial CNC execution, global EdTech,<br />
-                and automated computer vision.
+                A selection of production software I've built and shipped — spanning browser machine control, global EdTech, and computer vision.
               </p>
             </div>
             <button onClick={() => navigate('/projects')} style={{
@@ -219,11 +218,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
             style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '20px', marginBottom: '32px' }}
           >
             <div>
-              <div className="section-tag">03 / TECHNICAL TOOLCHAIN</div>
-              <h2 className="section-title" style={{ color: '#0f1e38' }}>Core Engineering Stack</h2>
-              <p className="section-subtitle" style={{ maxWidth: 420 }}>
-                High-level breakdown of production software stacks,<br />
-                Web Serial hardware APIs, and AI models.
+              <div className="section-tag">03 / TECH STACK &amp; TOOLS</div>
+              <h2 className="section-title" style={{ color: '#0f1e38' }}>Core Tech Stack</h2>
+              <p className="section-subtitle" style={{ maxWidth: 460 }}>
+                The languages, frameworks, hardware APIs, and tools I use day-to-day to build software.
               </p>
             </div>
             <button onClick={() => navigate('/skills')} style={{
@@ -453,7 +451,7 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
                   maxWidth: '100%',
                 }}>
                   <FiCheckCircle size={14} color="#60a5fa" />
-                  <span>AVAILABLE FOR CONTRACTS &amp; CONSULTING — DISCUSS HOW WE CAN ENGINEER CUSTOM WEB PLATFORMS, HARDWARE SERIAL TOOLS...</span>
+                  <span>OPEN FOR CONTRACTS &amp; COLLABORATION — WEB APPLICATIONS, HARDWARE TOOLS &amp; AI INTEGRATIONS</span>
                 </div>
 
                 {/* Headline */}
@@ -481,7 +479,7 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
                   boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.1)',
                 }}>
                   <p style={{ color: '#94a3b8', fontSize: '0.92rem', lineHeight: 1.55, margin: 0 }}>
-                    Let's discuss how we can engineer custom web platforms, hardware serial tools, or AI pipelines for your project.
+                    Let's discuss how we can build custom web apps, hardware serial tools, or AI features for your project.
                   </p>
                 </div>
 
@@ -508,7 +506,7 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
                       cursor: 'pointer',
                     }}
                   >
-                    View Career Trajectory
+                    View Experience &amp; Journey
                   </motion.button>
 
                   {/* Button 2: 3D Glowing Sapphire Blue Crystal Block */}

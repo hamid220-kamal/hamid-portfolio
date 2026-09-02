@@ -506,7 +506,7 @@ export default function CertificatesPage() {
               letterSpacing: '0.04em',
               marginBottom: '14px',
             }}>
-              VERIFIED COMPLIANCE &amp; DOSSIER
+              VERIFIED CERTIFICATIONS
             </div>
 
             <h3 style={{
@@ -518,11 +518,11 @@ export default function CertificatesPage() {
               marginBottom: '10px',
               letterSpacing: '-0.02em',
             }}>
-              Require verified proof or specialized credentials?
+              Need certificate verification or details?
             </h3>
 
             <p style={{ color: '#94a3b8', fontSize: '0.98rem', margin: '0 0 24px 0', lineHeight: 1.55, fontWeight: 500 }}>
-              All 29 certificates and official transcripts are verified and available for corporate background verification.
+              All 29 certificates include verification links and authentic PDF previews for background verification.
             </p>
 
             <motion.button
@@ -545,7 +545,7 @@ export default function CertificatesPage() {
                 boxShadow: '0 14px 40px -4px rgba(37, 99, 235, 0.85), inset 0 2px 3px rgba(255, 255, 255, 0.8), inset 0 -3px 6px rgba(0, 0, 0, 0.5)',
               }}
             >
-              <span>Request Credentials Dossier</span>
+              <span>Contact for Verification</span>
               <FiExternalLink size={18} />
             </motion.button>
           </div>

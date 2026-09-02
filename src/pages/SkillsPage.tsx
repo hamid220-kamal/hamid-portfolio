@@ -96,10 +96,10 @@ export default function SkillsPage() {
             color: '#1e3a5f',
             marginBottom: '16px',
           }}>
-            03 / TECHNICAL TOOLCHAIN
+            03 / TECH STACK &amp; TOOLS
           </div>
 
-          {/* 3D Floating Metallic Chrome Title Arch */}
+          {/* Title */}
           <h1 className="section-title" style={{
             fontSize: 'clamp(2.4rem, 5.2vw, 4.4rem)',
             fontWeight: 800,
@@ -113,7 +113,7 @@ export default function SkillsPage() {
             maxWidth: '900px',
             margin: '0 auto 20px',
           }}>
-            Engineering Stack &amp; Domain Toolchain
+            Tech Stack &amp; Developer Tools
           </h1>
 
           {/* Translucent Glass Subtitle Capsule */}
@@ -129,7 +129,7 @@ export default function SkillsPage() {
             boxShadow: '0 8px 24px -4px rgba(15, 23, 42, 0.06)',
           }}>
             <p style={{ fontSize: '0.96rem', color: '#334155', lineHeight: 1.6, margin: 0, fontWeight: 450 }}>
-              A comprehensive matrix of production languages, hardware APIs, AI computer vision libraries, and security frameworks.
+              The languages, frameworks, hardware APIs, and developer tools I work with to build software.
             </p>
           </div>
         </motion.div>

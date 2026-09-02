@@ -6,46 +6,46 @@ const engineeringPillars = [
   {
     id: 'hardware',
     index: '01',
-    title: "Hardware & Serial Execution",
-    description: "Architecting browser engines that directly interface with industrial CNC machinery via Web Serial API, WebAssembly, and real-time G-Code control logic.",
+    title: "Hardware & Serial Integration",
+    description: "Connecting browser applications directly to microcontrollers and CNC machines using the Web Serial API, WebAssembly, and G-Code streams.",
     icon: <FiCpu size={22} color="#2563eb" />
   },
   {
     id: 'web-systems',
     index: '02',
-    title: "High-Availability Web Architectures",
-    description: "Building production-grade web applications using React 19, Next.js, and low-latency Node.js infrastructure capable of serving global user bases.",
+    title: "Full-Stack Web Development",
+    description: "Building fast, responsive web applications with React 19, Next.js, and TypeScript, backed by modular Node.js services.",
     icon: <FiZap size={22} color="#059669" />
   },
   {
     id: 'ai-vision',
     index: '03',
-    title: "Computer Vision & AI Pipelines",
-    description: "Integrating real-time deep learning models (YOLOv8, OpenCV) and LLM-powered agentic automation pipelines into accessible web interfaces.",
+    title: "Computer Vision & Practical AI",
+    description: "Implementing real-time object detection models with YOLOv8 and OpenCV, alongside modern LLM tool integrations.",
     icon: <FiTarget size={22} color="#d97706" />
   },
   {
     id: 'cybersecurity',
     index: '04',
-    title: "Defensive & Offensive Security",
-    description: "Engineering resilient systems rooted in rigorous Security-by-Design principles, penetration testing methodologies, and threat surface minimization.",
+    title: "Security & System Hardening",
+    description: "Applying secure coding practices, careful input validation, and defensive auditing to keep systems and data safe.",
     icon: <FiShield size={22} color="#0284c7" />
   }
 ];
 
 const engineeringPrinciples = [
-  { title: "Performance-First Architecture", desc: "Zero unnecessary bloat. Optimized runtime execution, minimal bundle size, and fast FCP." },
-  { title: "Hardware-Native Browser Logic", desc: "Pushing browser capabilities via Web Serial, WASM, and low-level protocols to execute physical tasks." },
-  { title: "Security by Design", desc: "Proactive vulnerability landscape analysis, input validation, and defensive systems engineering." },
-  { title: "Resilient User Experience", desc: "Designing sleek, intuitive interfaces that perform reliably even in high-stress or low-bandwidth environments." }
+  { title: "Fast & Lightweight", desc: "No unnecessary libraries or bloat. Clean execution, minimal bundle size, and instant page loads." },
+  { title: "Browser Meets Hardware", desc: "Using Web Serial, WASM, and low-level protocols to make the browser interact with physical devices." },
+  { title: "Built Secure by Default", desc: "Thorough input validation, sensible defaults, and proactive vulnerability scanning on every route." },
+  { title: "Reliable User Experience", desc: "Simple, responsive user interfaces that perform consistently across desktop and mobile devices." }
 ];
 
 export default function AboutPage() {
   const { navigate } = useRouter();
 
   return (
-    <div style={{ paddingTop: '110px', paddingBottom: '80px' }}>
-      <div className="container">
+    <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px', overflowX: 'hidden' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         
         {/* Page Header Banner */}
         <motion.div
@@ -65,7 +65,7 @@ export default function AboutPage() {
             fontWeight: 700,
             color: '#1e3a5f',
           }}>
-            01 / ABOUT &amp; PHILOSOPHY
+            01 / ABOUT ME
           </div>
 
           <h1 className="section-title" style={{
@@ -79,7 +79,7 @@ export default function AboutPage() {
             WebkitTextFillColor: 'transparent',
             filter: 'drop-shadow(0 4px 12px rgba(37, 99, 235, 0.18))',
           }}>
-            Bridging web software with physical hardware &amp; cognitive AI logic.
+            Building software that connects the web, physical hardware, and AI.
           </h1>
 
           {/* Translucent Glass Subtitle Capsule */}
@@ -95,7 +95,7 @@ export default function AboutPage() {
             boxShadow: '0 8px 24px -4px rgba(15, 23, 42, 0.06)',
           }}>
             <p style={{ fontSize: '0.98rem', color: '#334155', lineHeight: 1.6, margin: 0, fontWeight: 450 }}>
-              A deep look into my background as a full-stack engineer, AI systems developer, and founder building software that breaks traditional browser limitations.
+              My background as a 17-year-old developer and founder — from tinkering with microcontrollers to shipping production systems.
             </p>
           </div>
         </motion.div>
@@ -104,16 +104,16 @@ export default function AboutPage() {
         <motion.div
           initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           style={{
             position: 'relative',
             borderRadius: '32px',
             padding: '10px',
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.2) 45%, rgba(255,255,255,0.5) 100%)',
-            border: '1px solid rgba(255, 255, 255, 0.75)',
-            boxShadow: '0 35px 80px -15px rgba(15, 23, 42, 0.22), inset 0 2px 4px rgba(255, 255, 255, 0.9), inset 0 -2px 4px rgba(0, 0, 0, 0.1)',
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.55) 100%)',
+            border: '1.5px solid rgba(255, 255, 255, 0.85)',
+            boxShadow: '0 30px 80px -15px rgba(15, 23, 42, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.95)',
             backdropFilter: 'blur(30px)',
-            marginBottom: '80px',
+            marginBottom: '40px',
           }}
         >
           {/* Inner Narrative & Photo Grid */}
@@ -149,16 +149,16 @@ export default function AboutPage() {
 
                 <div className="prose-content" style={{ fontSize: '0.92rem', lineHeight: 1.7, color: '#334155' }}>
                   <p style={{ marginBottom: '16px' }}>
-                    I am <span style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid rgba(37,99,235,0.22)', padding: '2px 8px', borderRadius: '6px', fontWeight: 700, color: '#0f172a' }}>Hamid Kamal</span>, a full-stack engineer and AI systems developer. I specialize in building software that bridges abstract digital logic with real-world execution.
+                    I am <span style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid rgba(37,99,235,0.22)', padding: '2px 8px', borderRadius: '6px', fontWeight: 700, color: '#0f172a' }}>Hamid Kamal</span>, a 17-year-old developer and founder from Hyderabad. I love building practical software that connects software directly with physical devices and AI models.
                   </p>
                   <p style={{ marginBottom: '16px' }}>
-                    My engineering journey began with a curiosity for low-level automation and security. Currently, as CTO at <strong style={{ color: '#1e40af', fontWeight: 700 }}>Learn Quran</strong>, I architect digital infrastructure connecting teachers and students globally via low-latency real-time communication protocols.
+                    My journey started with hands-on curiosity for microcontrollers and automated scripting. Currently, as CTO at <strong style={{ color: '#1e40af', fontWeight: 700 }}>Learn Quran</strong>, I manage our web application and audio communication infrastructure connecting teachers and students worldwide.
                   </p>
                   <p style={{ marginBottom: '16px' }}>
-                    Previously, I engineered <span style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid rgba(37,99,235,0.22)', padding: '2px 8px', borderRadius: '6px', fontWeight: 700, color: '#1e40af' }}>CNC Jugaaadi (Design Swiftly)</span>—a browser CAD/CAM control system featuring direct Web Serial API machine execution, WASM toolpath generation, and Gemini AI design intelligence.
+                    Previously, I co-founded <span style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid rgba(37,99,235,0.22)', padding: '2px 8px', borderRadius: '6px', fontWeight: 700, color: '#1e40af' }}>CNC Jugaaadi (Design Swiftly)</span>—a browser-based CAD/CAM tool that controls CNC machines directly through the Web Serial API and generates real-time toolpaths with WebAssembly.
                   </p>
                   <p style={{ marginBottom: '0' }}>
-                    My work spans computer vision pipelines <span style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid rgba(37,99,235,0.22)', padding: '2px 8px', borderRadius: '6px', fontWeight: 600, color: '#1e3a5f' }}>(YOLOv8, OpenCV)</span>, offensive security laboratories (OverR1de), and enterprise frontend engineering. I believe software should be fast, intuitive, and built with absolute technical rigor.
+                    Alongside hardware integrations, I work with computer vision <span style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid rgba(37,99,235,0.22)', padding: '2px 8px', borderRadius: '6px', fontWeight: 600, color: '#1e3a5f' }}>(YOLOv8, OpenCV)</span>, security auditing, and modern frontend development.
                   </p>
                 </div>
               </div>

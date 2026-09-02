@@ -126,11 +126,11 @@ export default function ExecutiveHero() {
                 wordBreak: 'normal',
               }}
             >
-              Engineering <span style={{
+              Building <span style={{
                 background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
-              }}>high-stakes web systems,</span> CAD engines &amp; AI.
+              }}>modern web platforms,</span> CAD engines &amp; AI.
             </motion.h1>
 
             {/* Paragraph Bio */}
@@ -152,7 +152,7 @@ export default function ExecutiveHero() {
                 WebkitHyphens: 'none',
               }}
             >
-              I'm <strong style={{ color: '#0f172a', fontWeight: 700 }}>Hamid Kamal</strong>. Chief Technology Officer (CTO) at <strong style={{ color: '#2563eb', fontWeight: 700 }}>Learn Quran</strong> (real-time EdTech platform) and former <span style={{ whiteSpace: 'nowrap' }}>Co&#8209;Founder</span> &amp; Lead Systems Engineer at <strong style={{ color: '#2563eb', fontWeight: 700 }}>CNC Jugaaadi</strong> (browser CAD/CAM via Web Serial API). I build robust <span style={{ whiteSpace: 'nowrap' }}>web apps</span>, hardware serial control logic, and computer vision pipelines.
+              I'm <strong style={{ color: '#0f172a', fontWeight: 700 }}>Hamid Kamal</strong>, a 17-year-old software developer and founder based in Hyderabad. Currently, I serve as Chief Technology Officer at <strong style={{ color: '#2563eb', fontWeight: 700 }}>Learn Quran</strong> (real-time EdTech platform) and previously co-founded <strong style={{ color: '#2563eb', fontWeight: 700 }}>CNC Jugaaadi</strong> (browser CAD/CAM communicating with CNC machines via the Web Serial API). I enjoy building fast, practical <span style={{ whiteSpace: 'nowrap' }}>web apps</span>, hardware integrations, and computer vision tools.
             </motion.p>
 
             {/* Live Telemetry Dark Teal Capsule Widget */}
@@ -203,7 +203,7 @@ export default function ExecutiveHero() {
                     textTransform: 'uppercase',
                     marginBottom: '2px'
                   }}>
-                    LIVE SYSTEM TELEMETRY
+                    LIVE SYSTEM STATUS
                   </div>
 
                   <motion.div
@@ -255,8 +255,8 @@ export default function ExecutiveHero() {
                   boxShadow: '0 8px 24px -4px rgba(37, 99, 235, 0.4)'
                 }}
               >
-                <span className="btn-text-desktop">Explore Selected Ventures</span>
-                <span className="btn-text-mobile">Selected Ventures</span>
+                <span className="btn-text-desktop">Explore Projects</span>
+                <span className="btn-text-mobile">Projects</span>
                 <FiArrowRight size={16} />
               </button>
 
@@ -275,7 +275,7 @@ export default function ExecutiveHero() {
                 }}
               >
                 <FiDownload size={16} />
-                <span>Executive CV</span>
+                <span>Download CV</span>
               </a>
             </motion.div>
 
