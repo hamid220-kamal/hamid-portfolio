@@ -1,27 +1,10 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiDownload, FiGithub, FiLinkedin, FiTerminal, FiCode } from 'react-icons/fi';
+import { FiArrowRight, FiDownload, FiGithub, FiLinkedin, FiCode } from 'react-icons/fi';
 import Hero3DCanvas from './canvas/Hero3DCanvas';
 import { useRouter } from '../context/RouterContext';
 
 export default function ExecutiveHero() {
   const { navigate } = useRouter();
-
-  // Telemetry Cycling Text
-  const [logIndex, setLogIndex] = useState(0);
-  const telemetryLogs = [
-    "> YOLOv8 Stream Inference: 99.4% Density Accuracy",
-    "> WebSerial.connect('COM4', 115200) → READY",
-    "> LearnQuran Protocol: Audio Sync OK (12ms)",
-    "> WASM G-Code Generator: 494 Files Verified"
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLogIndex((prev) => (prev + 1) % telemetryLogs.length);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, [telemetryLogs.length]);
 
   return (
     <section
@@ -154,85 +137,6 @@ export default function ExecutiveHero() {
             >
               I'm <strong style={{ color: '#0f172a', fontWeight: 700 }}>Hamid Kamal</strong>, a 17-year-old software developer and founder based in Hyderabad. Currently, I serve as Chief Technology Officer at <strong style={{ color: '#2563eb', fontWeight: 700 }}>Learn Quran</strong> (real-time EdTech platform) and previously co-founded <strong style={{ color: '#2563eb', fontWeight: 700 }}>CNC Jugaaadi</strong> (browser CAD/CAM communicating with CNC machines via the Web Serial API). I enjoy building fast, practical <span style={{ whiteSpace: 'nowrap' }}>web apps</span>, hardware integrations, and computer vision tools.
             </motion.p>
-
-            {/* Live Telemetry Dark Teal Capsule Widget */}
-            <motion.div
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="telemetry-capsule"
-              style={{
-                background: 'linear-gradient(135deg, #0d2830 0%, #0b1f26 100%)',
-                border: '1px solid #154c58',
-                borderRadius: '20px',
-                padding: '14px 18px',
-                marginBottom: '32px',
-                maxWidth: '560px',
-                boxShadow: '0 12px 30px -5px rgba(13, 40, 48, 0.4)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '12px',
-                width: '100%',
-                overflow: 'hidden'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexGrow: 1, minWidth: 0 }}>
-                {/* Terminal Icon Box */}
-                <div style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '10px',
-                  background: 'rgba(20, 184, 166, 0.15)',
-                  border: '1px solid rgba(20, 184, 166, 0.35)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#2dd4bf',
-                  flexShrink: 0
-                }}>
-                  <FiTerminal size={16} />
-                </div>
-
-                <div style={{ minWidth: 0, flexGrow: 1, overflow: 'hidden' }}>
-                  <div style={{
-                    fontSize: '0.65rem',
-                    fontFamily: 'Space Mono, monospace',
-                    color: '#6ee7b7',
-                    letterSpacing: '0.06em',
-                    textTransform: 'uppercase',
-                    marginBottom: '2px'
-                  }}>
-                    LIVE SYSTEM STATUS
-                  </div>
-
-                  <motion.div
-                    key={logIndex}
-                    initial={{ opacity: 0, y: 4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    style={{
-                      fontFamily: 'Space Mono, monospace',
-                      fontSize: '0.8rem',
-                      fontWeight: 700,
-                      color: '#38bdf8',
-                      whiteSpace: 'nowrap',
-                      textOverflow: 'ellipsis',
-                      overflow: 'hidden'
-                    }}
-                  >
-                    {telemetryLogs[logIndex]}
-                  </motion.div>
-                </div>
-              </div>
-
-              {/* Animated ECG Pulse Wave SVG */}
-              <div className="telemetry-ecg-wave" style={{ width: '60px', height: '22px', flexShrink: 0, opacity: 0.9 }}>
-                <svg viewBox="0 0 100 30" fill="none" stroke="#2dd4bf" strokeWidth="2.5" strokeLinecap="round">
-                  <path d="M0 15 L25 15 L35 5 L45 25 L55 10 L65 20 L75 15 L100 15" />
-                </svg>
-              </div>
-            </motion.div>
 
             {/* Action Buttons */}
             <motion.div
@@ -533,15 +437,7 @@ export default function ExecutiveHero() {
           .hero-bio {
             font-size: 0.88rem !important;
             line-height: 1.55 !important;
-            margin-bottom: 14px !important;
-          }
-          .telemetry-capsule {
-            padding: 8px 12px !important;
-            border-radius: 14px !important;
-            margin-bottom: 16px !important;
-          }
-          .telemetry-ecg-wave {
-            display: none !important;
+            margin-bottom: 20px !important;
           }
           .hero-action-btns {
             display: grid !important;
