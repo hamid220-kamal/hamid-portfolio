@@ -162,7 +162,7 @@ export default function FAQ() {
                 }}
               >
                 <img
-                  src="/images/3d/faq_3d_gear_cube.jpg"
+                  src="/images/3d/faq_3d_gear_cube.webp"
                   alt="3D Holographic Gear Cube Sculpture"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />

@@ -151,7 +151,7 @@ export default function DevEnvironment3DStage() {
               <motion.img
                 animate={{ rotate: 360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
-                src="/images/3d/metallic_gear_3d_render.jpg"
+                src="/images/3d/metallic_gear_3d_render.webp"
                 alt="3D Metallic Gear Render"
                 loading="lazy"
                 decoding="async"

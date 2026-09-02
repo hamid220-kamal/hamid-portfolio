@@ -68,7 +68,7 @@ export default function Footer() {
         filter: 'drop-shadow(0 0 35px rgba(37, 99, 235, 0.25))',
       }}>
         <img
-          src="/images/3d/footer_3d_skyline_landscape.jpg"
+          src="/images/3d/footer_3d_skyline_landscape.webp"
           alt="3D Futuristic Tech Skyline Horizon"
           loading="lazy"
           decoding="async"

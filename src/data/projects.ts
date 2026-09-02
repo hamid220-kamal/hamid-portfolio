@@ -26,7 +26,7 @@ export const projects: Project[] = [
     role: "AI Systems Architect",
     description:
       "A multi-agent framework built with Python's native asyncio. Enables autonomous agents to coordinate tasks, maintain shared state graphs, and handle errors reliably without heavy external libraries.",
-    image: "/images/projects/multi_agent_ai.jpg",
+    image: "/images/projects/multi_agent_ai.webp",
     tags: ["Python", "LangChain", "Multi-Agent", "asyncio", "Pydantic v2", "ChromaDB"],
     github: "https://github.com/hamid220-kamal/Multi-Agent-AI-System",
     featured: true,
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     role: "MLOps & Platform Engineer",
     description:
       "An end-to-end MLOps pipeline featuring automated model evaluation, OpenTelemetry tracing with Arize Phoenix, and Docker containerized deployment.",
-    image: "/images/projects/mlops_pipeline.jpg",
+    image: "/images/projects/mlops_pipeline.webp",
     tags: ["Python", "MLflow", "Docker", "OpenTelemetry", "FastAPI", "Arize Phoenix"],
     github: "https://github.com/hamid220-kamal/End-to-End-MLOps---LLMOps-Pipeline",
     featured: true,
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     role: "AI Search Engineer",
     description:
       "A practical Retrieval-Augmented Generation (RAG) system using hybrid vector search (BM25 + dense embeddings), cross-encoder reranking, and citation grounding.",
-    image: "/images/projects/rag_system.jpg",
+    image: "/images/projects/rag_system.webp",
     tags: ["Python", "LangChain", "Vector DB", "Hybrid Search", "Cross-Encoder", "RAG"],
     github: "https://github.com/hamid220-kamal/Advanced-production-RAG",
     featured: true,
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     role: "AI / Deep Learning Engineer",
     description:
       "Comprehensive model adaptation pipeline supporting LoRA, QLoRA, and PEFT techniques, paired with GGUF quantization and memory-mapped CPU inference.",
-    image: "/images/projects/fine_tuning.jpg",
+    image: "/images/projects/fine_tuning.webp",
     tags: ["Python", "Transformers", "LoRA", "QLoRA", "PEFT", "GGUF", "llama.cpp"],
     github: "https://github.com/hamid220-kamal/Fine-Tuning---Model-Optimization-Pipeline",
     featured: true,
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     role: "Computer Vision Engineer",
     description:
       "Urban traffic optimization platform utilizing YOLOv8 computer vision for real-time vehicle density analysis, dynamic signal control logic, and telemetry streaming.",
-    image: "/images/projects/ai_traffic_new.jpg",
+    image: "/images/projects/ai_traffic_new.webp",
     tags: ["YOLOv8", "FastAPI", "OpenCV", "React", "Computer Vision", "WebSockets"],
     github: "https://github.com/hamid220-kamal/AI-traffic-management-system",
     demo: "https://ai-traffic-management-system-henna.vercel.app",
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     role: "Security Researcher & Developer",
     description:
       "Offensive security laboratory and testing suite featuring custom automated penetration testing Python scripts, exploit verification logic, and simulated target environments.",
-    image: "/images/projects/override_new.jpg",
+    image: "/images/projects/override_new.webp",
     tags: ["Cybersecurity", "Python", "Penetration Testing", "Ethical Hacking", "Network Scanners"],
     github: "https://github.com/hamid220-kamal/OverR1de",
     featured: true,
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     role: "Machine Learning Engineer",
     description:
       "Machine learning classification system for cardiac risk assessment using clinical patient data, feature engineering, and ensemble prediction models.",
-    image: "/images/projects/heart_disease.jpg",
+    image: "/images/projects/heart_disease.webp",
     tags: ["Python", "Scikit-learn", "Pandas", "Ensemble ML", "Feature Engineering"],
     github: "https://github.com/hamid220-kamal/heart-disease-prediction",
     category: "ai",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     role: "Computer Vision Engineer",
     description:
       "Real-time facial recognition and identity verification pipeline powered by deep metric learning, facial landmark detection, and 128D embedding comparisons.",
-    image: "/images/projects/face_recognition.jpg",
+    image: "/images/projects/face_recognition.webp",
     tags: ["Python", "OpenCV", "Deep Learning", "dlib", "Biometric Embeddings"],
     github: "https://github.com/hamid220-kamal/Face-Recognition-",
     category: "ai",
@@ -213,7 +213,7 @@ export const projects: Project[] = [
     role: "NLP Engineer",
     description:
       "NLP-powered sentiment classification engine for analyzing text polarity and emotional tone across document corpora and customer feedback streams.",
-    image: "/images/projects/sentiment_analysis.jpg",
+    image: "/images/projects/sentiment_analysis.webp",
     tags: ["Python", "NLP", "ML", "NLTK", "TF-IDF", "Text Classification"],
     github: "https://github.com/hamid220-kamal/Sentiment_Analysis_Tool",
     category: "ai",
@@ -229,7 +229,7 @@ export const projects: Project[] = [
     role: "Audio AI Engineer",
     description:
       "Voice transcription engine converting speech audio streams into accurate text transcriptions using acoustic modeling and frequency spectrum analysis.",
-    image: "/images/projects/speech_to_text.jpg",
+    image: "/images/projects/speech_to_text.webp",
     tags: ["Python", "SpeechRecognition", "NLP", "Audio Signal Processing"],
     github: "https://github.com/hamid220-kamal/AI-Speech-to-Text",
     category: "ai",
@@ -245,7 +245,7 @@ export const projects: Project[] = [
     role: "Conversational AI Developer",
     description:
       "NLP-based intelligent customer service chatbot with context-aware responses, intent classification, and premium glassmorphism interface.",
-    image: "/images/projects/ai_chatbot.jpg",
+    image: "/images/projects/ai_chatbot.webp",
     tags: ["Python", "NLP", "CSS", "Chatbot", "Intent Classification"],
     github: "https://github.com/hamid220-kamal/AI-Customer-Chatbot",
     category: "ai",
@@ -261,7 +261,7 @@ export const projects: Project[] = [
     role: "AI Engineering Intern",
     description:
       "Rule-based expert system with voice user interface and automated inference engine built during Syntecxhub AI internship.",
-    image: "/images/projects/expert_system.jpg",
+    image: "/images/projects/expert_system.webp",
     tags: ["JavaScript", "AI", "Expert System", "Inference Engine", "Voice UI"],
     github: "https://github.com/hamid220-kamal/Syntecxhub_Expert_System",
     category: "ai",
@@ -277,7 +277,7 @@ export const projects: Project[] = [
     role: "Algorithm Developer",
     description:
       "A* pathfinding algorithm implementation with interactive web visualization, heuristic cost calculations, and procedural maze generation.",
-    image: "/images/projects/maze_solver.jpg",
+    image: "/images/projects/maze_solver.webp",
     tags: ["JavaScript", "HTML", "A* Algorithm", "Pathfinding", "Graph Theory"],
     github: "https://github.com/hamid220-kamal/Syntecxhub_Maze_Solver_AStar",
     category: "ai",
@@ -293,7 +293,7 @@ export const projects: Project[] = [
     role: "Author & Instructor",
     description:
       "Comprehensive structured curriculum and hands-on code repository covering modern Python from core primitives to advanced asynchronous architecture and data science.",
-    image: "/images/projects/python_course.jpg",
+    image: "/images/projects/python_course.webp",
     tags: ["Python", "HTML", "Curriculum", "Data Structures", "Asyncio"],
     github: "https://github.com/hamid220-kamal/The-Ultimate-Python-Course",
     category: "ai",
@@ -313,7 +313,7 @@ export const projects: Project[] = [
     role: "Founder & Lead Architect",
     description:
       "A browser-based CAD/CAM tool that controls CNC hardware directly through the Web Serial API. Features real-time G-Code toolpath generation, 3D Canvas simulation, and automated design assistance.",
-    image: "/images/projects/cnc_robot.jpg",
+    image: "/images/projects/cnc_robot.webp",
     tags: ["Web Serial API", "Rust WASM", "Canvas 60fps", "CAD/CAM", "Microcontroller Comm"],
     demo: "https://cnc.jugaaadi.com/",
     featured: true,
@@ -336,7 +336,7 @@ export const projects: Project[] = [
     role: "CTO & Founding Architect",
     description:
       "An online EdTech platform connecting students with certified tutors globally. Features low-latency audio streaming, lesson scheduling, and interactive progress tracking.",
-    image: "/images/projects/learn_quran_net.jpg",
+    image: "/images/projects/learn_quran_net.webp",
     tags: ["Next.js 15", "Node.js", "WebSockets", "Low-Latency Audio", "RBAC Auth", "EdTech"],
     demo: "https://learnquran.app/",
     featured: true,
@@ -363,7 +363,7 @@ export const projects: Project[] = [
     role: "Lead Full-Stack Developer",
     description:
       "Corporate web application built for a Sydney refrigerated transport company, featuring service catalogs, instant quote inquiries, and local SEO optimization.",
-    image: "/images/projects/ali_logistics.jpg",
+    image: "/images/projects/ali_logistics.webp",
     tags: ["React", "Vite", "Local SEO", "Cold Chain Logistics", "Mobile Responsive"],
     demo: "https://ali-logistics.vercel.app/",
     category: "client",
@@ -384,7 +384,7 @@ export const projects: Project[] = [
     role: "Lead Frontend Engineer",
     description:
       "Tourism booking platform for Kashmir tour packages featuring destination galleries, curated itineraries, and seamless booking management.",
-    image: "/images/projects/zoon_tourism.jpg",
+    image: "/images/projects/zoon_tourism.webp",
     tags: ["HTML", "CSS", "JavaScript", "Tourism UX", "Booking Engine"],
     demo: "https://zoontourism.vercel.app/",
     category: "client",
@@ -405,7 +405,7 @@ export const projects: Project[] = [
     role: "Web Architect & Consultant",
     description:
       "Corporate website built for an engineering and construction company in Bihar, featuring service catalogs, project showcases, and client inquiry forms.",
-    image: "/images/projects/prime_edge.jpg",
+    image: "/images/projects/prime_edge.webp",
     tags: ["HTML", "Tailwind CSS", "Enterprise SEO", "Civil Engineering"],
     demo: "https://prime-edge-engicon-pvt-lt.vercel.app/",
     category: "client",

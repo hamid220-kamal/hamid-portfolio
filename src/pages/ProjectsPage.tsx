@@ -576,7 +576,7 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
           }}
         >
           <img
-            src="/images/3d/projects_3d_isometric_stage.jpg"
+            src="/images/3d/projects_3d_isometric_stage.webp"
             alt="3D Multi-Tiered Isometric Architecture Stage"
             loading="lazy"
             decoding="async"
@@ -779,7 +779,7 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
               }}
             >
               <img
-                src="/images/3d/projects_cta_3d_banner.jpg"
+                src="/images/3d/projects_cta_3d_banner.webp"
                 alt="3D Cyber Showcase"
                 loading="lazy"
                 decoding="async"

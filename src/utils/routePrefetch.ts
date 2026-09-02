@@ -34,11 +34,11 @@ export const prefetchAllRoutes = () => {
     // 2. Pre-warm Key High-Priority Image Assets in Browser GPU/RAM Cache
     const criticalAssets = [
       '/images/hamid-ai-developer-portfolio.webp',
-      '/images/hamid-ai-developer-portfolio.jpg',
       '/favicon.svg',
-      '/images/3d/cnc_robot_arm.jpg',
-      '/images/3d/ai_traffic_city.jpg',
-      '/images/3d/cybersecurity_lab.jpg',
+      '/icons/icon-192.png',
+      '/images/3d/cnc_blueprint.webp',
+      '/images/3d/yolo_traffic.webp',
+      '/images/3d/shield_3d.webp',
     ];
 
     criticalAssets.forEach((src) => {

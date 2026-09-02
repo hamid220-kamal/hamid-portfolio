@@ -314,7 +314,7 @@ export default function CertificatesPage() {
               style={{ width: '100%', height: '380px', borderRadius: '20px', overflow: 'hidden' }}
             >
               <img
-                src="/images/3d/certificates_3d_validated_hub.jpg"
+                src="/images/3d/certificates_3d_validated_hub.webp"
                 alt="3D Validated Credentials Hub"
                 loading="lazy"
                 decoding="async"
@@ -574,7 +574,7 @@ export default function CertificatesPage() {
             }}
           >
             <img
-              src="/images/3d/certificates_cta_3d_badge.jpg"
+              src="/images/3d/certificates_cta_3d_badge.webp"
               alt="3D Verified Award Badge Sculpture"
               loading="lazy"
               decoding="async"

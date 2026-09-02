@@ -302,7 +302,7 @@ export default function Certificates() {
               style={{ width: '100%', height: '350px', borderRadius: '20px', overflow: 'hidden' }}
             >
               <img
-                src="/images/3d/certificates_3d_validated_hub.jpg"
+                src="/images/3d/certificates_3d_validated_hub.webp"
                 alt="3D Validated Blockchain Credentials Hub"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
@@ -540,7 +540,7 @@ export default function Certificates() {
             }}
           >
             <img
-              src="/images/3d/certificates_cta_3d_badge.jpg"
+              src="/images/3d/certificates_cta_3d_badge.webp"
               alt="3D Verified Award Badge Sculpture"
               style={{
                 width: '100%',

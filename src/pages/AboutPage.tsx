@@ -313,7 +313,7 @@ export default function AboutPage() {
             background: '#0a1424',
           }}>
             <img
-              src="/images/3d/four_pillars_3d_stage.jpg"
+              src="/images/3d/four_pillars_3d_stage.webp"
               alt="The Four Engineering Pillars 3D Render"
               style={{
                 width: '100%',
@@ -442,7 +442,7 @@ export default function AboutPage() {
             background: '#07101e',
           }}>
             <img
-              src="/images/3d/principles_standards_3d_stage.jpg"
+              src="/images/3d/principles_standards_3d_stage.webp"
               alt="Principles &amp; Standards 3D Sculptures"
               style={{
                 width: '100%',
@@ -618,7 +618,7 @@ export default function AboutPage() {
               mixBlendMode: 'screen',
               filter: 'drop-shadow(0 0 30px rgba(37, 99, 235, 0.4))',
             }}>
-              <img src="/images/3d/about_cta_3d_banner.jpg" alt="3D Cyber Console" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'contain', willChange: 'transform' }} />
+              <img src="/images/3d/about_cta_3d_banner.webp" alt="3D Cyber Console" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'contain', willChange: 'transform' }} />
             </div>
 
           </div>

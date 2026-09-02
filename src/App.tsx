@@ -5,6 +5,7 @@ import Effects from './components/Effects';
 import CommandPalette from './components/CommandPalette';
 import ProjectModal from './components/ProjectModal';
 import AppPreloader from './components/AppPreloader';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
 import { RouterProvider, useRouter } from './context/RouterContext';
 import { prefetchAllRoutes } from './utils/routePrefetch';
 import type { Project } from './data/projects';
@@ -23,7 +24,10 @@ function MainContent() {
   const { currentPath } = useRouter();
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isPreloading, setIsPreloading] = useState(true);
+  const [isPreloading, setIsPreloading] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return !sessionStorage.getItem('portfolio_preloaded');
+  });
 
   // Trigger idle background prefetching of all other routes immediately after mount
   useEffect(() => {
@@ -63,6 +67,7 @@ function MainContent() {
       {isPreloading && (
         <AppPreloader
           onComplete={() => {
+            sessionStorage.setItem('portfolio_preloaded', 'true');
             setIsPreloading(false);
             prefetchAllRoutes();
           }}
@@ -108,6 +113,9 @@ function MainContent() {
         project={selectedProject} 
         onClose={() => setSelectedProject(null)} 
       />
+
+      {/* PWA 1-Tap Ambient Install Banner */}
+      <PWAInstallPrompt />
     </>
   );
 }

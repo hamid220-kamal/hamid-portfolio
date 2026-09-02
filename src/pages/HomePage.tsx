@@ -70,7 +70,7 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
               filter: 'drop-shadow(0 20px 40px rgba(37,99,235,0.25))',
             }}>
               <img
-                src="/images/3d/engine_3d.jpg"
+                src="/images/3d/engine_3d.webp"
                 alt="Innovation Engine"
                 loading="lazy"
                 decoding="async"
@@ -283,8 +283,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
               >
                 <div style={{ position: 'relative', width: 'min(100%, 290px)' }}>
                   <img
-                    src="/images/3d/sphere_code.jpg"
+                    src="/images/3d/sphere_code.webp"
                     alt="Languages & WASM"
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: '100%', display: 'block',
                       WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at 50% 47%, black 65%, transparent 88%)',
@@ -321,8 +323,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
               >
                 <div style={{ position: 'relative', width: 'min(100%, 350px)' }}>
                   <img
-                    src="/images/3d/sphere_hardware.jpg"
+                    src="/images/3d/sphere_hardware.webp"
                     alt="Hardware & Web Serial"
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: '100%', display: 'block',
                       WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at 50% 47%, black 65%, transparent 88%)',
@@ -359,8 +363,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
               >
                 <div style={{ position: 'relative', width: 'min(100%, 290px)' }}>
                   <img
-                    src="/images/3d/sphere_cyber.jpg"
+                    src="/images/3d/sphere_cyber.webp"
                     alt="AI & Cybersecurity"
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: '100%', display: 'block',
                       WebkitMaskImage: 'radial-gradient(ellipse 50% 46% at 50% 44%, black 65%, transparent 88%)',
@@ -555,7 +561,7 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
                 }}
               >
                 <img
-                  src="/images/3d/banner_3d_assets.jpg"
+                  src="/images/3d/banner_3d_assets.webp"
                   alt="3D Technology Assets"
                   loading="lazy"
                   decoding="async"

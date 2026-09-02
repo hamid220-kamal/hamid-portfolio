@@ -7,7 +7,7 @@ interface AppPreloaderProps {
 
 export default function AppPreloader({ onComplete }: AppPreloaderProps) {
   const [progress, setProgress] = useState(0);
-  const [statusText, setStatusText] = useState('INITIALIZING NEURAL ARCHITECTURE...');
+  const [statusText, setStatusText] = useState('LOADING ASSETS...');
 
   useEffect(() => {
     // 1. Preload Hero Image
@@ -22,17 +22,17 @@ export default function AppPreloader({ onComplete }: AppPreloaderProps) {
           return 100;
         }
 
-        const next = prev + Math.floor(Math.random() * 15) + 10;
-        if (next >= 40 && next < 70) {
-          setStatusText('PRE-DECODING HOMEPAGE ASSETS & MODULES...');
-        } else if (next >= 70 && next < 95) {
-          setStatusText('CALIBRATING 60 FPS GRAPHICS ENGINE...');
+        const next = prev + Math.floor(Math.random() * 18) + 12;
+        if (next >= 40 && next < 75) {
+          setStatusText('PREPARING INTERFACE...');
+        } else if (next >= 75 && next < 95) {
+          setStatusText('OPTIMIZING DISPLAY...');
         } else if (next >= 95) {
-          setStatusText('PORTFOLIO KERNEL READY // LAUNCHING');
+          setStatusText('READY');
         }
         return next > 100 ? 100 : next;
       });
-    }, 60);
+    }, 45);
 
     return () => clearInterval(interval);
   }, []);

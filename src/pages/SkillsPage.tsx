@@ -150,7 +150,7 @@ export default function SkillsPage() {
           }}
         >
           <img
-            src="/images/3d/toolchain_3d_cyber_stage.jpg"
+            src="/images/3d/toolchain_3d_cyber_stage.webp"
             alt="3D Technical Toolchain Cyber Platform Stage"
             style={{
               width: '100%',
@@ -359,7 +359,7 @@ export default function SkillsPage() {
                 filter: 'drop-shadow(0 0 25px rgba(56, 189, 248, 0.3))',
               }}
             >
-              <img src="/images/3d/skills_cta_3d_banner.jpg" alt="3D Tech Assembly Stage" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'contain', willChange: 'transform' }} />
+              <img src="/images/3d/skills_cta_3d_banner.webp" alt="3D Tech Assembly Stage" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'contain', willChange: 'transform' }} />
             </div>
 
           </div>

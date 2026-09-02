@@ -297,7 +297,7 @@ export default function Contact() {
             }}
           >
             <img
-              src="/images/3d/contact_3d_cyber_cube.jpg"
+              src="/images/3d/contact_3d_cyber_cube.webp"
               alt="3D Holographic Cyber Cube Assembly"
               style={{
                 width: '100%',

@@ -238,8 +238,10 @@ export default function ExperiencePage() {
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }}
-                  src="/images/3d/career_3d_tower_sculpture.jpg"
-                  alt="3D Quantum Trajectory Orbit Sculpture"
+                  src="/images/3d/career_3d_tower_sculpture.webp"
+                  alt="Career Timeline 3D Render"
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -518,7 +520,7 @@ export default function ExperiencePage() {
                 }}
               >
                 <img
-                  src="/images/3d/experience_3d_query_stage.jpg"
+                  src="/images/3d/experience_3d_query_stage.webp"
                   alt="3D Data Query Dashboard Stage"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
@@ -714,7 +716,7 @@ export default function ExperiencePage() {
             }}
           >
             <img
-              src="/images/3d/experience_cta_3d_sphere_banner.jpg"
+              src="/images/3d/experience_cta_3d_sphere_banner.webp"
               alt="3D Orbital Sphere Render Stage"
               loading="lazy"
               decoding="async"

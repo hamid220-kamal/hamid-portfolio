@@ -278,7 +278,7 @@ export default function ContactPage() {
             }}
           >
             <img
-              src="/images/3d/contact_3d_cyber_cube.jpg"
+              src="/images/3d/contact_3d_cyber_cube.webp"
               alt="3D Holographic Cyber Cube Assembly"
               style={{
                 width: '100%',
@@ -631,7 +631,7 @@ export default function ContactPage() {
                 }}
               >
                 <img
-                  src="/images/3d/faq_3d_gear_cube.jpg"
+                  src="/images/3d/faq_3d_gear_cube.webp"
                   alt="3D Holographic Gear Cube Sculpture"
                   loading="lazy"
                   decoding="async"

@@ -163,7 +163,7 @@ export default function DomainArchitectureStage() {
             zIndex: 10, borderRadius: '50%', overflow: 'hidden',
             boxShadow: '0 0 0 8px rgba(255,255,255,0.6), 0 0 0 18px rgba(56,189,248,0.18), 0 30px 80px -10px rgba(37,99,235,0.25)',
           }}>
-            <img src="/images/3d/engine_3d.jpg" alt="Core Engine" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/images/3d/engine_3d.webp" alt="Core Engine" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             <div style={{
               position: 'absolute', bottom: 0, left: 0, right: 0,
               background: 'linear-gradient(transparent, rgba(15,23,42,0.88))',
@@ -224,7 +224,7 @@ export default function DomainArchitectureStage() {
                   border: '1px solid rgba(165,180,252,0.45)', borderRadius: 999, padding: '3px 9px',
                   fontFamily: "'Space Mono',monospace", fontSize: '0.56rem', fontWeight: 700, color: '#a5b4fc',
                 }}>Web Serial API &amp; Machine Control</div>
-                <img src="/images/3d/cnc_blueprint.jpg" alt="CNC Blueprint" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.88 }} />
+                <img src="/images/3d/cnc_blueprint.webp" alt="CNC Blueprint" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.88 }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 36, background: 'linear-gradient(transparent, rgba(10,12,40,0.65))' }} />
               </div>
               {/* Light bottom — text */}
@@ -298,7 +298,7 @@ export default function DomainArchitectureStage() {
                 </div>
                 {!isMobile && (
                   <div style={{ borderRadius: 11, overflow: 'hidden', height: 105, border: '1px solid rgba(110,231,183,0.32)' }}>
-                    <img src="/images/3d/yolo_traffic.jpg" alt="YOLO Detection" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src="/images/3d/yolo_traffic.webp" alt="YOLO Detection" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                 )}
               </div>
@@ -340,7 +340,7 @@ export default function DomainArchitectureStage() {
               {/* Large 3D Chrome Shield (only on desktop to prevent overflow) */}
               {!isMobile && (
                 <div style={{ position: 'absolute', right: -66, bottom: -32, width: 128, height: 154, zIndex: 25, filter: 'drop-shadow(-10px 18px 28px rgba(15,23,42,0.32))', pointerEvents: 'none', transform: 'rotate(-5deg)' }}>
-                  <img src="/images/3d/shield_3d.jpg" alt="Security Shield" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  <img src="/images/3d/shield_3d.webp" alt="Security Shield" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
               )}
               <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.9)', border: '1px solid rgba(203,213,225,0.7)', borderRadius: 999, padding: '3px 9px', marginBottom: 9, fontFamily: "'Space Mono',monospace", fontSize: '0.56rem', fontWeight: 700, color: '#0c4a6e' }}>
