@@ -27,10 +27,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
         {/* Section 2: Featured Ventures Showcase */}
         <section style={{ padding: '60px 0 80px 0', position: 'relative' }}>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '36px' }}
           >
             <div>
@@ -212,10 +212,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
 
           {/* Header row — no white wrapper, sits on gradient */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '20px', marginBottom: '32px' }}
           >
             <div>
@@ -276,10 +276,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
 
               {/* Sphere 1: Languages & WASM — pushed DOWN 50px */}
               <motion.div
-                initial={{ opacity: 0, x: -40 }}
+                initial={false}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.5 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}
               >
@@ -314,10 +314,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
 
               {/* Sphere 2: Hardware & Web Serial — at TOP (marginTop:0), largest, most prominent */}
               <motion.div
-                initial={{ opacity: 0, y: -30 }}
+                initial={false}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.1 }}
+                transition={{ duration: 0.5 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 style={{ display: 'flex', justifyContent: 'center', marginTop: 0 }}
               >
@@ -352,10 +352,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
 
               {/* Sphere 3: AI & Cybersecurity — pushed DOWN 50px matching left */}
               <motion.div
-                initial={{ opacity: 0, x: 40 }}
+                initial={false}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.2 }}
+                transition={{ duration: 0.5 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
                 style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}
               >
@@ -396,10 +396,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
         {/* Section 4: High-Impact Conversion Banner — 3D Glass Slab Container */}
         <section style={{ paddingBottom: '80px' }}>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             style={{
               position: 'relative',
               borderRadius: '28px',

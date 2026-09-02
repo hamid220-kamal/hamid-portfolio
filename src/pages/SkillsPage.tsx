@@ -78,9 +78,9 @@ export default function SkillsPage() {
         
         {/* Page Header Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           style={{ marginBottom: '44px', textAlign: 'center', position: 'relative' }}
         >
           <div className="section-tag" style={{
@@ -136,9 +136,9 @@ export default function SkillsPage() {
 
         {/* 3D 4-Station Cyber Platform Stage Visual (Exact match to Image 2) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
+          transition={{ duration: 0.4 }}
           style={{
             position: 'relative',
             borderRadius: '28px',
@@ -166,10 +166,10 @@ export default function SkillsPage() {
           {toolchainDomains.map((domain, idx) => (
             <motion.div
               key={domain.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               whileHover={{ y: -6, scale: 1.01 }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              transition={{ duration: 0.35, delay: idx * 0.04 }}
               style={{
                 background: 'linear-gradient(145deg, rgba(255,255,255,0.72) 0%, rgba(248,250,252,0.48) 100%)',
                 backdropFilter: 'blur(24px)',
@@ -245,9 +245,9 @@ export default function SkillsPage() {
 
         {/* Bottom CTA Banner — 3D Cyber Console Dark Stage */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5 }}
           style={{
             position: 'relative',
             borderRadius: '28px',

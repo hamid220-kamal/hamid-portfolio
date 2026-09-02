@@ -65,11 +65,11 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
     return (
       <motion.div
         key={project.id}
-        initial={{ opacity: 0, y: 24 }}
+        initial={false}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-40px' }}
+        viewport={{ once: true }}
         whileHover={{ y: -6, scale: 1.015 }}
-        transition={{ duration: 0.35, delay: idx * 0.05 }}
+        transition={{ duration: 0.35, delay: idx * 0.03 }}
         style={{
           background:
             'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
@@ -305,10 +305,10 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
     accentColor: string,
   ) => (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
       style={{ marginBottom: '36px' }}
     >
       <div
@@ -360,9 +360,9 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
 
         {/* ═══════════ Page Header Banner ═══════════ */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           style={{ marginBottom: '44px', textAlign: 'center', position: 'relative' }}
         >
           <div
@@ -434,9 +434,9 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
 
         {/* ═══════════ Stats Badges Row ═══════════ */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.4 }}
           style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -561,9 +561,9 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
 
         {/* ═══════════ 3D Isometric Stage Visual ═══════════ */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4 }}
           style={{
             position: 'relative',
             borderRadius: '28px',
@@ -638,10 +638,10 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
 
         {/* ═══════════ Bottom CTA Banner ═══════════ */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4 }}
           style={{
             marginTop: '80px',
             position: 'relative',

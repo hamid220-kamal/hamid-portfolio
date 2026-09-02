@@ -49,9 +49,9 @@ export default function AboutPage() {
         
         {/* Page Header Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           style={{ marginBottom: '44px' }}
         >
           <div className="section-tag" style={{
@@ -102,9 +102,9 @@ export default function AboutPage() {
 
         {/* Outer 3D Glass Slab Plate Container around BOTH Cards */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4 }}
           style={{
             position: 'relative',
             borderRadius: '32px',
@@ -267,9 +267,9 @@ export default function AboutPage() {
 
         {/* Engineering Pillars Section — 3D Stage & Pedestal Towers (Exact match to Image 2) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.4 }}
           style={{ marginTop: '80px', marginBottom: '80px', position: 'relative' }}
         >
           <div className="section-tag" style={{
@@ -396,9 +396,9 @@ export default function AboutPage() {
 
         {/* Engineering Mindset / Principles Grid — 3D Cyber Sculptures Stage (Exact match to Image 2) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.4 }}
           style={{ marginBottom: '80px', position: 'relative' }}
         >
           <div className="section-tag" style={{
@@ -499,9 +499,9 @@ export default function AboutPage() {
 
         {/* Bottom CTA Banner — High-Tech 3D Cyber Console Slab Frame (Exact match to Image 2) */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.4 }}
           style={{
             position: 'relative',
             borderRadius: '28px',

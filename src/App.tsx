@@ -1,10 +1,12 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense, useEffect } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Effects from './components/Effects';
 import CommandPalette from './components/CommandPalette';
 import ProjectModal from './components/ProjectModal';
+import AppPreloader from './components/AppPreloader';
 import { RouterProvider, useRouter } from './context/RouterContext';
+import { prefetchAllRoutes } from './utils/routePrefetch';
 import type { Project } from './data/projects';
 
 // Lazy load dedicated multi-section pages
@@ -21,11 +23,17 @@ function MainContent() {
   const { currentPath } = useRouter();
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isPreloading, setIsPreloading] = useState(true);
+
+  // Trigger idle background prefetching of all other routes immediately after mount
+  useEffect(() => {
+    prefetchAllRoutes();
+  }, []);
 
   const pageVariants: Variants = {
-    initial: { opacity: 0, y: 16 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const } },
-    exit: { opacity: 0, y: -16, transition: { duration: 0.2 } },
+    initial: { opacity: 0, y: 12 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const } },
+    exit: { opacity: 0, y: -12, transition: { duration: 0.15 } },
   };
 
   const renderCurrentPage = () => {
@@ -52,6 +60,15 @@ function MainContent() {
 
   return (
     <>
+      {isPreloading && (
+        <AppPreloader
+          onComplete={() => {
+            setIsPreloading(false);
+            prefetchAllRoutes();
+          }}
+        />
+      )}
+
       <Effects />
       <Navbar onOpenCommandPalette={() => setIsCommandPaletteOpen(true)} />
       
@@ -60,7 +77,7 @@ function MainContent() {
           <motion.div
             key={currentPath}
             variants={pageVariants}
-            initial="initial"
+            initial={false}
             animate="animate"
             exit="exit"
           >

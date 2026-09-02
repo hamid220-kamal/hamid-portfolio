@@ -81,9 +81,9 @@ export default function ContactPage() {
         
         {/* 1. Header Banner — Left Aligned (Exact match to Image 2) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           style={{ marginBottom: '36px' }}
         >
           <div style={{
@@ -129,9 +129,9 @@ export default function ContactPage() {
 
         {/* 2. Top Row: Direct Inquiries Glass Pod + GitHub & LinkedIn Stack + 3D Cyber Cube Assembly (Exact Match to Image 2) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.4 }}
           style={{
             display: 'grid',
             gridTemplateColumns: '1.1fr 0.9fr 220px',
@@ -294,9 +294,9 @@ export default function ContactPage() {
 
         {/* 3. Bottom Row: 3D Glass Form Slab ("Send Direct Message") (Exact Match to Image 2 Structure) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.4 }}
           style={{
             background: 'linear-gradient(145deg, rgba(255,255,255,0.85) 0%, rgba(248,250,252,0.55) 100%)',
             backdropFilter: 'blur(24px)',
@@ -529,9 +529,9 @@ export default function ContactPage() {
 
         {/* 4. Frequently Asked Questions Section (3D Light Glassmorphic Accordion Stage) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.4 }}
           style={{
             position: 'relative',
             width: '100%',

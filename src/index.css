@@ -347,4 +347,18 @@ body {
     border-left: none !important;
     border-top: 1px solid #e2e8f0 !important;
   }
+
+  /* Mobile Instant Rendering Safeguards (Prevent Blank Background During Fast Scrolling) */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Ensure hardware compositor renders layers without latency */
+  section,
+  main > div,
+  .projects-grid,
+  .stack-grid {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
 }

@@ -73,9 +73,9 @@ export default function CertificatesPage() {
         
         {/* 1. Header Section — Verified Professional Credentials Dashboard */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           style={{ textAlign: 'center', marginBottom: '36px' }}
         >
           {/* Title with Blue Checkmark */}
@@ -289,9 +289,9 @@ export default function CertificatesPage() {
 
           {/* Center 3D Validated Hub Stage */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             style={{
               position: 'relative',
               borderRadius: '26px',
@@ -469,9 +469,9 @@ export default function CertificatesPage() {
 
         {/* 4. Bottom CTA Banner — Verified Compliance Dossier */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.4 }}
           style={{
             position: 'relative',
             marginTop: '40px',

@@ -87,7 +87,7 @@ export default function DomainArchitectureStage() {
       <div style={{ maxWidth: '1320px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 40px', position: 'relative', zIndex: 2 }}>
 
         {/* ─── Header ─── */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} style={{ marginBottom: isMobile ? 24 : 36 }}>
+        <motion.div initial={false} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} style={{ marginBottom: isMobile ? 24 : 36 }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             background: 'rgba(255,255,255,0.75)', backdropFilter: 'blur(12px)',
@@ -182,10 +182,10 @@ export default function DomainArchitectureStage() {
             {/* ══ CARD 1: Industrial CAD/CAM (LEFT) ══ */}
             <motion.div
               ref={cardRefs[0]}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.5 }}
               whileHover={{ y: -6, transition: { duration: 0.3 } }}
               onClick={() => navigate('/projects')}
               style={isMobile ? {
@@ -250,10 +250,10 @@ export default function DomainArchitectureStage() {
             {/* ══ CARD 2: Computer Vision & AI (CENTER TOP) ══ */}
             <motion.div
               ref={cardRefs[1]}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 0.5 }}
               whileHover={{ y: -6, transition: { duration: 0.3 } }}
               onClick={() => navigate('/projects')}
               style={isMobile ? {
@@ -307,10 +307,10 @@ export default function DomainArchitectureStage() {
             {/* ══ CARD 3: Defensive Architecture (FAR RIGHT) ══ */}
             <motion.div
               ref={cardRefs[2]}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.15 }}
+              transition={{ duration: 0.5 }}
               whileHover={{ y: -6, transition: { duration: 0.3 } }}
               onClick={() => navigate('/experience')}
               style={isMobile ? {
@@ -361,10 +361,10 @@ export default function DomainArchitectureStage() {
             {/* ══ CARD 4: High-Availability Web Systems (BOTTOM RIGHT) ══ */}
             <motion.div
               ref={cardRefs[3]}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
               whileHover={{ y: -6, transition: { duration: 0.3 } }}
               onClick={() => navigate('/skills')}
               style={isMobile ? {

@@ -11,9 +11,9 @@ export default function ExperiencePage() {
         
         {/* Page Header Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           style={{ marginBottom: '44px', textAlign: 'center', position: 'relative' }}
         >
           <div className="section-tag" style={{
@@ -180,9 +180,9 @@ export default function ExperiencePage() {
 
             {/* 3D Quantum Trajectory Orbit Sculpture Showcase Stage */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.4 }}
               style={{
                 marginTop: '12px',
                 position: 'relative',
@@ -258,7 +258,7 @@ export default function ExperiencePage() {
             
             {/* Card 1: CTO Learn Quran */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               style={{
@@ -332,9 +332,9 @@ export default function ExperiencePage() {
 
             {/* Card 2: Former Co-Founder & Lead Systems Engineer */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              transition={{ duration: 0.4 }}
               style={{
                 background: 'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
                 backdropFilter: 'blur(24px)',
@@ -411,9 +411,9 @@ export default function ExperiencePage() {
                 
                 {/* Card 3: Web Architecture Intern */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.15 }}
+                  transition={{ duration: 0.4 }}
                   style={{
                     background: 'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
                     backdropFilter: 'blur(24px)',
@@ -457,9 +457,9 @@ export default function ExperiencePage() {
 
                 {/* Card 4: AI Systems Intern */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.2 }}
+                  transition={{ duration: 0.4 }}
                   style={{
                     background: 'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
                     backdropFilter: 'blur(24px)',
@@ -505,9 +505,9 @@ export default function ExperiencePage() {
 
               {/* Right Column: 3D Cyber Data Query Diorama Stage Visual */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.4 }}
                 style={{
                   position: 'relative',
                   borderRadius: '24px',
@@ -528,9 +528,9 @@ export default function ExperiencePage() {
 
             {/* Card 5: Computer Vision Intern (with Object Detector Scanner Badge) */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.25 }}
+              transition={{ duration: 0.4 }}
               style={{
                 background: 'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
                 backdropFilter: 'blur(24px)',
@@ -609,9 +609,9 @@ export default function ExperiencePage() {
 
         {/* Bottom CTA Banner — 3D Cyber Console Dark Showcase Stage */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.4 }}
           style={{
             position: 'relative',
             marginTop: '40px',
