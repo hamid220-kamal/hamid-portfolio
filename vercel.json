@@ -65,7 +65,7 @@
       ]
     },
     {
-      "source": "/(robots.txt|sitemap.xml|llms.txt|llms-full.txt|manifest.json|*.txt)",
+      "source": "/(robots.txt|sitemap.xml|llms.txt|llms-full.txt|manifest.json|e8f49a21b3c748d5910fae62319087cd.txt)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -76,7 +76,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ]
