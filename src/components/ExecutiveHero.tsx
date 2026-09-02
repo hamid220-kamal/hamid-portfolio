@@ -26,6 +26,7 @@ export default function ExecutiveHero() {
   return (
     <section
       id="home"
+      className="executive-hero-section"
       style={{
         minHeight: '94vh',
         display: 'flex',
@@ -109,9 +110,10 @@ export default function ExecutiveHero() {
             
             {/* Main Headline */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="hero-headline"
               style={{
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontSize: 'clamp(1.9rem, 6.5vw, 4.8rem)',
@@ -121,7 +123,7 @@ export default function ExecutiveHero() {
                 letterSpacing: '-0.03em',
                 color: '#0f172a',
                 maxWidth: '640px',
-                wordBreak: 'break-word',
+                wordBreak: 'normal',
               }}
             >
               Engineering <span style={{
@@ -133,24 +135,29 @@ export default function ExecutiveHero() {
 
             {/* Paragraph Bio */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className="hero-bio"
               style={{
-                fontSize: 'clamp(0.95rem, 1.6vw, 1.22rem)',
+                fontSize: 'clamp(0.92rem, 1.5vw, 1.2rem)',
                 color: '#334155',
                 marginBottom: '28px',
                 maxWidth: '620px',
                 lineHeight: 1.65,
-                fontWeight: 400
+                fontWeight: 400,
+                wordBreak: 'normal',
+                overflowWrap: 'break-word',
+                hyphens: 'none',
+                WebkitHyphens: 'none',
               }}
             >
-              I'm <strong style={{ color: '#0f172a', fontWeight: 700 }}>Hamid Kamal</strong>. Chief Technology Officer (CTO) at <strong style={{ color: '#2563eb', fontWeight: 700 }}>Learn Quran</strong> (real-time EdTech platform) and former Co-Founder &amp; Lead Systems Engineer at <strong style={{ color: '#2563eb', fontWeight: 700 }}>CNC Jugaaadi</strong> (browser CAD/CAM via Web Serial API). I build robust web apps, hardware serial control logic, and computer vision pipelines.
+              I'm <strong style={{ color: '#0f172a', fontWeight: 700 }}>Hamid Kamal</strong>. Chief Technology Officer (CTO) at <strong style={{ color: '#2563eb', fontWeight: 700 }}>Learn Quran</strong> (real-time EdTech platform) and former <span style={{ whiteSpace: 'nowrap' }}>Co&#8209;Founder</span> &amp; Lead Systems Engineer at <strong style={{ color: '#2563eb', fontWeight: 700 }}>CNC Jugaaadi</strong> (browser CAD/CAM via Web Serial API). I build robust <span style={{ whiteSpace: 'nowrap' }}>web apps</span>, hardware serial control logic, and computer vision pipelines.
             </motion.p>
 
             {/* Live Telemetry Dark Teal Capsule Widget */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="telemetry-capsule"
@@ -229,7 +236,7 @@ export default function ExecutiveHero() {
 
             {/* Action Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="hero-action-btns"
@@ -237,7 +244,7 @@ export default function ExecutiveHero() {
             >
               <button 
                 onClick={() => navigate('/projects')} 
-                className="btn-primary hero-btn"
+                className="btn-primary hero-btn hero-btn-primary"
                 style={{
                   background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
                   borderColor: '#2563eb',
@@ -248,13 +255,14 @@ export default function ExecutiveHero() {
                   boxShadow: '0 8px 24px -4px rgba(37, 99, 235, 0.4)'
                 }}
               >
-                Explore Selected Ventures
+                <span className="btn-text-desktop">Explore Selected Ventures</span>
+                <span className="btn-text-mobile">Selected Ventures</span>
                 <FiArrowRight size={16} />
               </button>
 
               <a 
                 href="/Hamid Kamal - Resume.pdf" 
-                className="btn-secondary hero-btn" 
+                className="btn-secondary hero-btn hero-btn-secondary" 
                 download
                 style={{
                   background: '#ffffff',
@@ -267,7 +275,7 @@ export default function ExecutiveHero() {
                 }}
               >
                 <FiDownload size={16} />
-                Executive CV
+                <span>Executive CV</span>
               </a>
             </motion.div>
 
@@ -275,9 +283,9 @@ export default function ExecutiveHero() {
 
           {/* Right Column Stage — Rotated 3D Hologram Frame */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="hero-right-stage"
           >
             <div className="hologram-rotated-container">
@@ -483,40 +491,135 @@ export default function ExecutiveHero() {
           transform: translateY(-2px);
         }
 
+        .btn-text-desktop {
+          display: inline;
+        }
+        .btn-text-mobile {
+          display: none;
+        }
+
         @media (max-width: 1024px) {
           .hero-reference-grid {
             grid-template-columns: 1fr;
             padding-left: 0;
-            gap: 40px;
+            gap: 36px;
           }
           .hero-right-stage {
-            max-width: 340px;
-            margin: 20px auto 0;
+            max-width: 320px;
+            margin: 16px auto 0;
           }
         }
 
         @media (max-width: 640px) {
+          .executive-hero-section {
+            min-height: auto !important;
+            padding-top: 76px !important;
+            padding-bottom: 24px !important;
+          }
+          .btn-text-desktop {
+            display: none !important;
+          }
+          .btn-text-mobile {
+            display: inline !important;
+          }
+          .hero-reference-grid {
+            gap: 18px !important;
+          }
+          .hero-headline {
+            font-size: clamp(1.75rem, 5.8vw, 2.3rem) !important;
+            margin-bottom: 10px !important;
+            line-height: 1.15 !important;
+          }
+          .hero-bio {
+            font-size: 0.88rem !important;
+            line-height: 1.55 !important;
+            margin-bottom: 14px !important;
+          }
+          .telemetry-capsule {
+            padding: 8px 12px !important;
+            border-radius: 14px !important;
+            margin-bottom: 16px !important;
+          }
           .telemetry-ecg-wave {
             display: none !important;
           }
           .hero-action-btns {
-            flex-direction: column !important;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 8px !important;
             width: 100% !important;
+            margin-bottom: 8px !important;
           }
           .hero-btn {
             width: 100% !important;
+            padding: 9px 8px !important;
+            font-size: 0.78rem !important;
+            height: 40px !important;
+            min-height: 40px !important;
+            border-radius: 999px !important;
+            display: inline-flex !important;
+            align-items: center !important;
             justify-content: center !important;
+            gap: 5px !important;
+            white-space: nowrap !important;
+            box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.3) !important;
+          }
+          .hero-btn svg {
+            width: 13px !important;
+            height: 13px !important;
+            flex-shrink: 0 !important;
+          }
+          .hero-right-stage {
+            max-width: 250px !important;
+            margin: 12px auto 0 !important;
+          }
+          .hologram-rotated-container {
+            aspect-ratio: 1 / 1.12 !important;
+          }
+          .dark-rotated-backdrop {
+            transform: rotate(4deg) !important;
+            border-radius: 26px !important;
+          }
+          .rotated-photo-card {
+            transform: rotate(-3deg) !important;
+            border-radius: 24px !important;
+          }
+          .bottom-profile-card {
+            padding: 6px 10px !important;
+            bottom: 8px !important;
+            left: 8px !important;
+            right: 8px !important;
+            border-radius: 10px !important;
+            gap: 8px !important;
+          }
+          .bottom-profile-card > div:first-child {
+            width: 24px !important;
+            height: 24px !important;
+          }
+          .bottom-profile-card > div:first-child svg {
+            width: 12px !important;
+            height: 12px !important;
+          }
+          .bottom-profile-card div > div:first-child {
+            font-size: 0.75rem !important;
+          }
+          .bottom-profile-card div > div:last-child {
+            font-size: 0.6rem !important;
           }
           .floating-hk-badge {
-            width: 56px !important;
-            height: 56px !important;
-            font-size: 1rem !important;
-            top: -12px !important;
-            right: -10px !important;
+            width: 50px !important;
+            height: 50px !important;
+            font-size: 0.95rem !important;
+            top: -10px !important;
+            right: -8px !important;
           }
           .social-pill-btn {
-            width: 38px !important;
-            height: 38px !important;
+            width: 34px !important;
+            height: 34px !important;
+          }
+          .social-pill-btn svg {
+            width: 14px !important;
+            height: 14px !important;
           }
         }
       `}</style>
