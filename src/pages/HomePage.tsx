@@ -20,7 +20,7 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
       <ExecutiveHero />
 
       <div className="container">
-        
+
         {/* Section 1: 3D Orbital Domain Architecture Stage (Matching Image 1) */}
         <DomainArchitectureStage />
 
@@ -74,9 +74,11 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
                 alt="Innovation Engine"
                 loading="lazy"
                 decoding="async"
-                style={{ width: '100%', borderRadius: '50%', display: 'block',
+                style={{
+                  width: '100%', borderRadius: '50%', display: 'block',
                   boxShadow: '0 0 0 8px rgba(255,255,255,0.55), 0 0 0 16px rgba(56,189,248,0.15)',
-                  willChange: 'transform' }}
+                  willChange: 'transform'
+                }}
               />
               <div style={{
                 textAlign: 'center', marginTop: 10,
@@ -115,8 +117,10 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
                         alt={project.title}
                         loading="lazy"
                         decoding="async"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block',
-                          transition: 'transform 0.5s ease', willChange: 'transform' }}
+                        style={{
+                          width: '100%', height: '100%', objectFit: 'cover', display: 'block',
+                          transition: 'transform 0.5s ease', willChange: 'transform'
+                        }}
                         onMouseOver={e => (e.currentTarget.style.transform = 'scale(1.05)')}
                         onMouseOut={e => (e.currentTarget.style.transform = 'scale(1)')}
                       />
@@ -247,25 +251,25 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
             >
               <defs>
                 <filter id="sg1" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="4" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  <feGaussianBlur stdDeviation="4" result="b" />
+                  <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
               </defs>
 
               {/* LEFT sphere equator (167, 195) → CENTER sphere equator (500, 175) */}
-              <path d="M 167 195 C 280 205 400 178 500 175" stroke="rgba(34,211,238,0.15)" strokeWidth="28" fill="none" strokeLinecap="round"/>
-              <path d="M 167 195 C 280 205 400 178 500 175" stroke="rgba(34,211,238,0.45)" strokeWidth="8" fill="none" strokeLinecap="round"/>
+              <path d="M 167 195 C 280 205 400 178 500 175" stroke="rgba(34,211,238,0.15)" strokeWidth="28" fill="none" strokeLinecap="round" />
+              <path d="M 167 195 C 280 205 400 178 500 175" stroke="rgba(34,211,238,0.45)" strokeWidth="8" fill="none" strokeLinecap="round" />
               <path d="M 167 195 C 280 205 400 178 500 175" stroke="#22d3ee" strokeWidth="2" fill="none" strokeLinecap="round" filter="url(#sg1)">
-                <animate attributeName="stroke-dashoffset" from="450" to="0" dur="2.2s" repeatCount="indefinite"/>
-                <animate attributeName="stroke-dasharray" from="0 450" to="450 0" dur="2.2s" repeatCount="indefinite"/>
+                <animate attributeName="stroke-dashoffset" from="450" to="0" dur="2.2s" repeatCount="indefinite" />
+                <animate attributeName="stroke-dasharray" from="0 450" to="450 0" dur="2.2s" repeatCount="indefinite" />
               </path>
 
               {/* CENTER sphere equator (500, 175) → RIGHT sphere equator (833, 195) */}
-              <path d="M 500 175 C 600 178 720 205 833 195" stroke="rgba(52,211,153,0.15)" strokeWidth="28" fill="none" strokeLinecap="round"/>
-              <path d="M 500 175 C 600 178 720 205 833 195" stroke="rgba(52,211,153,0.45)" strokeWidth="8" fill="none" strokeLinecap="round"/>
+              <path d="M 500 175 C 600 178 720 205 833 195" stroke="rgba(52,211,153,0.15)" strokeWidth="28" fill="none" strokeLinecap="round" />
+              <path d="M 500 175 C 600 178 720 205 833 195" stroke="rgba(52,211,153,0.45)" strokeWidth="8" fill="none" strokeLinecap="round" />
               <path d="M 500 175 C 600 178 720 205 833 195" stroke="#34d399" strokeWidth="2" fill="none" strokeLinecap="round" filter="url(#sg1)">
-                <animate attributeName="stroke-dashoffset" from="450" to="0" dur="2.6s" repeatCount="indefinite"/>
-                <animate attributeName="stroke-dasharray" from="0 450" to="450 0" dur="2.6s" repeatCount="indefinite"/>
+                <animate attributeName="stroke-dashoffset" from="450" to="0" dur="2.6s" repeatCount="indefinite" />
+                <animate attributeName="stroke-dasharray" from="0 450" to="450 0" dur="2.6s" repeatCount="indefinite" />
               </path>
             </svg>
 

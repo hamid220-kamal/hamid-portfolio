@@ -253,10 +253,10 @@ body {
     min-height: auto !important;
   }
 
-  .cta-banner-box > div,
-  .projects-cta-inner-box > div,
-  .skills-cta-inner-box > div,
-  .about-cta-inner-box > div {
+  .cta-banner-box>div,
+  .projects-cta-inner-box>div,
+  .skills-cta-inner-box>div,
+  .about-cta-inner-box>div {
     max-width: 100% !important;
   }
 }
@@ -293,7 +293,8 @@ body {
   }
 
   /* Make sure images and 3D preview containers fit small screens */
-  img, svg {
+  img,
+  svg {
     max-width: 100%;
     height: auto;
   }
@@ -324,9 +325,11 @@ body {
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important;
   }
+
   .category-pills-container::-webkit-scrollbar {
     display: none !important;
   }
+
   .category-pills-container button {
     white-space: nowrap !important;
     flex-shrink: 0 !important;
@@ -339,11 +342,13 @@ body {
     max-height: 75vh !important;
     overflow-y: auto !important;
   }
-  .modal-pdf-split > div:first-child {
+
+  .modal-pdf-split>div:first-child {
     height: 380px !important;
     min-height: 340px !important;
   }
-  .modal-pdf-split > div:last-child {
+
+  .modal-pdf-split>div:last-child {
     border-left: none !important;
     border-top: 1px solid #e2e8f0 !important;
   }
@@ -352,10 +357,10 @@ body {
   * {
     -webkit-tap-highlight-color: transparent;
   }
-  
+
   /* Ensure hardware compositor renders layers without latency */
   section,
-  main > div,
+  main>div,
   .projects-grid,
   .stack-grid {
     transform: translateZ(0);
