@@ -465,7 +465,10 @@ export default function ProjectsPage({ onSelectProject }: ProjectsPageProps) {
           >
             <img
               src="/images/hamid-ai-developer-portfolio.webp"
-              alt="Hamid Kamal Avatar"
+              alt="Hamid Kamal - AI Developer &amp; Systems Architect"
+              title="Hamid Kamal"
+              width="40"
+              height="40"
               style={{
                 width: '40px',
                 height: '40px',

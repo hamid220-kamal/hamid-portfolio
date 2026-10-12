@@ -1,47 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://hamid-ai-dev.vercel.app/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://hamid-ai-dev.vercel.app/images/hamid-kamal-ai-developer.jpg</image:loc>
+      <image:title>Hamid Kamal — 17yo AI Developer, Full Stack Software Engineer &amp; Founder</image:title>
+      <image:caption>Official portrait photograph of Hamid Kamal, 17-year-old AI Developer, Full Stack Software Engineer, and Founder based in Hyderabad.</image:caption>
+      <image:geo_location>Hyderabad, Telangana, India</image:geo_location>
+      <image:license>https://hamid-ai-dev.vercel.app/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://hamid-ai-dev.vercel.app/images/hamid-ai-developer-portfolio.jpg</image:loc>
+      <image:title>Hamid Kamal — AI Developer &amp; Systems Architect</image:title>
+      <image:caption>Official headshot of Hamid Kamal, 17yo AI Developer and Founder.</image:caption>
+      <image:geo_location>Hyderabad, Telangana, India</image:geo_location>
+      <image:license>https://hamid-ai-dev.vercel.app/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://hamid-ai-dev.vercel.app/images/hamid-kamal.jpg</image:loc>
+      <image:title>Hamid Kamal</image:title>
+      <image:caption>Hamid Kamal portrait headshot photograph.</image:caption>
+      <image:geo_location>Hyderabad, Telangana, India</image:geo_location>
+      <image:license>https://hamid-ai-dev.vercel.app/</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://hamid-ai-dev.vercel.app/about</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://hamid-ai-dev.vercel.app/images/hamid-founder-banner.jpg</image:loc>
+      <image:title>Hamid Kamal — Founder of Design Swiftly &amp; CTO of Learn Quran</image:title>
+      <image:caption>Hamid Kamal executive founder banner and software architect identity.</image:caption>
+      <image:geo_location>Hyderabad, Telangana, India</image:geo_location>
+      <image:license>https://hamid-ai-dev.vercel.app/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://hamid-ai-dev.vercel.app/images/hamid-kamal-software-engineer.jpg</image:loc>
+      <image:title>Hamid Kamal — Full Stack Software Engineer Coding in Workspace</image:title>
+      <image:caption>Hamid Kamal developing machine learning models and Web Serial CAD/CAM software in Hyderabad workspace.</image:caption>
+      <image:geo_location>Hyderabad, Telangana, India</image:geo_location>
+      <image:license>https://hamid-ai-dev.vercel.app/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://hamid-ai-dev.vercel.app/images/hamid-about-workspace.jpg</image:loc>
+      <image:title>Hamid Kamal Software Engineering Workspace</image:title>
+      <image:caption>Hamid Kamal active software engineering and AI systems development workspace.</image:caption>
+      <image:geo_location>Hyderabad, Telangana, India</image:geo_location>
+      <image:license>https://hamid-ai-dev.vercel.app/</image:license>
+    </image:image>
   </url>
   <url>
     <loc>https://hamid-ai-dev.vercel.app/projects</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hamid-ai-dev.vercel.app/skills</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hamid-ai-dev.vercel.app/experience</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hamid-ai-dev.vercel.app/certificates</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://hamid-ai-dev.vercel.app/contact</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

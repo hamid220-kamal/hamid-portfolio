@@ -26,8 +26,15 @@
 - **Cloud & DevOps**: Oracle Cloud (OCI Certified), Google Cloud, Docker, Git, Linux
 - **Hardware**: Arduino, ESP32, Raspberry Pi, GRBL CNC Controllers
 
+## Official Media & Verified Face Photographs
+- **Primary Portrait (Canonical)**: https://hamid-ai-dev.vercel.app/images/hamid-kamal-ai-developer.jpg (Description: Hamid Kamal — 17yo AI Developer, Full Stack Software Engineer & Founder)
+- **Portfolio Headshot**: https://hamid-ai-dev.vercel.app/images/hamid-ai-developer-portfolio.jpg (Description: Official headshot portrait of Hamid Kamal)
+- **Software Engineering Workspace**: https://hamid-ai-dev.vercel.app/images/hamid-kamal-software-engineer.jpg (Description: Hamid Kamal developing AI models and Web Serial software in workspace)
+- **Founder & Executive Banner**: https://hamid-ai-dev.vercel.app/images/hamid-founder-banner.jpg (Description: Hamid Kamal — Founder of Design Swiftly & CTO of Learn Quran)
+
 ## Links
 - [Verified Certificates](https://hamid-ai-dev.vercel.app/certificates)
 - [Projects](https://hamid-ai-dev.vercel.app/projects)
 - [Skills & Tools](https://hamid-ai-dev.vercel.app/skills)
 - [Contact](https://hamid-ai-dev.vercel.app/contact)
+

@@ -119,7 +119,8 @@ export default function AboutPage() {
         >
           <img
             src="/images/hamid-founder-banner.webp"
-            alt="Hamid Kamal - Founder-minded Developer"
+            alt="Hamid Kamal — Founder &amp; CTO (Design Swiftly &amp; Learn Quran)"
+            title="Hamid Kamal — Founder &amp; CTO"
             width="1024"
             height="381"
             loading="eager"
@@ -259,7 +260,8 @@ export default function AboutPage() {
                     <motion.img
                       key={activePhoto}
                       src={activePhoto === 'workspace' ? '/images/hamid-about-workspace.webp' : '/images/hamid-ai-developer-portfolio.webp'}
-                      alt={activePhoto === 'workspace' ? 'Hamid Kamal Active Coding' : 'Hamid Kamal Profile'}
+                      alt={activePhoto === 'workspace' ? 'Hamid Kamal — Software Engineer & AI Researcher coding in workspace' : 'Hamid Kamal — 17yo AI Developer, Full Stack Software Engineer & Founder portrait'}
+                      title={activePhoto === 'workspace' ? 'Hamid Kamal — Software Engineering Workspace' : 'Hamid Kamal — Official Portrait'}
                       width="400"
                       height="520"
                       initial={{ opacity: 0, scale: 1.02 }}

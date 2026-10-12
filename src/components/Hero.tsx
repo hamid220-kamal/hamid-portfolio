@@ -152,7 +152,10 @@ export default function Hero() {
                 >
                     <img
                         src="/images/hamid-ai-developer-portfolio.webp"
-                        alt="Hamid Kamal"
+                        alt="Hamid Kamal - 17yo AI Developer, Full Stack Software Engineer &amp; Founder"
+                        title="Hamid Kamal — AI Developer &amp; Founder"
+                        width="160"
+                        height="160"
                         style={{
                             width: '100%',
                             height: '100%',
