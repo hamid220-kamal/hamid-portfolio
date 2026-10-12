@@ -41,12 +41,22 @@ export default function DomainArchitectureStage() {
   const [cardPts, setCardPts] = useState<Pt[]>([
     { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 },
   ]);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') return window.innerWidth <= 900;
+    return false;
+  });
 
   const measure = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    const mobile = window.innerWidth <= 900;
+    setIsMobile(mobile);
+    if (mobile) {
+      setSvgDim({ w: 0, h: 0 });
+      return;
+    }
+
     const stage = stageRef.current;
     const eng   = engineRef.current;
-    setIsMobile(window.innerWidth <= 900);
     if (!stage || !eng) return;
 
     const sr = stage.getBoundingClientRect();
@@ -70,6 +80,10 @@ export default function DomainArchitectureStage() {
   }, []);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 900) {
+      window.addEventListener('resize', measure);
+      return () => window.removeEventListener('resize', measure);
+    }
     measure();
     const t1 = setTimeout(measure, 300);
     const t2 = setTimeout(measure, 800);
@@ -163,7 +177,7 @@ export default function DomainArchitectureStage() {
             zIndex: 10, borderRadius: '50%', overflow: 'hidden',
             boxShadow: '0 0 0 8px rgba(255,255,255,0.6), 0 0 0 18px rgba(56,189,248,0.18), 0 30px 80px -10px rgba(37,99,235,0.25)',
           }}>
-            <img src="/images/3d/engine_3d.webp" alt="Core Engine" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src="/images/3d/engine_3d.webp" alt="Core Engine" width="240" height="240" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             <div style={{
               position: 'absolute', bottom: 0, left: 0, right: 0,
               background: 'linear-gradient(transparent, rgba(15,23,42,0.88))',

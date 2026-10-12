@@ -72,6 +72,8 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
               <img
                 src="/images/3d/engine_3d.webp"
                 alt="Innovation Engine"
+                width="220"
+                height="220"
                 loading="lazy"
                 decoding="async"
                 style={{
@@ -289,6 +291,8 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
                   <img
                     src="/images/3d/sphere_code.webp"
                     alt="Languages & WASM"
+                    width="290"
+                    height="290"
                     loading="lazy"
                     decoding="async"
                     style={{
@@ -329,6 +333,8 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
                   <img
                     src="/images/3d/sphere_hardware.webp"
                     alt="Hardware & Web Serial"
+                    width="350"
+                    height="350"
                     loading="lazy"
                     decoding="async"
                     style={{
@@ -369,6 +375,8 @@ export default function HomePage({ onSelectProject }: HomePageProps) {
                   <img
                     src="/images/3d/sphere_cyber.webp"
                     alt="AI & Cybersecurity"
+                    width="290"
+                    height="290"
                     loading="lazy"
                     decoding="async"
                     style={{

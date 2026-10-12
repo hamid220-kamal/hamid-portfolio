@@ -1,38 +1,27 @@
-import { useState, lazy, Suspense, useEffect } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Effects from './components/Effects';
 import CommandPalette from './components/CommandPalette';
 import ProjectModal from './components/ProjectModal';
-import AppPreloader from './components/AppPreloader';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
+import HomePage from './pages/HomePage';
+import Footer from './components/Footer';
 import { RouterProvider, useRouter } from './context/RouterContext';
-import { prefetchAllRoutes } from './utils/routePrefetch';
 import type { Project } from './data/projects';
 
-// Lazy load dedicated multi-section pages
-const HomePage = lazy(() => import('./pages/HomePage'));
+// Lazy load dedicated secondary pages on demand
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
 const SkillsPage = lazy(() => import('./pages/SkillsPage'));
 const ExperiencePage = lazy(() => import('./pages/ExperiencePage'));
 const CertificatesPage = lazy(() => import('./pages/CertificatesPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
-const Footer = lazy(() => import('./components/Footer'));
 
 function MainContent() {
   const { currentPath } = useRouter();
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isPreloading, setIsPreloading] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return !sessionStorage.getItem('portfolio_preloaded');
-  });
-
-  // Trigger idle background prefetching of all other routes immediately after mount
-  useEffect(() => {
-    prefetchAllRoutes();
-  }, []);
 
   const pageVariants: Variants = {
     initial: { opacity: 0, y: 12 },
@@ -64,16 +53,6 @@ function MainContent() {
 
   return (
     <>
-      {isPreloading && (
-        <AppPreloader
-          onComplete={() => {
-            sessionStorage.setItem('portfolio_preloaded', 'true');
-            setIsPreloading(false);
-            prefetchAllRoutes();
-          }}
-        />
-      )}
-
       <Effects />
       <Navbar onOpenCommandPalette={() => setIsCommandPaletteOpen(true)} />
       
@@ -99,9 +78,7 @@ function MainContent() {
         </AnimatePresence>
       </main>
 
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
+      <Footer />
 
       {/* Global Modals */}
       <CommandPalette 

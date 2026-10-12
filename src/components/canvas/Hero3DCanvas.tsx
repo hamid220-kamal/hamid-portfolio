@@ -11,8 +11,17 @@ export default function Hero3DCanvas() {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let width = (canvas.width = canvas.parentElement?.clientWidth || 500);
-    let height = (canvas.height = canvas.parentElement?.clientHeight || 500);
+    let width = 500;
+    let height = 500;
+
+    const updateDimensions = () => {
+      if (!canvas.parentElement) return;
+      width = canvas.width = canvas.parentElement.clientWidth;
+      height = canvas.height = canvas.parentElement.clientHeight;
+    };
+
+    // Defer reading dimensions to next frame to prevent initial forced reflow
+    requestAnimationFrame(updateDimensions);
 
     // Mouse tracking for interactive 3D rotation
     let mouseX = 0;
@@ -42,14 +51,12 @@ export default function Hero3DCanvas() {
     };
 
     const handleResize = () => {
-      if (!canvas.parentElement) return;
-      width = canvas.width = canvas.parentElement.clientWidth;
-      height = canvas.height = canvas.parentElement.clientHeight;
+      requestAnimationFrame(updateDimensions);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove);
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
 
     // Create 3D Machine Node Points & Mechanical Mesh
     const numPoints = 36;

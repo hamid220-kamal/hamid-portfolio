@@ -5,16 +5,14 @@ interface AppPreloaderProps {
   onComplete: () => void;
 }
 
-// Complete Master Asset Registry across ALL 7 Dedicated Pages:
-// 1. Home | 2. About | 3. Projects | 4. Skills | 5. Experience | 6. Certificates | 7. Contact
-const ALL_PORTFOLIO_ASSETS = [
+// Core Master Asset Registry for Instant 60fps Home Page Experience
+const CORE_PORTFOLIO_ASSETS = [
   // Global & Core Hero
   '/images/hamid-ai-developer-portfolio.webp',
   '/favicon.svg',
   '/icons/icon-192.png',
-  '/icons/icon-512.png',
 
-  // 1. Home Page Assets
+  // Home Page 3D Stages & Spheres (Pre-warmed in GPU memory)
   '/images/3d/engine_3d.webp',
   '/images/3d/cnc_blueprint.webp',
   '/images/3d/yolo_traffic.webp',
@@ -23,55 +21,6 @@ const ALL_PORTFOLIO_ASSETS = [
   '/images/3d/sphere_hardware.webp',
   '/images/3d/sphere_cyber.webp',
   '/images/3d/banner_3d_assets.webp',
-
-  // 2. About Page Assets
-  '/images/3d/four_pillars_3d_stage.webp',
-  '/images/3d/principles_standards_3d_stage.webp',
-  '/images/3d/about_cta_3d_banner.webp',
-
-  // 3. Projects & Ventures Page Assets
-  '/images/3d/projects_3d_isometric_stage.webp',
-  '/images/3d/projects_cta_3d_banner.webp',
-  '/images/projects/multi_agent_ai.webp',
-  '/images/projects/mlops_pipeline.webp',
-  '/images/projects/rag_system.webp',
-  '/images/projects/fine_tuning.webp',
-  '/images/projects/ai_traffic_new.webp',
-  '/images/projects/override_new.webp',
-  '/images/projects/capstone.webp',
-  '/images/projects/heart_disease.webp',
-  '/images/projects/face_recognition.webp',
-  '/images/projects/sentiment_analysis.webp',
-  '/images/projects/speech_to_text.webp',
-  '/images/projects/ai_chatbot.webp',
-  '/images/projects/expert_system.webp',
-  '/images/projects/maze_solver.webp',
-  '/images/projects/python_course.webp',
-  '/images/projects/cnc_robot.webp',
-  '/images/projects/learn_quran_net.webp',
-  '/images/projects/ali_logistics.webp',
-  '/images/projects/zoon_tourism.webp',
-  '/images/projects/prime_edge.webp',
-
-  // 4. Skills & Toolchain Page Assets
-  '/images/3d/toolchain_3d_cyber_stage.webp',
-  '/images/3d/skills_cta_3d_banner.webp',
-
-  // 5. Experience & Leadership Page Assets
-  '/images/3d/career_3d_tower_sculpture.webp',
-  '/images/3d/experience_3d_query_stage.webp',
-  '/images/3d/experience_cta_3d_sphere_banner.webp',
-
-  // 6. Verified Certifications Page Assets
-  '/images/3d/certificates_3d_validated_hub.webp',
-  '/images/3d/certificates_cta_3d_badge.webp',
-
-  // 7. Contact & FAQ Page Assets
-  '/images/3d/contact_3d_cyber_cube.webp',
-  '/images/3d/faq_3d_gear_cube.webp',
-
-  // Global Footer
-  '/images/3d/footer_3d_skyline_landscape.webp',
 ];
 
 export default function AppPreloader({ onComplete }: AppPreloaderProps) {
@@ -82,48 +31,28 @@ export default function AppPreloader({ onComplete }: AppPreloaderProps) {
     let isMounted = true;
     let completedItems = 0;
 
-    // 1. Preload JS Chunks for all 7 routes concurrently
-    const routeLoaders = [
-      () => import('../pages/HomePage'),
-      () => import('../pages/AboutPage'),
-      () => import('../pages/ProjectsPage'),
-      () => import('../pages/SkillsPage'),
-      () => import('../pages/ExperiencePage'),
-      () => import('../pages/CertificatesPage'),
-      () => import('../pages/ContactPage'),
-      () => import('../components/Footer'),
-    ];
+    // 1. Ensure HomePage and Footer are immediately primed
+    import('../pages/HomePage').catch(() => {});
+    import('../components/Footer').catch(() => {});
 
-    routeLoaders.forEach((loader) => {
-      try {
-        loader();
-      } catch {
-        // Safe prefetch ignore
-      }
-    });
-
-    const totalAssets = ALL_PORTFOLIO_ASSETS.length;
+    const totalAssets = CORE_PORTFOLIO_ASSETS.length;
 
     const updateProgress = (current: number) => {
       if (!isMounted) return;
       const pct = Math.min(100, Math.round((current / totalAssets) * 100));
       setProgress(pct);
 
-      if (pct < 25) {
-        setStatusText('DECODING 7 PAGE MODULES...');
-      } else if (pct < 55) {
-        setStatusText('PRE-WARMING 3D RENDER STAGES...');
-      } else if (pct < 85) {
-        setStatusText('CACHING ALL 20 PROJECT ASSETS...');
-      } else if (pct < 100) {
-        setStatusText('INITIALIZING FULL APP IN GPU RAM...');
+      if (pct < 40) {
+        setStatusText('DECODING HOME PAGE...');
+      } else if (pct < 80) {
+        setStatusText('PRE-WARMING 3D ASSETS...');
       } else {
-        setStatusText('ALL 7 PAGES READY');
+        setStatusText('PORTFOLIO READY');
       }
     };
 
-    // 2. Concurrently fetch and decode all 7 pages' assets into browser GPU memory
-    const promises = ALL_PORTFOLIO_ASSETS.map((src) => {
+    // 2. Concurrently fetch and decode core Home assets into browser GPU memory
+    const promises = CORE_PORTFOLIO_ASSETS.map((src) => {
       return new Promise<void>((resolve) => {
         const img = new Image();
         img.src = src;
@@ -153,19 +82,19 @@ export default function AppPreloader({ onComplete }: AppPreloaderProps) {
       });
     });
 
-    // Safety timeout: Maximum 2.5s fallback so slow 3G networks never hang
+    // Snappy fallback timeout: Maximum 650ms so mobile never lags or hangs
     const fallbackTimer = setTimeout(() => {
       if (isMounted) {
         setProgress(100);
-        setStatusText('ALL 7 PAGES READY');
+        setStatusText('PORTFOLIO READY');
       }
-    }, 2500);
+    }, 650);
 
     Promise.all(promises).then(() => {
       clearTimeout(fallbackTimer);
       if (isMounted) {
         setProgress(100);
-        setStatusText('ALL 7 PAGES READY');
+        setStatusText('PORTFOLIO READY');
       }
     });
 
@@ -298,14 +227,17 @@ export default function AppPreloader({ onComplete }: AppPreloaderProps) {
               position: 'relative',
             }}
           >
-            <motion.div
+            <div
               style={{
                 height: '100%',
-                width: `${progress}%`,
+                width: '100%',
                 background: 'linear-gradient(90deg, #2563eb 0%, #38bdf8 100%)',
                 borderRadius: '999px',
-                transition: 'width 0.1s ease',
+                transform: `scaleX(${progress / 100})`,
+                transformOrigin: 'left center',
+                transition: 'transform 0.15s cubic-bezier(0.16, 1, 0.3, 1)',
                 boxShadow: '0 0 12px rgba(56, 189, 248, 0.6)',
+                willChange: 'transform',
               }}
             />
           </div>

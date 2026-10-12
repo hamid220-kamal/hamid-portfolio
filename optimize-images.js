@@ -101,6 +101,22 @@ async function run() {
     }
   }
   
+  // 3. Optimize all 3D assets (max-width 1000px, quality 82 for crystal clear 3D details)
+  const THREED_DIR = './public/images/3d';
+  cleanTempFiles(THREED_DIR);
+  if (fs.existsSync(THREED_DIR)) {
+    const files = fs.readdirSync(THREED_DIR);
+    for (const file of files) {
+      if (file.endsWith('.temp')) continue;
+      const filePath = path.join(THREED_DIR, file);
+      if (!fs.existsSync(filePath)) continue;
+      const stat = fs.statSync(filePath);
+      if (stat.isFile() && /\.(webp|jpg|jpeg|png)$/i.test(file)) {
+        await optimizeImage(filePath, 1000, 82);
+      }
+    }
+  }
+
   console.log('Image optimization process complete!');
 }
 

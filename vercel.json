@@ -51,7 +51,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
@@ -60,7 +60,7 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
@@ -82,12 +82,12 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
     {
-      "source": "/(robots.txt|sitemap.xml|llms.txt|llms-full.txt|manifest.json|e8f49a21b3c748d5910fae62319087cd.txt)",
+      "source": "/(robots.txt|sitemap.xml|llms.txt|llms-full.txt|manifest.json|ai-catalog.json|e8f49a21b3c748d5910fae62319087cd.txt)",
       "headers": [
         {
           "key": "Cache-Control",

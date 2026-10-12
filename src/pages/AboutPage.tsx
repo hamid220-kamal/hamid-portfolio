@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { FiCpu, FiShield, FiZap, FiTarget, FiArrowRight, FiCheckCircle } from 'react-icons/fi';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiCpu, FiShield, FiZap, FiTarget, FiArrowRight, FiCheckCircle, FiCode, FiUser } from 'react-icons/fi';
 import { useRouter } from '../context/RouterContext';
 
 const engineeringPillars = [
@@ -42,6 +43,7 @@ const engineeringPrinciples = [
 
 export default function AboutPage() {
   const { navigate } = useRouter();
+  const [activePhoto, setActivePhoto] = useState<'workspace' | 'portrait'>('workspace');
 
   return (
     <div style={{ position: 'relative', minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px', overflowX: 'hidden' }}>
@@ -98,6 +100,32 @@ export default function AboutPage() {
               My background as a 17-year-old developer and founder — from tinkering with microcontrollers to shipping production systems.
             </p>
           </div>
+        </motion.div>
+
+        {/* Founder Mindset Brand Banner */}
+        <motion.div
+          initial={false}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          style={{
+            position: 'relative',
+            borderRadius: '24px',
+            overflow: 'hidden',
+            border: '1.5px solid rgba(255, 255, 255, 0.85)',
+            boxShadow: '0 20px 50px -10px rgba(15, 23, 42, 0.12)',
+            marginBottom: '32px',
+            background: '#ffffff',
+          }}
+        >
+          <img
+            src="/images/hamid-founder-banner.webp"
+            alt="Hamid Kamal - Founder-minded Developer"
+            width="1024"
+            height="381"
+            loading="eager"
+            decoding="async"
+            style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+          />
         </motion.div>
 
         {/* Outer 3D Glass Slab Plate Container around BOTH Cards */}
@@ -212,7 +240,7 @@ export default function AboutPage() {
                   boxShadow: '0 12px 32px -6px rgba(15, 23, 42, 0.06)',
                 }}
               >
-                {/* Photo Frame Container */}
+                {/* Photo Frame Container with Active Switching */}
                 <div
                   className="about-profile-frame"
                   style={{
@@ -224,20 +252,87 @@ export default function AboutPage() {
                     flex: 1,
                     minHeight: '420px',
                     marginBottom: '16px',
-                    background: '#ffffff',
+                    background: '#0f172a',
                   }}
                 >
-                  <img
-                    src="/images/hamid-ai-developer-portfolio.webp"
-                    alt="Hamid Kamal Profile"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: '50% 12%',
-                      display: 'block',
-                    }}
-                  />
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={activePhoto}
+                      src={activePhoto === 'workspace' ? '/images/hamid-about-workspace.webp' : '/images/hamid-ai-developer-portfolio.webp'}
+                      alt={activePhoto === 'workspace' ? 'Hamid Kamal Active Coding' : 'Hamid Kamal Profile'}
+                      width="400"
+                      height="520"
+                      initial={{ opacity: 0, scale: 1.02 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: '50% 12%',
+                        display: 'block',
+                      }}
+                    />
+                  </AnimatePresence>
+
+                  {/* Mode Selector Pill */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '12px',
+                    right: '12px',
+                    display: 'flex',
+                    gap: '6px',
+                    background: 'rgba(15, 23, 42, 0.75)',
+                    backdropFilter: 'blur(12px)',
+                    border: '1px solid rgba(255, 255, 255, 0.25)',
+                    borderRadius: '999px',
+                    padding: '4px',
+                    zIndex: 10,
+                  }}>
+                    <button
+                      type="button"
+                      onClick={() => setActivePhoto('workspace')}
+                      style={{
+                        background: activePhoto === 'workspace' ? 'linear-gradient(135deg, #2563eb, #38bdf8)' : 'transparent',
+                        color: '#ffffff',
+                        border: 'none',
+                        borderRadius: '999px',
+                        padding: '4px 10px',
+                        fontFamily: "'Space Mono', monospace",
+                        fontSize: '0.65rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px',
+                        transition: 'all 0.2s ease',
+                      }}
+                    >
+                      <FiCode size={11} /> Coding
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActivePhoto('portrait')}
+                      style={{
+                        background: activePhoto === 'portrait' ? 'linear-gradient(135deg, #2563eb, #38bdf8)' : 'transparent',
+                        color: '#ffffff',
+                        border: 'none',
+                        borderRadius: '999px',
+                        padding: '4px 10px',
+                        fontFamily: "'Space Mono', monospace",
+                        fontSize: '0.65rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px',
+                        transition: 'all 0.2s ease',
+                      }}
+                    >
+                      <FiUser size={11} /> Portrait
+                    </button>
+                  </div>
                 </div>
 
                 {/* Status Pill Box */}
@@ -315,6 +410,10 @@ export default function AboutPage() {
             <img
               src="/images/3d/four_pillars_3d_stage.webp"
               alt="The Four Engineering Pillars 3D Render"
+              width="1200"
+              height="440"
+              loading="lazy"
+              decoding="async"
               style={{
                 width: '100%',
                 maxHeight: '440px',
@@ -444,6 +543,10 @@ export default function AboutPage() {
             <img
               src="/images/3d/principles_standards_3d_stage.webp"
               alt="Principles &amp; Standards 3D Sculptures"
+              width="1200"
+              height="440"
+              loading="lazy"
+              decoding="async"
               style={{
                 width: '100%',
                 maxHeight: '440px',

@@ -99,6 +99,7 @@ export default function PWAInstallPrompt() {
             bottom: '24px',
             right: '20px',
             zIndex: 99999,
+            contain: 'layout',
             maxWidth: '380px',
             width: 'calc(100% - 40px)',
             background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.96) 0%, rgba(30, 41, 59, 0.94) 100%)',

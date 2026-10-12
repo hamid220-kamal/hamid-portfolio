@@ -41,6 +41,17 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
     { name: 'Connect', path: '/contact', index: '06', icon: <FiSend size={18} /> }
   ];
 
+  const prefetchRoute = (path: string) => {
+    switch (path) {
+      case '/about': import('../pages/AboutPage'); break;
+      case '/projects': import('../pages/ProjectsPage'); break;
+      case '/skills': import('../pages/SkillsPage'); break;
+      case '/experience': import('../pages/ExperiencePage'); break;
+      case '/certificates': import('../pages/CertificatesPage'); break;
+      case '/contact': import('../pages/ContactPage'); break;
+    }
+  };
+
   const handleNavClick = (path: string) => {
     navigate(path);
     setIsMobileOpen(false);
@@ -233,6 +244,8 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
               <motion.button
                 key={item.name}
                 onClick={() => handleNavClick(item.path)}
+                onMouseEnter={() => prefetchRoute(item.path)}
+                onTouchStart={() => prefetchRoute(item.path)}
                 whileHover={{ scale: 1.12, y: -2, rotateX: 6, rotateY: -6 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: 'spring', stiffness: 450, damping: 25 }}
@@ -322,6 +335,8 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.path)}
+                  onMouseEnter={() => prefetchRoute(item.path)}
+                  onTouchStart={() => prefetchRoute(item.path)}
                   style={{
                     background: isActive ? 'rgba(37, 99, 235, 0.08)' : 'none',
                     border: 'none',

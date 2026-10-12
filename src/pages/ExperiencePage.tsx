@@ -6,7 +6,7 @@ export default function ExperiencePage() {
   const { navigate } = useRouter();
 
   return (
-    <div style={{ paddingTop: '110px', paddingBottom: '80px' }}>
+    <div className="experience-page-root" style={{ paddingTop: '110px', paddingBottom: '80px' }}>
       <div className="container">
         
         {/* Page Header Banner */}
@@ -34,7 +34,7 @@ export default function ExperiencePage() {
 
           {/* Title */}
           <h1 className="section-title" style={{
-            fontSize: 'clamp(2.4rem, 5.2vw, 4.4rem)',
+            fontSize: 'clamp(1.9rem, 5.2vw, 4.4rem)',
             fontWeight: 800,
             lineHeight: 1.1,
             letterSpacing: '-0.03em',
@@ -68,24 +68,10 @@ export default function ExperiencePage() {
         </motion.div>
 
         {/* Main Experience Layout (Left Vertical Stepper Pipeline + Right Experience Cards Stack) */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '300px 1fr',
-          gap: '36px',
-          alignItems: 'start',
-          marginBottom: '80px',
-        }} className="experience-main-grid">
+        <div className="experience-main-grid">
           
           {/* LEFT COLUMN: Vertical Timeline Stepper Pipeline (Exact match to Image 2) */}
-          <div style={{
-            position: 'sticky',
-            top: '120px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '24px',
-            paddingLeft: '16px',
-            borderLeft: '2px solid rgba(37, 99, 235, 0.4)',
-          }}>
+          <div className="experience-sidebar">
             
             {/* Step 1: Executive CTO Role */}
             <div style={{ position: 'relative', paddingLeft: '20px' }}>
@@ -183,6 +169,7 @@ export default function ExperiencePage() {
               initial={false}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
+              className="experience-sidebar-stage"
               style={{
                 marginTop: '12px',
                 position: 'relative',
@@ -240,6 +227,8 @@ export default function ExperiencePage() {
                   }}
                   src="/images/3d/career_3d_tower_sculpture.webp"
                   alt="Career Timeline 3D Render"
+                  width={300}
+                  height={320}
                   loading="lazy"
                   decoding="async"
                   style={{
@@ -256,13 +245,14 @@ export default function ExperiencePage() {
           </div>
 
           {/* RIGHT COLUMN: Experience Cards Stack (Exact match to Image 2 layout) */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div className="experience-cards-stack" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             
             {/* Card 1: CTO Learn Quran */}
             <motion.div
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
+              className="timeline-card"
               style={{
                 background: 'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
                 backdropFilter: 'blur(24px)',
@@ -273,7 +263,7 @@ export default function ExperiencePage() {
                 boxShadow: '0 20px 45px -10px rgba(15, 23, 42, 0.1), inset 0 2px 3px rgba(255, 255, 255, 0.9)',
               }}
             >
-              <div style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: '32px', alignItems: 'start' }}>
+              <div className="experience-card-split">
                 <div>
                   <div style={{
                     display: 'inline-flex',
@@ -337,6 +327,7 @@ export default function ExperiencePage() {
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
+              className="timeline-card"
               style={{
                 background: 'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
                 backdropFilter: 'blur(24px)',
@@ -347,7 +338,7 @@ export default function ExperiencePage() {
                 boxShadow: '0 20px 45px -10px rgba(15, 23, 42, 0.1), inset 0 2px 3px rgba(255, 255, 255, 0.9)',
               }}
             >
-              <div style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: '32px', alignItems: 'start' }}>
+              <div className="experience-card-split">
                 <div>
                   <div style={{
                     display: 'inline-flex',
@@ -406,7 +397,7 @@ export default function ExperiencePage() {
             </motion.div>
 
             {/* Middle Split Grid: Internships + 3D Cyber Data Query Stage (Exact Match to Image 2) */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '24px', alignItems: 'stretch' }}>
+            <div className="experience-middle-split">
               
               {/* Left Column: Web Architecture & AI Systems Intern Cards */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -416,6 +407,7 @@ export default function ExperiencePage() {
                   initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
+                  className="timeline-card timeline-card-sm"
                   style={{
                     background: 'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
                     backdropFilter: 'blur(24px)',
@@ -462,6 +454,7 @@ export default function ExperiencePage() {
                   initial={false}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
+                  className="timeline-card timeline-card-sm"
                   style={{
                     background: 'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
                     backdropFilter: 'blur(24px)',
@@ -510,6 +503,7 @@ export default function ExperiencePage() {
                 initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
+                className="experience-query-stage"
                 style={{
                   position: 'relative',
                   borderRadius: '24px',
@@ -522,6 +516,10 @@ export default function ExperiencePage() {
                 <img
                   src="/images/3d/experience_3d_query_stage.webp"
                   alt="3D Data Query Dashboard Stage"
+                  width={480}
+                  height={360}
+                  loading="lazy"
+                  decoding="async"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
               </motion.div>
@@ -533,6 +531,7 @@ export default function ExperiencePage() {
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
+              className="timeline-card"
               style={{
                 background: 'linear-gradient(145deg, rgba(255,255,255,0.78) 0%, rgba(248,250,252,0.5) 100%)',
                 backdropFilter: 'blur(24px)',
@@ -543,7 +542,7 @@ export default function ExperiencePage() {
                 boxShadow: '0 20px 45px -10px rgba(15, 23, 42, 0.1), inset 0 2px 3px rgba(255, 255, 255, 0.9)',
               }}
             >
-              <div style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: '32px', alignItems: 'center' }}>
+              <div className="experience-card-split">
                 <div>
                   <div style={{
                     display: 'inline-flex',
@@ -614,6 +613,7 @@ export default function ExperiencePage() {
           initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
+          className="experience-cta-box"
           style={{
             position: 'relative',
             marginTop: '40px',
@@ -622,17 +622,12 @@ export default function ExperiencePage() {
             backdropFilter: 'blur(24px)',
             WebkitBackdropFilter: 'blur(24px)',
             border: '1.5px solid rgba(56, 189, 248, 0.4)',
-            padding: '40px 48px',
             boxShadow: '0 30px 70px -15px rgba(5, 11, 23, 0.6), inset 0 2px 3px rgba(255, 255, 255, 0.15)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '32px',
             overflow: 'hidden',
           }}
         >
           {/* Left Content Column */}
-          <div style={{ position: 'relative', zIndex: 3, maxWidth: '580px' }}>
+          <div className="experience-cta-content" style={{ position: 'relative', zIndex: 3, maxWidth: '580px' }}>
             <div style={{
               display: 'inline-block',
               background: 'rgba(56, 189, 248, 0.12)',
@@ -653,7 +648,7 @@ export default function ExperiencePage() {
 
             <h3 style={{
               fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 'clamp(1.6rem, 3.2vw, 2.2rem)',
+              fontSize: 'clamp(1.4rem, 3.2vw, 2.2rem)',
               fontWeight: 800,
               color: '#ffffff',
               lineHeight: 1.2,
@@ -671,6 +666,7 @@ export default function ExperiencePage() {
               whileHover={{ scale: 1.06, y: -2 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => navigate('/contact')}
+              className="experience-cta-btn"
               style={{
                 background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #6366f1 100%)',
                 border: '2px solid rgba(191, 219, 254, 0.8)',
@@ -694,7 +690,7 @@ export default function ExperiencePage() {
 
           {/* Right Column — 3D Orbital Sphere Floating Animation */}
           <motion.div
-            className="hide-on-mobile"
+            className="experience-cta-image hide-on-mobile"
             animate={{
               y: [-8, 8, -8],
               rotate: [0, 3, -3, 0],
@@ -718,6 +714,8 @@ export default function ExperiencePage() {
             <img
               src="/images/3d/experience_cta_3d_sphere_banner.webp"
               alt="3D Orbital Sphere Render Stage"
+              width={360}
+              height={220}
               loading="lazy"
               decoding="async"
               style={{
@@ -734,6 +732,51 @@ export default function ExperiencePage() {
       </div>
 
       <style>{`
+        .experience-page-root {
+          padding-top: 110px;
+          padding-bottom: 80px;
+        }
+
+        .experience-main-grid {
+          display: grid;
+          grid-template-columns: 290px 1fr;
+          gap: 36px;
+          align-items: start;
+          margin-bottom: 80px;
+        }
+
+        .experience-sidebar {
+          position: sticky;
+          top: 120px;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          padding-left: 16px;
+          border-left: 2px solid rgba(37, 99, 235, 0.4);
+        }
+
+        .experience-card-split {
+          display: grid;
+          grid-template-columns: 0.85fr 1.15fr;
+          gap: 32px;
+          align-items: start;
+        }
+
+        .experience-middle-split {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 24px;
+          align-items: stretch;
+        }
+
+        .experience-cta-box {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 32px;
+          padding: 40px 48px;
+        }
+
         .timeline {
           display: flex;
           flex-direction: column;
@@ -828,9 +871,97 @@ export default function ExperiencePage() {
           line-height: 1.65;
         }
 
-        @media (max-width: 900px) {
-          .timeline-split { grid-template-columns: 1fr; gap: 24px; }
-          .mobile-hide-line { display: none; }
+        @media (max-width: 1024px) {
+          .experience-main-grid {
+            grid-template-columns: 1fr !important;
+            gap: 28px !important;
+            margin-bottom: 48px !important;
+          }
+
+          .experience-sidebar {
+            display: none !important;
+          }
+
+          .experience-card-split {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+
+          .experience-middle-split {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+
+          .experience-query-stage {
+            height: 240px !important;
+            min-height: 220px !important;
+          }
+
+          .experience-cta-box {
+            flex-direction: column !important;
+            text-align: center !important;
+            padding: 32px 24px !important;
+            gap: 24px !important;
+          }
+
+          .experience-cta-content {
+            max-width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+          }
+
+          .timeline-split {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+
+          .mobile-hide-line {
+            display: none !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .experience-page-root {
+            padding-top: 90px !important;
+            padding-bottom: 48px !important;
+          }
+
+          .timeline-card {
+            padding: 22px 18px !important;
+            border-radius: 20px !important;
+          }
+
+          .timeline-card-sm {
+            padding: 20px 16px !important;
+            border-radius: 18px !important;
+          }
+
+          .experience-cta-box {
+            padding: 28px 18px !important;
+            border-radius: 20px !important;
+          }
+
+          .experience-cta-btn {
+            width: 100% !important;
+            max-width: 320px !important;
+            justify-content: center !important;
+          }
+
+          .experience-query-stage {
+            height: 220px !important;
+            border-radius: 18px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .timeline-card {
+            padding: 18px 14px !important;
+          }
+
+          .experience-query-stage {
+            height: 190px !important;
+          }
         }
       `}</style>
     </div>

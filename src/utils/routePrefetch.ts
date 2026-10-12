@@ -1,18 +1,21 @@
-// Background Pre-fetching and Asset Warming Engine for 0ms Route Transitions
+// Background Pre-fetching Engine for 0ms Route Transitions (Deferred for Initial LCP Protection)
 
 export const prefetchAllRoutes = () => {
   if (typeof window === 'undefined') return;
 
   const schedulePrefetch = (callback: () => void) => {
-    if ('requestIdleCallback' in window) {
-      (window as Window & { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(callback);
-    } else {
-      setTimeout(callback, 50);
-    }
+    // Wait until initial page render has completely stabilized before warming up other routes
+    setTimeout(() => {
+      if ('requestIdleCallback' in window) {
+        (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => void }).requestIdleCallback(callback, { timeout: 4000 });
+      } else {
+        setTimeout(callback, 200);
+      }
+    }, 3500);
   };
 
   schedulePrefetch(() => {
-    // 1. Preload JavaScript Chunks for All 6 Remaining Pages in Background
+    // Preload JavaScript Chunks for remaining pages in background
     const routeLoaders = [
       () => import('../pages/AboutPage'),
       () => import('../pages/ProjectsPage'),
@@ -20,7 +23,6 @@ export const prefetchAllRoutes = () => {
       () => import('../pages/CertificatesPage'),
       () => import('../pages/ExperiencePage'),
       () => import('../pages/ContactPage'),
-      () => import('../components/Footer'),
     ];
 
     routeLoaders.forEach((loader) => {
@@ -29,22 +31,6 @@ export const prefetchAllRoutes = () => {
       } catch {
         // Silently handle any prefetch aborts
       }
-    });
-
-    // 2. Pre-warm Key High-Priority Image Assets in Browser GPU/RAM Cache
-    const criticalAssets = [
-      '/images/hamid-ai-developer-portfolio.webp',
-      '/favicon.svg',
-      '/icons/icon-192.png',
-      '/images/3d/cnc_blueprint.webp',
-      '/images/3d/yolo_traffic.webp',
-      '/images/3d/shield_3d.webp',
-    ];
-
-    criticalAssets.forEach((src) => {
-      const img = new Image();
-      img.decoding = 'async';
-      img.src = src;
     });
   });
 };

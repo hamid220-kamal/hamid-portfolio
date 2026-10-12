@@ -71,6 +71,7 @@ export default function Effects() {
           pointerEvents: 'none',
           overflow: 'hidden',
           zIndex: 0,
+          contain: 'strict',
         }}
         aria-hidden="true"
       >

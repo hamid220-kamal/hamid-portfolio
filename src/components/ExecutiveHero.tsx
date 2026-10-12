@@ -35,28 +35,29 @@ export default function ExecutiveHero() {
           height: '440px',
           opacity: 0.28,
           pointerEvents: 'none',
-          zIndex: 1
+          zIndex: 1,
+          contain: 'strict',
         }}
       >
         <svg viewBox="0 0 400 300" fill="none" stroke="#2563eb" strokeWidth="1.2">
           {/* Cylinder Block Engine Lines */}
           <rect x="60" y="80" width="280" height="150" rx="16" strokeDasharray="4 4" />
           
-          {/* Oscillating Piston Cylinder Assemblies */}
-          <motion.circle 
+          {/* Cylinder Assemblies */}
+          <circle 
             cx="120" cy="155" r="40" 
-            animate={{ r: [38, 42, 38], strokeWidth: [1.2, 1.8, 1.2] }}
-            transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+            strokeDasharray="6 3"
+            opacity="0.85"
           />
-          <motion.circle 
+          <circle 
             cx="200" cy="155" r="40" 
-            animate={{ r: [42, 38, 42], strokeWidth: [1.8, 1.2, 1.8] }}
-            transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
+            strokeDasharray="6 3"
+            opacity="0.85"
           />
-          <motion.circle 
+          <circle 
             cx="280" cy="155" r="40" 
-            animate={{ r: [38, 42, 38], strokeWidth: [1.2, 1.8, 1.2] }}
-            transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 1 }}
+            strokeDasharray="6 3"
+            opacity="0.85"
           />
 
           <path d="M120 115 L120 195 M200 115 L200 195 M280 115 L280 195" strokeDasharray="2 2" />
@@ -201,9 +202,13 @@ export default function ExecutiveHero() {
               <div className="rotated-photo-card">
                 <img 
                   src="/images/hamid-ai-developer-portfolio.webp" 
+                  srcSet="/images/hamid-ai-developer-portfolio-mobile.webp 440w, /images/hamid-ai-developer-portfolio.webp 767w"
+                  sizes="(max-width: 640px) 310px, 440px"
                   alt="Hamid Kamal Profile" 
                   className="photo-img"
                   fetchPriority="high"
+                  width="440"
+                  height="550"
                 />
 
                 {/* Bottom Overlay Profile Card */}
