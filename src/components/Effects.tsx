@@ -76,13 +76,7 @@ export default function Effects() {
         aria-hidden="true"
       >
         {/* Floating 3D Glowing Ambient Color Orbs (Sky Blue & Warm Beige) */}
-        <motion.div
-          animate={{
-            x: [0, 90, -70, 0],
-            y: [0, -100, 80, 0],
-            scale: [1, 1.25, 0.9, 1],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+        <div
           style={{
             position: 'absolute',
             top: '5%',
@@ -93,16 +87,11 @@ export default function Effects() {
             background: 'radial-gradient(circle, rgba(255, 255, 255, 0.45) 0%, rgba(59, 130, 246, 0.18) 55%, transparent 75%)',
             filter: 'blur(55px)',
             willChange: 'transform',
+            animation: 'floatOrb1 18s ease-in-out infinite',
           }}
         />
 
-        <motion.div
-          animate={{
-            x: [0, -110, 80, 0],
-            y: [0, 90, -100, 0],
-            scale: [1, 1.3, 0.85, 1],
-          }}
-          transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
+        <div
           style={{
             position: 'absolute',
             top: '42%',
@@ -113,16 +102,11 @@ export default function Effects() {
             background: 'radial-gradient(circle, rgba(253, 244, 219, 0.5) 0%, rgba(147, 197, 253, 0.25) 55%, transparent 75%)',
             filter: 'blur(65px)',
             willChange: 'transform',
+            animation: 'floatOrb2 22s ease-in-out infinite',
           }}
         />
 
-        <motion.div
-          animate={{
-            x: [0, 80, -90, 0],
-            y: [0, 70, -80, 0],
-            scale: [1, 1.2, 0.9, 1],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
+        <div
           style={{
             position: 'absolute',
             bottom: '8%',
@@ -133,24 +117,13 @@ export default function Effects() {
             background: 'radial-gradient(circle, rgba(219, 234, 254, 0.45) 0%, rgba(37, 99, 235, 0.15) 55%, transparent 75%)',
             filter: 'blur(60px)',
             willChange: 'transform',
+            animation: 'floatOrb3 25s ease-in-out infinite',
           }}
         />
 
         {/* 3D Glass Wireframe Rotating Cube 1 (Top Right - Light Glass & Specular Glow) */}
-        <motion.div
+        <div
           className="hide-on-mobile"
-          animate={{
-            rotateX: [0, 360],
-            rotateY: [0, 360],
-            rotateZ: [0, 180],
-            y: [-15, 15, -15],
-          }}
-          transition={{
-            rotateX: { duration: 24, repeat: Infinity, ease: 'linear' },
-            rotateY: { duration: 32, repeat: Infinity, ease: 'linear' },
-            rotateZ: { duration: 40, repeat: Infinity, ease: 'linear' },
-            y: { duration: 6, repeat: Infinity, ease: 'easeInOut' },
-          }}
           style={{
             position: 'absolute',
             top: '12%',
@@ -161,6 +134,7 @@ export default function Effects() {
             perspective: 800,
             opacity: 0.75,
             willChange: 'transform',
+            animation: 'rotateCube1 28s linear infinite',
           }}
         >
           <div
@@ -174,20 +148,10 @@ export default function Effects() {
               boxShadow: '0 20px 40px rgba(37, 99, 235, 0.2), inset 0 0 25px rgba(255, 255, 255, 0.8)',
             }}
           />
-        </motion.div>
+        </div>
 
         {/* 3D Floating Sapphire/Beige Ring Sculpture (Left Center) */}
-        <motion.div
-          animate={{
-            rotateX: [60, 40, 60],
-            rotateY: [0, 360],
-            y: [20, -20, 20],
-          }}
-          transition={{
-            rotateY: { duration: 28, repeat: Infinity, ease: 'linear' },
-            rotateX: { duration: 10, repeat: Infinity, ease: 'easeInOut' },
-            y: { duration: 7, repeat: Infinity, ease: 'easeInOut' },
-          }}
+        <div
           style={{
             position: 'absolute',
             top: '38%',
@@ -200,23 +164,13 @@ export default function Effects() {
             background: 'radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(37, 99, 235, 0.1) 70%)',
             opacity: 0.7,
             willChange: 'transform',
+            animation: 'rotateRing 24s linear infinite',
           }}
         />
 
         {/* 3D Glass Wireframe Rotating Cube 2 (Bottom Right) */}
-        <motion.div
-          animate={{
-            rotateX: [360, 0],
-            rotateY: [0, 360],
-            rotateZ: [180, 0],
-            y: [-20, 20, -20],
-          }}
-          transition={{
-            rotateX: { duration: 30, repeat: Infinity, ease: 'linear' },
-            rotateY: { duration: 25, repeat: Infinity, ease: 'linear' },
-            rotateZ: { duration: 35, repeat: Infinity, ease: 'linear' },
-            y: { duration: 8, repeat: Infinity, ease: 'easeInOut' },
-          }}
+        <div
+          className="hide-on-mobile"
           style={{
             position: 'absolute',
             bottom: '20%',
@@ -227,6 +181,7 @@ export default function Effects() {
             perspective: 800,
             opacity: 0.75,
             willChange: 'transform',
+            animation: 'rotateCube2 30s linear infinite',
           }}
         >
           <div
@@ -240,34 +195,23 @@ export default function Effects() {
               boxShadow: '0 15px 35px rgba(37, 99, 235, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.8)',
             }}
           />
-        </motion.div>
+        </div>
 
         {/* Floating Particle Stars Matrix (Light Sky & Golden Amber Palette) */}
         {[
-          { top: '10%', left: '15%', size: 6, duration: 4, color: '#2563eb' },
-          { top: '25%', left: '85%', size: 8, duration: 6, color: '#1d4ed8' },
-          { top: '38%', left: '22%', size: 7, duration: 5, color: '#ffffff' },
-          { top: '55%', left: '78%', size: 6, duration: 7, color: '#d97706' },
-          { top: '70%', left: '10%', size: 8, duration: 5.5, color: '#2563eb' },
-          { top: '82%', left: '65%', size: 7, duration: 4.5, color: '#ffffff' },
-          { top: '18%', left: '48%', size: 6, duration: 6.5, color: '#2563eb' },
-          { top: '62%', left: '40%', size: 7, duration: 5, color: '#1d4ed8' },
-          { top: '90%', left: '30%', size: 8, duration: 7, color: '#d97706' },
-          { top: '32%', left: '92%', size: 6, duration: 4, color: '#ffffff' },
+          { top: '10%', left: '15%', size: 6, duration: '4s', delay: '0s', color: '#2563eb' },
+          { top: '25%', left: '85%', size: 8, duration: '6s', delay: '0.4s', color: '#1d4ed8' },
+          { top: '38%', left: '22%', size: 7, duration: '5s', delay: '0.8s', color: '#ffffff' },
+          { top: '55%', left: '78%', size: 6, duration: '7s', delay: '1.2s', color: '#d97706' },
+          { top: '70%', left: '10%', size: 8, duration: '5.5s', delay: '1.6s', color: '#2563eb' },
+          { top: '82%', left: '65%', size: 7, duration: '4.5s', delay: '2s', color: '#ffffff' },
+          { top: '18%', left: '48%', size: 6, duration: '6.5s', delay: '2.4s', color: '#2563eb' },
+          { top: '62%', left: '40%', size: 7, duration: '5s', delay: '2.8s', color: '#1d4ed8' },
+          { top: '90%', left: '30%', size: 8, duration: '7s', delay: '3.2s', color: '#d97706' },
+          { top: '32%', left: '92%', size: 6, duration: '4s', delay: '3.6s', color: '#ffffff' },
         ].map((particle, idx) => (
-          <motion.div
+          <div
             key={idx}
-            animate={{
-              y: [-12, 12, -12],
-              opacity: [0.4, 0.95, 0.4],
-              scale: [0.8, 1.3, 0.8],
-            }}
-            transition={{
-              duration: particle.duration,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: idx * 0.4,
-            }}
             style={{
               position: 'absolute',
               top: particle.top,
@@ -278,10 +222,54 @@ export default function Effects() {
               background: particle.color,
               boxShadow: `0 0 14px ${particle.color}`,
               willChange: 'transform, opacity',
+              animation: `twinkleParticle ${particle.duration} ease-in-out infinite`,
+              animationDelay: particle.delay,
             }}
           />
         ))}
       </div>
+
+      <style>{`
+        @keyframes floatOrb1 {
+          0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+          33% { transform: translate3d(90px, -100px, 0) scale(1.25); }
+          66% { transform: translate3d(-70px, 80px, 0) scale(0.9); }
+        }
+
+        @keyframes floatOrb2 {
+          0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+          33% { transform: translate3d(-110px, 90px, 0) scale(1.3); }
+          66% { transform: translate3d(80px, -100px, 0) scale(0.85); }
+        }
+
+        @keyframes floatOrb3 {
+          0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+          50% { transform: translate3d(80px, 70px, 0) scale(1.2); }
+        }
+
+        @keyframes rotateCube1 {
+          0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(-15px); }
+          50% { transform: rotateX(180deg) rotateY(180deg) rotateZ(90deg) translateY(15px); }
+          100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg) translateY(-15px); }
+        }
+
+        @keyframes rotateRing {
+          0% { transform: rotateX(60deg) rotateY(0deg) translateY(20px); }
+          50% { transform: rotateX(40deg) rotateY(180deg) translateY(-20px); }
+          100% { transform: rotateX(60deg) rotateY(360deg) translateY(20px); }
+        }
+
+        @keyframes rotateCube2 {
+          0% { transform: rotateX(360deg) rotateY(0deg) rotateZ(180deg) translateY(-20px); }
+          50% { transform: rotateX(180deg) rotateY(180deg) rotateZ(90deg) translateY(20px); }
+          100% { transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateY(-20px); }
+        }
+
+        @keyframes twinkleParticle {
+          0%, 100% { transform: translateY(-12px) scale(0.8); opacity: 0.4; }
+          50% { transform: translateY(12px) scale(1.3); opacity: 0.95; }
+        }
+      `}</style>
     </>
   );
 }
